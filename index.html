@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>[Your Name] - Portfolio</title>
+
+  <!-- Meta tags for responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Embedded CSS for a sleek, professional design -->
+  <style>
+    /* RESET/BASE STYLES */
+    * {
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
+    }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: "Arial", sans-serif;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: #fff;
+    }
+    ul {
+      list-style: none;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      padding: 20px 0;
+      z-index: 999; /* ensure it stays on top */
+      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+      transition: background 0.3s ease;
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav li {
+      margin: 0 20px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    nav li a:hover {
+      color: #00adee;
+      transition: color 0.3s ease;
+    }
+
+    /* SECTION CONTAINERS */
+    section {
+      width: 80%;
+      margin: 120px auto 60px auto; 
+      /* top margin ensures nav won't overlap section heading */
+      padding-bottom: 60px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      opacity: 0;              /* for fade-in animation */
+      transform: translateY(20px); /* shift down slightly */
+      animation: fadeInUp 1s forwards ease-in-out; 
+      /* forwards ensures final state is retained */
+    }
+    section:nth-of-type(even) {
+      animation-delay: 0.2s; /* minor stagger effect */
+    }
+    section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      letter-spacing: 1px;
+      border-bottom: 2px solid #00adee;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    /* FADE-IN ANIMATION KEYFRAMES */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ABOUT SECTION */
+    .about-content {
+      margin-top: 10px;
+      font-size: 1.1em;
+      line-height: 1.8;
+    }
+
+    /* SKILLS SECTION */
+    .skills-list {
+      columns: 2; /* display in two columns if screen is wide enough */
+      column-gap: 40px;
+      font-size: 1.1em;
+    }
+    .skills-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+    .skills-list li::before {
+      content: "•"; /* bullet */
+      position: absolute;
+      left: 0;
+      color: #00adee;
+    }
+
+    /* PROJECTS SECTION */
+    .project {
+      margin-bottom: 30px;
+    }
+    .project h3 {
+      margin-bottom: 5px;
+      font-size: 1.5em;
+      color: #00adee;
+    }
+    .project p {
+      margin-bottom: 8px;
+      line-height: 1.6;
+    }
+    .project a {
+      color: #00adee;
+      text-decoration: underline;
+    }
+    .project a:hover {
+      color: #fff;
+      background-color: #00adee;
+      transition: all 0.2s ease;
+      padding: 0 4px;
+    }
+
+    /* RESUME BUTTON (optional styling) */
+    .resume-link {
+      display: inline-block;
+      margin-top: 10px;
+      background: #00adee;
+      color: #000;
+      padding: 10px 15px;
+      border-radius: 4px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    .resume-link:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* MEDIA QUERIES FOR RESPONSIVENESS */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+      }
+      nav li {
+        margin: 10px 0;
+      }
+      section {
+        width: 90%;
+        margin: 140px auto 60px auto;
+      }
+      .skills-list {
+        columns: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <ul>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#resume">Resume</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
+
+  <!-- ABOUT SECTION -->
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        Hello! I'm <strong>[Your Name]</strong>, a passionate student and researcher fascinated 
+        by the <em>interdisciplinary applications of machine learning</em> and the 
+        <em>intersection of mathematics and ML</em>. My academic interests include applying 
+        advanced computational techniques to solve real-world problems in fields ranging from 
+        data science to robotics and beyond. I enjoy exploring new algorithms, optimizing 
+        existing approaches, and discovering ways to bridge theoretical foundations with 
+        practical deployments.
+      </p>
+      <p>
+        Beyond my research, I love exploring cutting-edge technologies, developing creative 
+        solutions for everyday challenges, and collaborating with like-minded individuals 
+        on <em>innovative, impact-driven projects</em>. In my free time, I indulge in
+        reading about computational math breakthroughs, tinkering with open-source code, 
+        and engaging in outdoor activities.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python (Flask, scikit-learn, OpenCV, matplotlib, seaborn, etc.)</li>
+      <li>SQL</li>
+      <li>Java</li>
+      <li>C++</li>
+      <li>Lua</li>
+      <li>Unity</li>
+      <li>Web Design (HTML, CSS, JavaScript)</li>
+      <li>Discord.js</li>
+      <li>MongoDB</li>
+      <li>Other ML/Data Science libraries as needed</li>
+    </ul>
+  </section>
+
+  <!-- RESUME SECTION -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>
+      You can view or download my full resume by clicking the button below:
+    </p>
+    <!-- Make sure 'resume.pdf' is in the same folder or adjust the path accordingly -->
+    <a href="resume.pdf" target="_blank" class="resume-link">View My Resume (PDF)</a>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Swarm Intelligence Research</h3>
+      <p>
+        Explores the emergent properties of agent-based models to optimize 
+        collective decision-making and resource allocation. This work attempts 
+        to harness multi-agent coordination techniques for real-world 
+        applications in robotics and complex systems.
+      </p>
+      <p>
+        <strong>Paper Link:</strong> 
+        <a href="https://example.com/swarm-intel-paper" target="_blank">
+          Swarm Intelligence Paper
+        </a>
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/swarm-intelligence" target="_blank">
+          https://github.com/example/swarm-intelligence
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Startup Success Prediction Model</h3>
+      <p>
+        A data-driven approach analyzing key factors influencing a startup's 
+        trajectory. Uses machine learning techniques for classification and 
+        risk assessment, providing strategic insights for entrepreneurs and 
+        investors.
+      </p>
+      <p>
+        <strong>Paper Link:</strong>
+        <a href="https://example.com/startup-prediction-paper" target="_blank">
+          Startup Prediction Paper
+        </a>
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/startup-success-model" target="_blank">
+          https://github.com/example/startup-success-model
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Verdant (Garden App)</h3>
+      <p>
+        A user-friendly web app leveraging machine learning to optimize planting 
+        schedules, track produce yields, and manage donations to local food 
+        banks. Successfully implemented advanced forecasting algorithms to 
+        anticipate growth cycles and resource requirements.
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/verdant-garden-app" target="_blank">
+          https://github.com/example/verdant-garden-app
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>Metropolis Madness</h3>
+      <p>
+        A robust web application used by the local science center to manage 
+        large-scale events, schedules, and ticketing. This platform has been 
+        effectively handling event logistics for over two years.
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/metropolis-madness" target="_blank">
+          https://github.com/example/metropolis-madness
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>911 Call Analysis Model</h3>
+      <p>
+        A Flask-based app that performs association rule mining on 911 call data 
+        to reveal patterns in call reasons (EMS, Fire, Traffic) and other related 
+        attributes. Demonstrates end-to-end data ingestion, preprocessing, 
+        modeling, and web deployment.
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/911-analysis-app" target="_blank">
+          https://github.com/example/911-analysis-app
+        </a>
+      </p>
+    </div>
+
+    <div class="project">
+      <h3>OpenCV Shape/Object Recognition Model</h3>
+      <p>
+        An application showcasing OpenCV’s capabilities for image processing 
+        and computer vision tasks. Users can upload images to be classified 
+        into specific categories (e.g., shapes, handwritten digits, etc.). 
+        Demonstrates feature extraction, classification, and real-time inference.
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/example/opencv-model" target="_blank">
+          https://github.com/example/opencv-model
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- OPTIONAL: SCRIPTS FOR SMOOTH SCROLL (purely aesthetic) -->
+  <script>
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href'))
+          .scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
