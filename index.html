@@ -240,13 +240,22 @@
   <!-- PROJECTS SECTION -->
   <section id="projects">
     <h2>Projects</h2>
+    
+    <!-- SWARM INTELLIGENCE RESEARCH -->
     <div class="project">
       <h3>Swarm Intelligence Research</h3>
       <p>
-        Explores the emergent properties of agent-based models to optimize 
-        collective decision-making and resource allocation. This work attempts 
-        to harness multi-agent coordination techniques for real-world 
-        applications in robotics and complex systems.
+        In this project, I investigated the use of agent-based models to enhance 
+        collective decision-making and resource allocation in multi-agent systems. 
+        Building on the concept of <em>swarm robotics</em>, I integrated Dihedral 
+        and Cyclic group theory approaches into an **evolutionary algorithm** to 
+        discover optimal coordination strategies. These strategies improved 
+        collision avoidance, task distribution, and formation control across 
+        numerous simulations (like the Halite Challenge), demonstrating that 
+        symmetry-based approaches can significantly boost performance in 
+        real-world robotics and complex systems. The research culminated in 
+        a paper showcasing how algebraic analysis and geometric optimization 
+        can shape more robust, scalable, and energy-efficient swarms.
       </p>
       <p>
         <strong>Paper Link:</strong> 
@@ -262,90 +271,138 @@
       </p>
     </div>
 
+    <!-- STARTUP SUCCESS PREDICTION MODEL -->
     <div class="project">
       <h3>Startup Success Prediction Model</h3>
       <p>
-        A data-driven approach analyzing key factors influencing a startup's 
-        trajectory. Uses machine learning techniques for classification and 
-        risk assessment, providing strategic insights for entrepreneurs and 
-        investors.
+        This comprehensive study analyzed **4,000+ startup cases** to understand 
+        which factors drive entrepreneurial success. I compiled a robust dataset 
+        encompassing variables such as industry sector, company age, prior 
+        founder experience, educational background, and geographic region. 
+        Leveraging advanced machine learning (Random Forest, Gradient Boosting, 
+        Logistic Regression), I identified the key predictors—like <em>Years 
+        Since Founded</em> and <em>Number of Founded Organizations</em>—that 
+        have the highest impact on a startup’s success rate. Beyond mere 
+        classification accuracy (up to 82%), I used feature importance 
+        analysis to give entrepreneurs and investors data-driven strategies 
+        for navigating today’s competitive startup environment. The study 
+        also employed logistic regression to predict probabilities of success, 
+        providing actionable insights that founders can use when seeking 
+        funding or making operational decisions.
       </p>
       <p>
         <strong>Paper Link:</strong>
-        <a href="https://example.com/startup-prediction-paper" target="_blank">
+        <a href="The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf" target="_blank">
           Startup Prediction Paper
         </a>
       </p>
       <p>
         <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/example/startup-success-model" target="_blank">
-          https://github.com/example/startup-success-model
+        <a href="https://github.com/akshajnad/StartupSuccessResearch" target="_blank">
+          https://github.com/akshajnad/StartupSuccessResearch
         </a>
       </p>
     </div>
 
+    <!-- VERDANT (GARDEN APP) -->
     <div class="project">
       <h3>Verdant (Garden App)</h3>
       <p>
-        A user-friendly web app leveraging machine learning to optimize planting 
-        schedules, track produce yields, and manage donations to local food 
-        banks. Successfully implemented advanced forecasting algorithms to 
-        anticipate growth cycles and resource requirements.
+        I built Verdant around a neural network architecture designed to forecast planting schedules and expected produce yields. Specifically, I fine-tuned a pretrained LSTM-based model (originally from Keras/TensorFlow’s time-series forecasting repository) using historical weather data (e.g., from local NOAA data feeds), soil-condition metrics, and past yield logs collected from regional community gardens. The neural network’s core layers comprise several LSTM blocks for sequence modeling and a final dense layer to output precise harvest predictions. This training process enabled Verdant to factor in weather fluctuations, seasonal soil dynamics, and historical donation patterns. By integrating these data-driven forecasts into a user-friendly web interface, the app empowers local gardeners to plan crop rotations more accurately, minimize waste, and optimize produce donations to nearby food banks.
       </p>
       <p>
         <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/example/verdant-garden-app" target="_blank">
-          https://github.com/example/verdant-garden-app
+        <a href="https://github.com/akshajnad/GardenApp" target="_blank">
+          https://github.com/akshajnad/GardenApp
         </a>
       </p>
     </div>
 
-    <div class="project">
-      <h3>Metropolis Madness</h3>
-      <p>
-        A robust web application used by the local science center to manage 
-        large-scale events, schedules, and ticketing. This platform has been 
-        effectively handling event logistics for over two years.
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/example/metropolis-madness" target="_blank">
-          https://github.com/example/metropolis-madness
-        </a>
-      </p>
-    </div>
-
+    <!-- 911 CALL ANALYSIS MODEL -->
     <div class="project">
       <h3>911 Call Analysis Model</h3>
       <p>
-        A Flask-based app that performs association rule mining on 911 call data 
-        to reveal patterns in call reasons (EMS, Fire, Traffic) and other related 
-        attributes. Demonstrates end-to-end data ingestion, preprocessing, 
-        modeling, and web deployment.
+        This Flask-based application leverages **association rule mining** 
+        (Apriori) on 911 call data to unearth hidden patterns and frequent 
+        itemsets regarding call reasons (EMS, Fire, Traffic) and other 
+        attributes. I engineered an end-to-end pipeline where data is 
+        ingested, cleaned, and transformed into a one-hot encoded format, 
+        then processed by the Apriori algorithm to derive data-driven 
+        insights. These insights can guide emergency response teams 
+        on how to allocate resources more effectively. The app features 
+        a sleek web interface for real-time exploration, letting users 
+        quickly see top rules and filter calls by reason—demonstrating 
+        how data science can improve public safety and resource planning.
       </p>
       <p>
         <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/example/911-analysis-app" target="_blank">
-          https://github.com/example/911-analysis-app
+        <a href="https://github.com/akshajnad/911CallAnalysisModel" target="_blank">
+          https://github.com/akshajnad/911CallAnalysisModel
         </a>
       </p>
     </div>
 
+    <!-- OPENCV SHAPE/OBJECT RECOGNITION -->
     <div class="project">
       <h3>OpenCV Shape/Object Recognition Model</h3>
       <p>
-        An application showcasing OpenCV’s capabilities for image processing 
-        and computer vision tasks. Users can upload images to be classified 
-        into specific categories (e.g., shapes, handwritten digits, etc.). 
-        Demonstrates feature extraction, classification, and real-time inference.
+        This project showcases my exploration of **computer vision** via 
+        OpenCV. The model accepts user-uploaded images and classifies 
+        them into distinct categories—such as geometric shapes or 
+        handwritten digits—using a pipeline of grayscale conversion, 
+        resizing, feature extraction, and a machine learning classifier 
+        (e.g., logistic regression or SVM). I built an interactive Flask 
+        frontend to illustrate real-time image inference, highlighting 
+        the immediate feedback loop essential in vision-based applications 
+        like robotics, OCR, or user interface accessibility. This project 
+        demonstrates how classical CV techniques can still achieve high 
+        accuracy while being lightweight and easily deployable.
       </p>
       <p>
         <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/example/opencv-model" target="_blank">
-          https://github.com/example/opencv-model
+        <a href="https://github.com/akshajnad/DigitRecognizerOpenCVModel" target="_blank">
+          https://github.com/akshajnad/DigitRecognizerOpenCVModel
         </a>
       </p>
     </div>
+
+    <!-- CT SCIENCE AND ENGINEERING FAIR (CSEF) PROJECT -->
+    <div class="project">
+      <h3>CT Science and Engineering Fair: Optimizing Magnetic Fusion Reactors</h3>
+      <p>
+        For the Connecticut Science and Engineering Fair (CSEF), I developed 
+        a theoretical optimization tool, dubbed “TOAST” (Theoretical 
+        Optimization Algorithm for Sustainable Technology), that models 
+        **Magneto-Inertial Fusion** configurations. Drawing upon the 
+        Grad-Shafranov equation, I introduced a customizable pressure 
+        function J(ψ) = α·ψ - β·ψ² + sin(ψ) + 0.1·cos(ψ) to capture 
+        nuanced plasma behavior inside a Field Reversed Configuration (FRC). 
+        By varying α (linear pressure gradient), β (ratio of plasma to magnetic 
+        pressure), and the FRC radius, I simulated how changes in magnetic 
+        flux profiles affect plasma temperature and density under the 
+        **Lawson Criterion**. 
+      </p>
+      <p>
+        Through a combination of penalty-based optimization and advanced 
+        numerical methods (including `solve_bvp` in Python), I discovered 
+        a sweet spot (α ≈ 102.4, β ≈ 22.9, radius ≈ 13.6 m) that balances 
+        temperature (reaching ~125 million Kelvin) and density without 
+        exceeding engineering limits (150 million Kelvin, 10<sup>22</sup> 
+        particles/m³). The tool also explored the interplay of additional 
+        factors like electrical current and pulse duration, highlighting 
+        how these can be tuned to maximize net energy yield. This project 
+        offers a conceptual framework for future fusion research and 
+        underlines the potential of computational modeling in accelerating 
+        clean energy innovations.
+      </p>
+      <p>
+        <strong>GitHub Repo:</strong> 
+        <a href="https://github.com/akshajnad/CSEF" target="_blank">
+          https://github.com/akshajnad/CSEF
+        </a>
+      </p>
+    </div>
+
   </section>
 
   <!-- OPTIONAL: SCRIPTS FOR SMOOTH SCROLL (purely aesthetic) -->
