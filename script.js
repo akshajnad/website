@@ -2,18 +2,52 @@
   "use strict";
 
   var header = document.querySelector("[data-header]");
-  var navLinks = Array.from(document.querySelectorAll('.desktop-nav a[href^="#"]'));
+  var menuToggle = document.querySelector("[data-menu-toggle]");
+  var nav = document.querySelector("[data-nav]");
+  var navLinks = Array.from(document.querySelectorAll('.site-nav a[href^="#"]'));
   var sections = Array.from(document.querySelectorAll("main section[id]"));
+  var reveals = Array.from(document.querySelectorAll(".reveal"));
   var year = document.querySelector("[data-year]");
 
   if (year) year.textContent = new Date().getFullYear();
 
   function updateHeader() {
-    if (header) header.classList.toggle("scrolled", window.scrollY > 12);
+    if (header) header.classList.toggle("is-scrolled", window.scrollY > 12);
   }
 
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
+
+  if (menuToggle && nav) {
+    menuToggle.addEventListener("click", function () {
+      var isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      nav.classList.toggle("is-open", !isOpen);
+      document.body.classList.toggle("menu-open", !isOpen);
+    });
+
+    navLinks.forEach(function (link) {
+      link.addEventListener("click", function () {
+        menuToggle.setAttribute("aria-expanded", "false");
+        nav.classList.remove("is-open");
+        document.body.classList.remove("menu-open");
+      });
+    });
+  }
+
+  if ("IntersectionObserver" in window) {
+    var revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8%", threshold: 0.08 });
+
+    reveals.forEach(function (element) { revealObserver.observe(element); });
+  } else {
+    reveals.forEach(function (element) { element.classList.add("is-visible"); });
+  }
 
   if ("IntersectionObserver" in window && navLinks.length) {
     var sectionObserver = new IntersectionObserver(function (entries) {
@@ -50,7 +84,7 @@
     },
     {
       terms: ["travelers", "internship", "intern", "ticket", "servicenow", "bedrock", "support", "enterprise"],
-      answer: "At Travelers, Akshaj is building a serverless multi-agent system for a 150+ user data platform that processes more than 8,000 jobs per day. The system uses Amazon Bedrock, Lambda, API Gateway, S3, DynamoDB, and RAG to reduce ticket diagnosis from about 60 minutes to under 5."
+      answer: "At Travelers, Akshaj is building a serverless multi-agent system for a 150+ user data platform processing more than 8,000 jobs per day. EventBridge and Lambda route tickets across six root-cause categories; Bedrock agents diagnose them, Step Functions handles human approval, and structured resolutions return to ServiceNow. The target is to move roughly 40% of routine tickets through that path and reduce diagnosis from 30–60 minutes to under 5."
     },
     {
       terms: ["ria", "advisory", "billing", "etl", "random", "forest", "oracle", "first internship"],
@@ -58,7 +92,7 @@
     },
     {
       terms: ["signifi", "startup", "founder", "prd", "requirements", "product management", "create-x", "pilot"],
-      answer: "Akshaj founded Signifi, an AI-native requirements platform that converts raw notes and product ideas into structured technical specifications. He built a planner-worker pipeline spanning 15+ linked agent steps, serves 3 pilot teams, received $25K in Microsoft for Startups funding, and reached the Klaus Startup Challenge finals."
+      answer: "Akshaj founded Signifi, an AI-native requirements platform that converts notes and transcripts into cross-linked PRDs, user stories, test cases, timelines, and prototypes. Its artifact graph contains 50+ linked nodes; a PatternRegistry keeps generated interfaces consistent, while atomic patches update only affected sections. Signifi has 3 pilot teams, $25K in Microsoft for Startups funding, and reached the Klaus Startup Challenge finals."
     },
     {
       terms: ["research", "space", "spacecraft", "aerospace", "ros2", "mujoco", "fuel", "simulation", "lab"],
@@ -74,11 +108,11 @@
     },
     {
       terms: ["talking", "fingers", "asl", "sign language", "camera", "confidence", "ios club"],
-      answer: "For Georgia Tech iOS Club's Talking Fingers app, Akshaj built the graded signing camera view in SwiftUI. It connects the live camera session to sign comparison and streams recognition-confidence updates back to the lesson flow on iOS and macOS."
+      answer: "For Georgia Tech iOS Club's Talking Fingers app, Akshaj worked on the vision pipeline and graded SwiftUI camera experience. Apple Vision hand-pose observations become normalized SignFrame references: static signs use geometric joint matching, while dynamic signs use dynamic time warping over handshape and shoulder-relative wrist trajectories. The reference set covers 37 signs, including dynamic J and Z motions."
     },
     {
       terms: ["skillswap", "skill swap", "ios club", "firebase", "swiftui", "mobile app"],
-      answer: "SkillSwap is a Georgia Tech iOS Club app that helps students exchange skills: each user can find someone who teaches what they want to learn and offer a skill in return. Akshaj contributed to its SwiftUI/Firebase team codebase and product implementation."
+      answer: "SkillSwap is a Georgia Tech iOS Club peer-learning app. Akshaj worked on its AI generation pipeline: Core ML and Apple Foundation Models turn a selected skill into structured lesson plans and quizzes, then connect completion data to personalized progress statistics in the SwiftUI experience."
     },
     {
       terms: ["hackathon", "hackathons", "won", "wins", "awards", "recognition", "finalist", "finalists"],
@@ -90,7 +124,7 @@
     },
     {
       terms: ["gridly", "energyhack", "vultr", "smart plug", "carbon", "energy"],
-      answer: "Gridly is a smart-plug platform with bidirectional WebSocket control and AI scheduling around user needs and lower-carbon grid windows. The team used a Vultr VPS, Vultr AI Agents, PostgreSQL, and Electricity Maps data, winning Best Use of Vultr at EnergyHack."
+      answer: "Gridly is a smart-plug platform with bidirectional WebSocket control and AI scheduling around user needs and lower-carbon grid windows. During the demo, the team controlled a physical plug in Kennesaw from Atlanta through a Vultr-hosted API. It used PostgreSQL, Electricity Maps data, and Vultr AI Agents for structured scheduling, and won Best Use of Vultr at EnergyHack."
     },
     {
       terms: ["ppp", "pocket", "hackgt", "purchasing power", "budget", "capital one"],
