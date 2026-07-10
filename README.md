@@ -1,6 +1,6 @@
 # Akshaj Nadimpalli — Personal Website
 
-A responsive, accessible, text-first portfolio covering internships, research, team projects, and hackathon results. It also includes a client-side portfolio assistant grounded in verified site content, so no API key or user data leaves the browser.
+A responsive, accessible portfolio combining animated project visuals with detailed accounts of internships, research, team projects, and hackathon results. It also includes a client-side portfolio assistant grounded in verified site content, so no API key or user data leaves the browser.
 
 ## Run locally
 
