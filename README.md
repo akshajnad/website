@@ -1,6 +1,6 @@
 # Akshaj Nadimpalli — Personal Website
 
-A responsive, accessible portfolio focused on production engineering impact, startup work, research, and award-winning projects.
+A responsive, accessible, text-first portfolio covering internships, research, team projects, and hackathon results. It also includes a client-side portfolio assistant grounded in verified site content, so no API key or user data leaves the browser.
 
 ## Run locally
 
