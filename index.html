@@ -1,407 +1,525 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Akshaj Nadimpalli - Portfolio</title>
-
-  <!-- Meta tags for responsiveness -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Embedded CSS for a sleek, professional design -->
-  <style>
-    /* RESET/BASE STYLES */
-    * {
-      margin: 0; 
-      padding: 0; 
-      box-sizing: border-box;
-    }
-    body {
-      background: #000;
-      color: #fff;
-      font-family: "Arial", sans-serif;
-      line-height: 1.6;
-    }
-    a {
-      text-decoration: none;
-      color: #fff;
-    }
-    ul {
-      list-style: none;
-    }
-
-    /* NAVIGATION BAR */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: #111;
-      padding: 20px 0;
-      z-index: 999; /* ensure it stays on top */
-      box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
-      transition: background 0.3s ease;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    nav li {
-      margin: 0 20px;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    nav li a:hover {
-      color: #00adee;
-      transition: color 0.3s ease;
-    }
-
-    /* SECTION CONTAINERS */
-    section {
-      width: 80%;
-      margin: 120px auto 60px auto; 
-      /* top margin ensures nav won't overlap section heading */
-      padding-bottom: 60px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      opacity: 0;              /* for fade-in animation */
-      transform: translateY(20px); /* shift down slightly */
-      animation: fadeInUp 1s forwards ease-in-out; 
-      /* forwards ensures final state is retained */
-    }
-    section:nth-of-type(even) {
-      animation-delay: 0.2s; /* minor stagger effect */
-    }
-    section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      letter-spacing: 1px;
-      border-bottom: 2px solid #00adee;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* FADE-IN ANIMATION KEYFRAMES */
-    @keyframes fadeInUp {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* ABOUT SECTION */
-    .about-content {
-      margin-top: 10px;
-      font-size: 1.1em;
-      line-height: 1.8;
-    }
-
-    /* SKILLS SECTION */
-    .skills-list {
-      columns: 2; /* display in two columns if screen is wide enough */
-      column-gap: 40px;
-      font-size: 1.1em;
-    }
-    .skills-list li {
-      margin-bottom: 10px;
-      padding-left: 20px;
-      position: relative;
-    }
-    .skills-list li::before {
-      content: "•"; /* bullet */
-      position: absolute;
-      left: 0;
-      color: #00adee;
-    }
-
-    /* PROJECTS SECTION */
-    .project {
-      margin-bottom: 30px;
-    }
-    .project h3 {
-      margin-bottom: 5px;
-      font-size: 1.5em;
-      color: #00adee;
-    }
-    .project p {
-      margin-bottom: 8px;
-      line-height: 1.6;
-    }
-    .project a {
-      color: #00adee;
-      text-decoration: underline;
-    }
-    .project a:hover {
-      color: #fff;
-      background-color: #00adee;
-      transition: all 0.2s ease;
-      padding: 0 4px;
-    }
-
-    /* RESUME BUTTON (optional styling) */
-    .resume-link {
-      display: inline-block;
-      margin-top: 10px;
-      background: #00adee;
-      color: #000;
-      padding: 10px 15px;
-      border-radius: 4px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    .resume-link:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    /* MEDIA QUERIES FOR RESPONSIVENESS */
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-      }
-      nav li {
-        margin: 10px 0;
-      }
-      section {
-        width: 90%;
-        margin: 140px auto 60px auto;
-      }
-      .skills-list {
-        columns: 1;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <!-- NAVIGATION BAR -->
-  <nav>
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
-  </nav>
-
-  <!-- ABOUT SECTION -->
-  <section id="about">
-    <h2>About Me</h2>
-    <div class="about-content">
-      <p>
-        Hello! I’m Akshaj Nadimpalli, a sophomore at Georgia Tech majoring in Computer Science with a focus on the interdisciplinary applications of machine learning and the mathematical foundations of AI. I am particularly interested in leveraging computational methods—ranging from optimization algorithms and group-theoretic models to large-scale data systems—to address challenges in data science, robotics, and intelligent systems. My work often centers on translating rigorous theory into practical implementations, whether through algorithm design, systems optimization, or applied machine learning research.
-      </p>
-      <p>
-        Beyond academics, I am driven by curiosity for emerging technologies and enjoy building solutions that merge technical depth with real-world impact. I thrive in collaborative, innovation-focused environments where ideas can be prototyped, iterated, and scaled. In my free time, I stay connected to both technical and creative pursuits: exploring computational breakthroughs, contributing to open-source projects, playing tennis, practicing violin, and hiking to recharge and gain perspective.
-      </p>
-    </div>
-  </section>
-
-  <!-- SKILLS SECTION -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Python (Flask, SQLAlchemy)</li>
-      <li>SQL (MySQL)</li>
-      <li>Java (Spring Boot (Spring Maven/Gradle, Spring Data JPA), RESTful API design w/ CRUD operations and Postman)</li>
-      <li>C++ (Ross)</li>
-      <li>Frontend Development (HTML, CSS, React, AngularJS)</li>
-      <li>Machine Learning and Data Science (Tensorflow, PyTorch, Numpy, Pandas, Scikit-learn, OpenCV, Anaconda, Matplotlib, Seaborn)</li>
-      <li>SwiftUI</li>
-      <li>Firebase & Supabase</li>
-    </ul>
-  </section>
-
-  <!-- RESUME SECTION -->
-  <section id="resume">
-    <h2>Resume</h2>
-    <p>
-      You can view or download my full resume by clicking the button below:
-    </p>
-    <!-- Make sure 'resume.pdf' is in the same folder or adjust the path accordingly -->
-    <a href="resume.pdf" target="_blank" class="resume-link">View My Resume (PDF)</a>
-  </section>
-
-  <!-- PROJECTS SECTION -->
-  <section id="projects">
-    <h2>Projects</h2>
-    
-    <!-- SWARM INTELLIGENCE RESEARCH -->
-    <div class="project">
-      <h3>Swarm Intelligence Research</h3>
-      <p>
-        In this project, I investigated the use of agent-based models to enhance 
-        collective decision-making and resource allocation in multi-agent systems. 
-        Building on the concept of <em>swarm robotics</em>, I integrated Dihedral 
-        and Cyclic group theory approaches into an **evolutionary algorithm** to 
-        discover optimal coordination strategies. These strategies improved 
-        collision avoidance, task distribution, and formation control across 
-        numerous simulations (like the Halite Challenge), demonstrating that 
-        symmetry-based approaches can significantly boost performance in 
-        real-world robotics and complex systems. The research culminated in 
-        a paper showcasing how algebraic analysis and geometric optimization 
-        can shape more robust, scalable, and energy-efficient swarms.
-      </p>
-      <p>
-        <strong>Paper Link:</strong> 
-        <a href="Adaptive_Collective_Strategies_for_Swarm_Intelligence_Applications.pdf" target="_blank">
-          Swarm Intelligence Paper
-        </a>
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/SwarmIntelligenceModel" target="_blank">
-          https://github.com/akshajnad/SwarmIntelligenceModel
-        </a>
-      </p>
-    </div>
-
-    <!-- STARTUP SUCCESS PREDICTION MODEL -->
-    <div class="project">
-      <h3>Startup Success Prediction Model</h3>
-      <p>
-        This comprehensive study analyzed **4,000+ startup cases** to understand 
-        which factors drive entrepreneurial success. I compiled a robust dataset 
-        encompassing variables such as industry sector, company age, prior 
-        founder experience, educational background, and geographic region. 
-        Leveraging advanced machine learning (Random Forest, Gradient Boosting, 
-        Logistic Regression), I identified the key predictors—like <em>Years 
-        Since Founded</em> and <em>Number of Founded Organizations</em>—that 
-        have the highest impact on a startup’s success rate. Beyond mere 
-        classification accuracy (up to 82%), I used feature importance 
-        analysis to give entrepreneurs and investors data-driven strategies 
-        for navigating today’s competitive startup environment. The study 
-        also employed logistic regression to predict probabilities of success, 
-        providing actionable insights that founders can use when seeking 
-        funding or making operational decisions. It is has been published by the Journal of Student Research this January.
-      </p>
-      <p>
-        <strong>Paper Link:</strong>
-        <a href="The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf" target="_blank">
-          Startup Prediction Paper
-        </a>
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/StartupSuccessResearch" target="_blank">
-          https://github.com/akshajnad/StartupSuccessResearch
-        </a>
-      </p>
-    </div>
-
-    <!-- VERDANT (GARDEN APP) -->
-    <div class="project">
-      <h3>Verdant - Produce for All</h3>
-      <p>
-        Verdant connects community gardens to shelters in need, helping them plan, plant, and harvest produce efficiently. Shelters can submit requests through the platform, which uses machine learning to determine a planting schedule that we as volunteers can follow to provide as much as possible. I am building Verdant around a neural network architecture designed to forecast planting schedules and expected produce yields. Specifically, I fine-tuned a pretrained LSTM-based model (originally from Keras/TensorFlow’s time-series forecasting repository) using historical weather data (e.g., from local NOAA data feeds), soil-condition metrics, and past yield logs collected from regional community gardens. The neural network’s core layers comprise several LSTM blocks for sequence modeling and a final dense layer to output precise harvest predictions. This training process enabled Verdant to factor in weather fluctuations, seasonal soil dynamics, and historical donation patterns. By integrating these data-driven forecasts into a user-friendly web interface, the app empowers local gardeners to plan crop rotations more accurately, minimize waste, and optimize produce donations to nearby food banks.
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/Verdant" target="_blank">
-          https://github.com/akshajnad/Verdant
-        </a>
-      </p>
-    </div>
-
-    <!-- 911 CALL ANALYSIS MODEL -->
-    <div class="project">
-      <h3>911 Call Analysis Model</h3>
-      <p>
-        This Flask-based application leverages **association rule mining** 
-        (Apriori) on 911 call data to unearth hidden patterns and frequent 
-        itemsets regarding call reasons (EMS, Fire, Traffic) and other 
-        attributes. I engineered an end-to-end pipeline where data is 
-        ingested, cleaned, and transformed into a one-hot encoded format, 
-        then processed by the Apriori algorithm to derive data-driven 
-        insights. These insights can guide emergency response teams 
-        on how to allocate resources more effectively. The app features 
-        a sleek web interface for real-time exploration, letting users 
-        quickly see top rules and filter calls by reason.
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/911CallAnalysisModel" target="_blank">
-          https://github.com/akshajnad/911CallAnalysisModel
-        </a>
-      </p>
-    </div>
-
-    <!-- OPENCV SHAPE/OBJECT RECOGNITION -->
-    <div class="project">
-      <h3>OpenCV Shape/Object Recognition Model</h3>
-      <p>
-        This project showcases my exploration of **computer vision** via 
-        OpenCV. The model accepts user-uploaded images and classifies 
-        them into distinct categories—such as geometric shapes or 
-        handwritten digits—using a pipeline of grayscale conversion, 
-        resizing, feature extraction, and a machine learning classifier 
-        (e.g., logistic regression or SVM). I built an interactive Flask 
-        frontend to illustrate real-time image inference, highlighting 
-        the immediate feedback loop essential in vision-based applications 
-        like robotics, OCR, or user interface accessibility. This project 
-        demonstrates how classical CV techniques can still achieve high 
-        accuracy while being lightweight and easily deployable.
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/DigitRecognizerOpenCVModel" target="_blank">
-          https://github.com/akshajnad/DigitRecognizerOpenCVModel
-        </a>
-      </p>
-    </div>
-
-    <!-- CT SCIENCE AND ENGINEERING FAIR (CSEF) PROJECT -->
-    <div class="project">
-      <h3>CT Science and Engineering Fair: Optimizing Magnetic Fusion Reactors</h3>
-      <p>
-        For the Connecticut Science and Engineering Fair (CSEF), I developed 
-        a theoretical optimization tool, dubbed “TOAST” (Theoretical 
-        Optimization Algorithm for Sustainable Technology), that models 
-        **Magneto-Inertial Fusion** configurations. Drawing upon the 
-        Grad-Shafranov equation, I introduced a customizable pressure 
-        function J(ψ) = α·ψ - β·ψ² + sin(ψ) + 0.1·cos(ψ) to capture 
-        nuanced plasma behavior inside a Field Reversed Configuration (FRC). 
-        By varying α (linear pressure gradient), β (ratio of plasma to magnetic 
-        pressure), and the FRC radius, I simulated how changes in magnetic 
-        flux profiles affect plasma temperature and density under the 
-        **Lawson Criterion**. 
-      </p>
-      <p>
-        Through a combination of penalty-based optimization and advanced 
-        numerical methods (including `solve_bvp` in Python), I discovered 
-        a sweet spot (α ≈ 102.4, β ≈ 22.9, radius ≈ 13.6 m) that balances 
-        temperature (reaching ~125 million Kelvin) and density without 
-        exceeding engineering limits (150 million Kelvin, 10<sup>22</sup> 
-        particles/m³). The tool also explored the interplay of additional 
-        factors like electrical current and pulse duration, highlighting 
-        how these can be tuned to maximize net energy yield. This project 
-        offers a conceptual framework for future fusion research and 
-        underlines the potential of computational modeling in accelerating 
-        clean energy innovations.
-      </p>
-      <p>
-        <strong>GitHub Repo:</strong> 
-        <a href="https://github.com/akshajnad/T.O.A.S.T-CSEF" target="_blank">
-          https://github.com/akshajnad/CSEF
-        </a>
-      </p>
-    </div>
-
-  </section>
-
-  <!-- OPTIONAL: SCRIPTS FOR SMOOTH SCROLL (purely aesthetic) -->
-  <script>
-    // Smooth scroll for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href'))
-          .scrollIntoView({ behavior: 'smooth' });
-      });
-    });
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Akshaj Nadimpalli | Software Engineer, Founder &amp; Researcher</title>
+  <meta name="description" content="Akshaj Nadimpalli is a Georgia Tech computer science student building production AI systems, developer tools, and robotics research.">
+  <meta name="theme-color" content="#f4f1e8">
+  <meta property="og:title" content="Akshaj Nadimpalli | Software Engineer">
+  <meta property="og:description" content="Production AI systems, ambitious products, and research with measurable impact.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>document.documentElement.classList.add('js');</script>
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Akshaj Nadimpalli",
+    "jobTitle": "Software Engineer",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Georgia Institute of Technology"
+    },
+    "sameAs": [
+      "https://github.com/akshajnad",
+      "https://www.linkedin.com/in/akshaj-nadimpalli/"
+    ]
+  }
   </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <div class="nav-shell">
+      <a class="wordmark" href="#top" aria-label="Akshaj Nadimpalli, home">
+        <span class="wordmark-mark" aria-hidden="true">AN</span>
+        <span class="wordmark-name">Akshaj Nadimpalli</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+        <a href="#experience">Experience</a>
+        <a href="#work">Selected work</a>
+        <a href="#recognition">Recognition</a>
+        <a href="#about">About</a>
+        <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="orb orb-one" aria-hidden="true"></div>
+      <div class="orb orb-two" aria-hidden="true"></div>
+
+      <div class="shell hero-shell">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span></span> Georgia Tech CS · Class of 2028</p>
+          <h1 id="hero-title">I build AI systems that <em>survive contact</em> with the real world.</h1>
+          <p class="hero-lede">Software engineer, founder, and researcher turning ambitious ideas into reliable products across agentic AI, data platforms, and robotics.</p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="mailto:akshajnadn@gmail.com">Start a conversation <span aria-hidden="true">↗</span></a>
+          </div>
+
+          <nav class="hero-links" aria-label="Social links">
+            <a href="https://github.com/akshajnad" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+            <a href="https://www.linkedin.com/in/akshaj-nadimpalli/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+            <a href="resume.pdf" target="_blank" rel="noopener">Resume <span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+
+        <aside class="now-card reveal" aria-label="Current role">
+          <div class="now-card-top">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Currently building</span>
+            <span class="now-index">01 / 03</span>
+          </div>
+          <div class="now-visual" aria-hidden="true">
+            <div class="signal signal-a"></div>
+            <div class="signal signal-b"></div>
+            <div class="signal signal-c"></div>
+            <div class="system-node node-one">INTAKE</div>
+            <div class="system-node node-two">RAG</div>
+            <div class="system-node node-three">RESOLVE</div>
+          </div>
+          <p class="now-company">Travelers</p>
+          <h2>Multi-agent support automation for a high-volume enterprise data platform.</h2>
+          <p>Amazon Bedrock · Lambda · API Gateway · DynamoDB</p>
+        </aside>
+      </div>
+
+      <ul class="shell proof-strip reveal">
+        <li class="proof-item">
+          <strong>4.0</strong>
+          <span>Georgia Tech GPA</span>
+        </li>
+        <li class="proof-item">
+          <strong>&lt;5 min</strong>
+          <span>Ticket diagnosis time</span>
+        </li>
+        <li class="proof-item">
+          <strong>$25K</strong>
+          <span>Startup cloud funding</span>
+        </li>
+        <li class="proof-item">
+          <strong>4×</strong>
+          <span>Hackathon award winner</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="section experience-section" id="experience" aria-labelledby="experience-title">
+      <div class="shell">
+        <div class="section-heading section-heading-light reveal">
+          <p class="section-kicker">01 · Experience</p>
+          <h2 id="experience-title">Engineering with measurable stakes.</h2>
+          <p>Production systems, research, and startup work where reliability matters as much as the demo.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="timeline-number">01</span>
+              <p>Jun. 2026 — Present</p>
+              <p>Hartford, CT</p>
+            </div>
+            <div class="timeline-content">
+              <div class="role-heading">
+                <div>
+                  <p class="company">Travelers</p>
+                  <h3>Software Engineering Intern</h3>
+                </div>
+                <span class="role-tag">AI Platform Engineering</span>
+              </div>
+              <p class="role-summary">Architecting a serverless, event-driven multi-agent system that auto-triages ServiceNow tickets for a 150+ user data platform processing 8,000+ jobs each day.</p>
+              <ul class="impact-list">
+                <li>Reduced diagnosis time from roughly 60 minutes to under 5 with Bedrock, Lambda, and API Gateway.</li>
+                <li>Built grounded RAG diagnosis plus an approval-gated learning loop with traceability across 37 resolved tickets.</li>
+                <li>Instrumented latency, errors, and resolution success with Dynatrace and Graylog; packaging for EKS with Terraform and CI/CD.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="timeline-number">02</span>
+              <p>Feb. 2026 — Present</p>
+              <p>Atlanta, GA</p>
+            </div>
+            <div class="timeline-content">
+              <div class="role-heading">
+                <div>
+                  <p class="company">Signifi</p>
+                  <h3>Founder &amp; Lead Developer</h3>
+                </div>
+                <span class="role-tag">CREATE-X S26</span>
+              </div>
+              <p class="role-summary">Leading an AI-native product management platform that turns one brief into aligned PRDs, user stories, prototypes, and delivery plans.</p>
+              <ul class="impact-list">
+                <li>Orchestrated 15+ planner and worker agent steps through typed JSON outputs and shared run state.</li>
+                <li>Shipped real-time web and mobile prototype rendering with Next.js, TypeScript, Supabase, and Vercel.</li>
+                <li>Serving 3 pilot teams; backed by $25K in Microsoft for Startups funding and named a Klaus Startup Challenge finalist.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="timeline-number">03</span>
+              <p>Jan. 2026 — Present</p>
+              <p>Georgia Tech</p>
+            </div>
+            <div class="timeline-content">
+              <div class="role-heading">
+                <div>
+                  <p class="company">Big Data Big Impact</p>
+                  <h3>Project Lead</h3>
+                </div>
+                <span class="role-tag">15-person team</span>
+              </div>
+              <p class="role-summary">Leading the ML system behind Graption, a Hacklytics-winning accessibility platform for speaker-aware live captions and missed-context recovery.</p>
+              <ul class="impact-list">
+                <li>Trained a multimodal active-speaker classifier to 0.74 F1 across 8 hours of audio-video.</li>
+                <li>Fused audio, lip, and gesture signals while sustaining 30 FPS and sub-1.5 second latency.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="timeline-number">04</span>
+              <p>May — Aug. 2025</p>
+              <p>Software &amp; Data</p>
+            </div>
+            <div class="timeline-content">
+              <div class="role-heading">
+                <div>
+                  <p class="company">RIA Advisory</p>
+                  <h3>Software Engineering Intern</h3>
+                </div>
+                <span class="role-tag">Fintech</span>
+              </div>
+              <p class="role-summary">Automated recurring revenue and billing workflows in Oracle ORMB through Python ETL pipelines on AWS Lambda and S3.</p>
+              <ul class="impact-list">
+                <li>Built reconciliation checks that caught incomplete or inconsistent billing records before production.</li>
+                <li>Trained a random forest anomaly detector with 0.88 precision and 0.79 recall, surfacing 21 misbilled records.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="timeline-number">05</span>
+              <p>Undergraduate Research</p>
+              <p>Georgia Tech</p>
+            </div>
+            <div class="timeline-content">
+              <div class="role-heading">
+                <div>
+                  <p class="company">Aerospace Robotics Lab</p>
+                  <h3>Research Assistant</h3>
+                </div>
+                <span class="role-tag">Robotics &amp; ML</span>
+              </div>
+              <p class="role-summary">Built a ROS2 and MuJoCo spacecraft simulator coordinating 8 agents at 500 Hz with perception, GNC, and formation control in the loop.</p>
+              <ul class="impact-list">
+                <li>Trained decentralized models across roughly 500 rollouts, reducing simulated fuel cost by approximately 20%.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work" aria-labelledby="work-title">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-kicker">02 · Selected work</p>
+          <h2 id="work-title">Systems, not science projects.</h2>
+          <p>Selected builds across AI infrastructure, accessibility, robotics, fintech, and energy.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card project-featured reveal">
+            <div class="project-art art-signifi" aria-hidden="true">
+              <div class="artifact artifact-brief">BRIEF</div>
+              <div class="artifact artifact-prd">PRD</div>
+              <div class="artifact artifact-story">STORIES</div>
+              <div class="artifact artifact-ui">PROTOTYPE</div>
+              <span class="flow-line flow-one"></span>
+              <span class="flow-line flow-two"></span>
+              <span class="flow-line flow-three"></span>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Founder build · 2026</span>
+                <span class="project-status">3 pilot teams</span>
+              </div>
+              <h3>Signifi</h3>
+              <p>An AI-native product management workspace that keeps strategy, requirements, prototypes, and delivery plans aligned through a coordinated agent system.</p>
+              <ul class="project-facts">
+                <li>15+ linked agent steps</li>
+                <li>$25K Microsoft funding</li>
+                <li>Next.js · Supabase · Vercel</li>
+              </ul>
+              <span class="project-link project-link-muted">Private pilot build</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-graption" aria-hidden="true">
+              <div class="face-frame"><span></span><span></span><span></span></div>
+              <div class="waveform">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <p>AKSHAJ <strong>is speaking</strong></p>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Accessibility AI</span>
+                <span class="project-status">Winner</span>
+              </div>
+              <h3>Graption</h3>
+              <p>Speaker-aware live captions that fuse audio, lip movement, and gesture signals to recover missed context in real time.</p>
+              <ul class="project-facts">
+                <li>0.74 F1 active-speaker model</li>
+                <li>30 FPS · &lt;1.5s latency</li>
+              </ul>
+              <a class="project-link" href="https://github.com/akshajnad/hacklytics-2026" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-space" aria-hidden="true">
+              <div class="planet"></div>
+              <div class="orbit orbit-a"><span></span><span></span><span></span></div>
+              <div class="orbit orbit-b"><span></span><span></span></div>
+              <div class="telemetry">500 HZ <b>8 AGENTS</b></div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Robotics research</span>
+                <span class="project-status">−20% fuel</span>
+              </div>
+              <h3>Multi-agent Spacecraft Simulation</h3>
+              <p>A high-fidelity ROS2 and MuJoCo simulator for decentralized formation control, onboard perception, and learned trajectory optimization.</p>
+              <ul class="project-facts">
+                <li>~500 training rollouts</li>
+                <li>ROS2 · MuJoCo · PyTorch</li>
+              </ul>
+              <span class="project-link project-link-muted">Georgia Tech research</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-gridly" aria-hidden="true">
+              <div class="plug"><span></span></div>
+              <div class="energy-chart">
+                <span class="bar-one"></span><span class="bar-two"></span><span class="bar-three"></span><span class="bar-four"></span><span class="bar-five"></span><span class="bar-six"></span><span class="bar-seven"></span>
+              </div>
+              <div class="carbon-label">LOW-CARBON WINDOW</div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>IoT · Energy</span>
+                <span class="project-status">Best Use of Vultr</span>
+              </div>
+              <h3>Gridly</h3>
+              <p>A smart-plug platform with real-time WebSocket control and AI scheduling around user needs and lower-carbon grid windows.</p>
+              <ul class="project-facts">
+                <li>Remote Atlanta ↔ Kennesaw control</li>
+                <li>Vultr VPS · AI Agents · PostgreSQL</li>
+              </ul>
+              <a class="project-link" href="https://github.com/akshajnad/energyhacks-gt" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-finmate" aria-hidden="true">
+              <div class="finance-panel">
+                <span>BENEFITS MATCH</span>
+                <strong>87%</strong>
+                <div><i class="match-fill"></i></div>
+              </div>
+              <div class="finance-chip chip-one">RAG</div>
+              <div class="finance-chip chip-two">TOOLS</div>
+              <div class="finance-chip chip-three">GUARDRAILS</div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Financial AI</span>
+                <span class="project-status">codeLinc10 Winner</span>
+              </div>
+              <h3>FinMate</h3>
+              <p>An AI financial-benefits assistant built on Bedrock RAG with grounded retrieval, guardrails, and tool calls that update the user dashboard.</p>
+              <ul class="project-facts">
+                <li>13/15 internal eval score</li>
+                <li>Claude · Titan · Lambda · S3</li>
+              </ul>
+              <span class="project-link project-link-muted">Hackathon build</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-art art-simulacra" aria-hidden="true">
+              <div class="pixel-city">
+                <span class="building building-one"></span>
+                <span class="building building-two"></span>
+                <span class="building building-three"></span>
+                <span class="person person-one"></span>
+                <span class="person person-two"></span>
+                <span class="person person-three"></span>
+              </div>
+              <div class="sim-label">25 AGENTS · 15 ROUNDS</div>
+            </div>
+            <div class="project-body">
+              <div class="project-topline">
+                <span>Agent simulation</span>
+                <span class="project-status">YHack 2026</span>
+              </div>
+              <h3>Simulacra</h3>
+              <p>A pixel-art policy simulator where 25 generative agents react, form memories, influence neighbors, and reshape a city over 15 rounds.</p>
+              <ul class="project-facts">
+                <li>Live WebSocket simulation</li>
+                <li>LangGraph · FastAPI · Phaser</li>
+              </ul>
+              <a class="project-link" href="https://github.com/akshajnad/bitcamp" target="_blank" rel="noopener">View repository <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section recognition-section" id="recognition" aria-labelledby="recognition-title">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <p class="section-kicker">03 · Recognition</p>
+          <h2 id="recognition-title">A track record of shipping under pressure.</h2>
+          <p>Four award-winning hackathon builds, plus startup and research recognition.</p>
+        </div>
+
+        <div class="awards-list">
+          <article class="award-row reveal">
+            <span class="award-year">2026</span>
+            <div><h3>Hacklytics @ Georgia Tech</h3><p>Winner · Graption</p></div>
+            <span class="award-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-year">2026</span>
+            <div><h3>codeLinc10</h3><p>Hackathon Winner · FinMate</p></div>
+            <span class="award-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-year">2026</span>
+            <div><h3>EnergyHack @ Georgia Tech</h3><p>Best Use of Vultr · Gridly</p></div>
+            <span class="award-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-year">2025</span>
+            <div><h3>HackGT</h3><p>Capital One Best Financial Hack · PPP Pocket</p></div>
+            <span class="award-arrow" aria-hidden="true">↗</span>
+          </article>
+          <article class="award-row reveal">
+            <span class="award-year">2026</span>
+            <div><h3>Klaus Startup Challenge</h3><p>Finalist · Signifi</p></div>
+            <span class="award-arrow" aria-hidden="true">↗</span>
+          </article>
+        </div>
+
+        <div class="publications reveal" aria-labelledby="publications-title">
+          <div>
+            <p class="section-kicker">Research archive</p>
+            <h3 id="publications-title">Earlier publications</h3>
+          </div>
+          <div class="publication-links">
+            <a href="Adaptive_Collective_Strategies_for_Swarm_Intelligence_Applications.pdf" target="_blank" rel="noopener">
+              <span>Adaptive Collective Strategies for Swarm Intelligence Applications</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a href="The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf" target="_blank" rel="noopener">
+              <span>The Influence of Various Factors in a Startup’s Success</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="shell about-grid">
+        <div class="about-copy reveal">
+          <p class="section-kicker">04 · About</p>
+          <h2 id="about-title">Technical depth, product instinct, and a bias toward shipping.</h2>
+          <p>I’m pursuing a B.S. in Computer Science at Georgia Tech, where I work across machine learning, distributed systems, and robotics. I’m most energized by problems that demand both architecture and judgment: grounding an AI system, designing a feedback loop, making an interface legible, or proving that a model improves the outcome that actually matters.</p>
+          <p>Outside of engineering, I play tennis and violin, hike whenever I can, and enjoy turning early ideas into products people can test.</p>
+          <a class="text-link" href="resume.pdf" target="_blank" rel="noopener">Read the full resume <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="about-details reveal">
+          <div class="education-card">
+            <p class="detail-label">Education</p>
+            <h3>Georgia Institute of Technology</h3>
+            <p>B.S. Computer Science · Expected May 2028</p>
+            <p>GPA: 4.0 / 4.0</p>
+          </div>
+
+          <div class="skills-card">
+            <p class="detail-label">Core toolkit</p>
+            <div class="skill-group">
+              <span>Languages</span>
+              <p>Python · Java · C++ · TypeScript · SQL · Swift · Bash</p>
+            </div>
+            <div class="skill-group">
+              <span>AI &amp; Data</span>
+              <p>PyTorch · Scikit-learn · Hugging Face · LangGraph · Pinecone</p>
+            </div>
+            <div class="skill-group">
+              <span>Systems</span>
+              <p>AWS · Docker · Terraform · EKS · GitHub Actions · REST · GraphQL</p>
+            </div>
+            <div class="skill-group">
+              <span>Product</span>
+              <p>Next.js · React Native · Angular · FastAPI · Spring Boot · Supabase</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-title">
+      <div class="shell contact-shell reveal">
+        <div>
+          <p class="section-kicker">05 · Contact</p>
+          <h2 id="contact-title">Interested in ambitious engineering problems.</h2>
+        </div>
+        <div class="contact-actions">
+          <a class="contact-email" href="mailto:akshajnadn@gmail.com">akshajnadn@gmail.com <span aria-hidden="true">↗</span></a>
+          <p>Open to software engineering, applied AI, and research opportunities.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <p>© <span data-year>2026</span> Akshaj Nadimpalli</p>
+      <p>Designed and built with intention.</p>
+      <a href="#top">Back to top <span aria-hidden="true">↑</span></a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
