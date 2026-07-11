@@ -586,30 +586,35 @@
   <button class="assistant-launcher" type="button" aria-expanded="false" aria-controls="portfolio-assistant" data-assistant-launcher>
     <span class="assistant-launcher-dot" aria-hidden="true"></span>
     Ask about Akshaj
+    <span class="assistant-launcher-key" aria-hidden="true">⌘/</span>
   </button>
 
-  <section class="assistant-panel" id="portfolio-assistant" aria-label="Ask about Akshaj" hidden data-assistant-panel>
+  <section class="assistant-panel" id="portfolio-assistant" aria-label="Portfolio assistant" hidden data-assistant-panel>
     <div class="assistant-header">
       <div>
-        <p>Portfolio assistant</p>
-        <h2>Ask Akshaj</h2>
+        <p>Local portfolio assistant</p>
+        <h2>Ask about Akshaj</h2>
       </div>
-      <button type="button" aria-label="Close portfolio assistant" data-assistant-close>×</button>
+      <div class="assistant-header-actions">
+        <span class="assistant-local-badge"><span aria-hidden="true"></span> Local</span>
+        <button class="assistant-icon-button" type="button" aria-label="Clear conversation" title="Clear conversation" data-assistant-clear>↻</button>
+        <button class="assistant-icon-button" type="button" aria-label="Close portfolio assistant" data-assistant-close>×</button>
+      </div>
     </div>
-    <div class="assistant-messages" aria-live="polite" data-assistant-messages>
-      <div class="assistant-message assistant-message-system">I can answer from the verified work on this site. Try an internship, project, research, skills, or hackathon question.</div>
+    <div class="assistant-messages" role="log" aria-live="polite" aria-relevant="additions" data-assistant-messages>
+      <div class="assistant-message assistant-message-system">I understand projects, roles, technologies, metrics, comparisons, recruiter questions, and follow-ups. Every answer stays grounded in the verified content on this site.</div>
     </div>
-    <div class="assistant-suggestions" data-assistant-suggestions>
+    <div class="assistant-suggestions" aria-label="Suggested questions" data-assistant-suggestions>
       <button type="button">What is Akshaj building now?</button>
-      <button type="button">How does Talking Fingers work?</button>
-      <button type="button">Which hackathons did he win?</button>
+      <button type="button">What makes him stand out?</button>
+      <button type="button">Which projects use AWS?</button>
     </div>
     <form class="assistant-form" data-assistant-form>
       <label class="sr-only" for="assistant-input">Ask a question about Akshaj</label>
-      <input id="assistant-input" type="text" autocomplete="off" placeholder="Ask about a project…" data-assistant-input>
+      <input id="assistant-input" type="text" maxlength="180" autocomplete="off" autocapitalize="sentences" spellcheck="true" placeholder="Ask about a project, role, or skill…" data-assistant-input>
       <button type="submit">Send</button>
     </form>
-    <p class="assistant-note">Runs locally from verified portfolio content; no API key or personal data is sent.</p>
+    <p class="assistant-note">Advanced local search with conversation context. No API key, account, or data transfer.</p>
   </section>
 
   <script src="script.js" defer></script>
