@@ -14,7 +14,7 @@
         "His work usually spans the full path from model or prototype to evaluation, infrastructure, human approval, and a usable interface.",
         "He is open to software engineering, applied AI, and research opportunities."
       ],
-      metrics: ["4.0 Georgia Tech GPA", "10+ AI products and applications built", "$25K in startup cloud funding", "4 hackathon wins and 2 track finalist finishes"],
+      metrics: ["4.0 Georgia Tech GPA", "10+ AI products and applications built", "$25K in startup cloud funding", "5 hackathon wins and 2 track finalist finishes"],
       stack: ["Python", "Java", "C++", "TypeScript", "SQL", "Swift", "AWS", "Docker", "Terraform", "React Native", "FastAPI"],
       links: [
         { label: "GitHub", href: "https://github.com/akshajnad" },
@@ -170,6 +170,24 @@
       suggestions: ["What did PPP Pocket win?", "How did PPP Pocket work?", "Show all hackathon projects"]
     },
     {
+      id: "echolocate",
+      name: "Echolocate",
+      type: "project",
+      aliases: ["echolocate", "simularca", "simulacra", "bitcamp", "bitcamp umd", "economic policy simulator", "moonshot award"],
+      tags: ["multi agent", "economic policy", "simulation", "langgraph", "websocket", "hackathon"],
+      summary: "Echolocate simulates how 25 AI residents respond to an economic policy across a live pixel-art city.",
+      details: [
+        "Each resident perceives the policy, retrieves memories, reflects, plans, acts, and influences nearby agents over 15 rounds.",
+        "A FastAPI and LangGraph backend streams simulation events over WebSockets to a Next.js and Phaser frontend."
+      ],
+      metrics: ["Moonshot Award for Most Innovative Hack at Bitcamp UMD", "25 AI agents across 15 simulation rounds"],
+      stack: ["LangGraph", "FastAPI", "Python", "Next.js", "Phaser", "WebSockets", "TypeScript"],
+      links: [{ label: "View repository", href: "https://github.com/akshajnad/bitcamp" }],
+      section: "#work",
+      related: ["awards", "aerospace", "graption"],
+      suggestions: ["How does Echolocate simulate a policy?", "What did Echolocate win?", "How are its agents orchestrated?"]
+    },
+    {
       id: "veritas",
       name: "Veritas",
       type: "project",
@@ -277,20 +295,21 @@
       type: "recognition",
       aliases: ["awards", "recognition", "hackathons", "wins", "winner", "finalist", "prizes", "accomplishments"],
       tags: ["hackathon", "competition", "winner", "finalist"],
-      summary: "Akshaj has four hackathon wins and two track finalist finishes, plus Signifi was a Klaus Startup Challenge finalist.",
+      summary: "Akshaj has five hackathon wins and two track finalist finishes, plus Signifi was a Klaus Startup Challenge finalist.",
       details: [
         "Hacklytics winner for Graption.",
         "codeLinc10 winner for FinMate.",
         "Best Use of Vultr at EnergyHack for Gridly.",
         "Capital One Best Financial Hack at HackGT for PPP Pocket.",
+        "Moonshot Award for Most Innovative Hack at Bitcamp UMD for Echolocate.",
         "YHack K2 Think V2 Track finalist for Veritas and HackGT Capital One Track finalist for PPP Pocket.",
         "Klaus Startup Challenge finalist for Signifi."
       ],
-      metrics: ["4 hackathon wins", "2 track finalist finishes", "1 startup challenge finalist finish"],
+      metrics: ["5 hackathon wins", "2 track finalist finishes", "1 startup challenge finalist finish"],
       stack: [],
       links: [{ label: "View recognition", href: "#recognition" }, { label: "View Devpost", href: "https://devpost.com/akshajnad" }],
       section: "#recognition",
-      related: ["graption", "finmate", "gridly", "ppp-pocket", "veritas"],
+      related: ["graption", "finmate", "gridly", "ppp-pocket", "echolocate", "veritas"],
       suggestions: ["Which project won Hacklytics?", "Tell me about FinMate", "Show all hackathon projects"]
     },
     {
@@ -667,12 +686,12 @@
   function categoryResponse(category) {
     var groups = {
       experience: ["travelers", "ria"],
-      projects: ["signifi", "graption", "aerospace", "gridly", "finmate", "ppp-pocket", "veritas", "talking-fingers", "skillswap", "buywise"],
+      projects: ["signifi", "graption", "aerospace", "gridly", "finmate", "ppp-pocket", "echolocate", "veritas", "talking-fingers", "skillswap", "buywise"],
       ios: ["talking-fingers", "skillswap"],
       bdbi: ["graption", "buywise"],
-      ai: ["travelers", "signifi", "graption", "finmate", "veritas", "skillswap", "aerospace"],
+      ai: ["travelers", "signifi", "graption", "finmate", "echolocate", "veritas", "skillswap", "aerospace"],
       research: ["aerospace", "publications"],
-      hackathons: ["graption", "finmate", "gridly", "ppp-pocket", "veritas"]
+      hackathons: ["graption", "finmate", "gridly", "ppp-pocket", "echolocate", "veritas"]
     };
     var ids = groups[category] || [];
     var records = ids.map(function (id) { return ENTITIES.find(function (item) { return item.id === id; }); }).filter(Boolean);
@@ -724,7 +743,7 @@
         "Production-minded AI: the Travelers system includes routing, retrieval, human approval, observability, and deployment rather than only an LLM prompt.",
         "Technical range with depth: his work spans enterprise cloud systems, multimodal accessibility, iOS, fintech, and multi-agent robotics.",
         "Ownership and leadership: he founded Signifi and leads a 15-person Big Data Big Impact project team.",
-        "Measurable outcomes: examples include sub-5-minute ticket diagnosis, 0.74 F1 at 30 FPS, about 20% lower simulated fuel cost, and four hackathon wins."
+        "Measurable outcomes: examples include sub-5-minute ticket diagnosis, 0.74 F1 at 30 FPS, about 20% lower simulated fuel cost, and five hackathon wins."
       ],
       links: [{ label: "Open resume", href: "resume.pdf" }, { label: "View selected work", href: "#work" }],
       suggestions: ["Which roles fit him best?", "What is his strongest project?", "How can I contact him?"],
