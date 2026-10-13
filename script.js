@@ -10,11 +10,11 @@
       tags: ["software engineer", "student", "founder", "researcher", "georgia tech", "computer science", "applied ai"],
       summary: "Akshaj is a Georgia Tech computer science student who builds applied AI systems, backend infrastructure, product experiences, and robotics software.",
       details: [
-        "He is currently a software engineering intern at Travelers, founder and lead developer of Signifi, a Georgia Tech aerospace robotics researcher, and a project lead in Big Data Big Impact.",
+        "He is currently a software engineering intern at Travelers, co-founder and lead developer of Signifi, a Georgia Tech aerospace robotics researcher, and a project lead in Big Data Big Impact.",
         "His work usually spans the full path from model or prototype to evaluation, infrastructure, human approval, and a usable interface.",
-        "He is open to software engineering, applied AI, and research opportunities."
+        "He is seeking Summer 2027 software engineering internships, with a focus on backend, platform, and applied AI systems."
       ],
-      metrics: ["4.0 Georgia Tech GPA", "10+ AI products and applications built", "$25K in startup cloud funding", "5 hackathon wins and 2 track finalist finishes"],
+      metrics: ["4.0 Georgia Tech GPA", "10+ AI products and applications built", "$25K Microsoft for Startups support", "Hacklytics Best Use of Snowflake API"],
       stack: ["Python", "Java", "C++", "TypeScript", "SQL", "Swift", "AWS", "Docker", "Terraform", "React Native", "FastAPI"],
       links: [
         { label: "GitHub", href: "https://github.com/akshajnad" },
@@ -35,9 +35,9 @@
       details: [
         "EventBridge and Lambda route tickets across six root-cause categories to a Bedrock supervisor that delegates retrieval and diagnosis work.",
         "Step Functions and API Gateway callbacks keep a human approval gate before resolution notes are written back to ServiceNow or added to the knowledge base.",
-        "The system is instrumented with Dynatrace and Graylog and delivered across dev, UAT, and production through EKS, Terraform, and GitHub Actions."
+        "The system is instrumented with Dynatrace and Graylog; packaging for EKS with Angular, Spring Boot, Terraform, and GitHub Actions is in progress."
       ],
-      metrics: ["150+ platform users", "8,000+ jobs per day", "Diagnosis reduced from roughly 60 minutes to under 5", "Routine-ticket path designed for about 40% of request work"],
+      metrics: ["150+ platform users", "8,000+ jobs per day", "Diagnosis reduced from roughly 60 minutes to under 5", "Traceability across 37 resolved tickets"],
       stack: ["AWS Bedrock", "Lambda", "EventBridge", "Step Functions", "API Gateway", "DynamoDB", "EKS", "Terraform", "GitHub Actions", "Dynatrace", "Graylog", "ServiceNow"],
       links: [{ label: "View experience section", href: "#experience" }],
       section: "#experience",
@@ -52,13 +52,13 @@
       tags: ["founder", "product", "requirements", "prototypes", "artifact graph", "schema validation", "ai product", "pilot teams"],
       summary: "Signifi is an AI-native requirements platform that turns raw notes and transcripts into linked PRDs, user stories, test cases, timelines, and interactive prototypes.",
       details: [
-        "A 50+ node artifact graph links outputs back to their source requirements, so edits propagate to the correct artifacts instead of regenerating everything.",
-        "Schema-constrained outputs and a PatternRegistry keep generated interfaces inside valid application patterns and reduce design drift.",
-        "Atomic patches update only the affected requirements and prototype components."
+        "An orchestrated planner/worker pipeline uses shared run state to keep requirements, stories, prototypes, and timelines aligned across 15+ agent steps.",
+        "Structured JSON outputs give each generation step an explicit contract.",
+        "Next.js renders interactive prototypes from the generated artifacts."
       ],
-      metrics: ["3 pilot teams", "$25K in Microsoft for Startups funding", "50+ linked artifact nodes", "Klaus Startup Challenge finalist"],
-      stack: ["TypeScript", "Next.js", "AI structured outputs", "Schema validation", "Artifact graphs", "PatternRegistry"],
-      links: [{ label: "Visit Signifi", href: "https://www.signifi.tech/" }],
+      metrics: ["3 pilot teams", "$25K Microsoft for Startups support", "15+ orchestrated agent steps", "Klaus Startup Challenge finalist"],
+      stack: ["TypeScript", "Next.js", "AI structured outputs", "Schema validation", "Artifact graphs"],
+      links: [{ label: "Explore Signifi demo", href: "https://www.signifi.tech/demo" }],
       section: "#work",
       related: ["profile", "travelers", "skills"],
       suggestions: ["How does Signifi avoid AI drift?", "What traction does Signifi have?", "Compare Signifi and the Travelers system"]
@@ -93,9 +93,9 @@
         "A retrieval layer stores the transcript and surrounding conversation so users can ask what they missed.",
         "Akshaj leads the 15-person Big Data Big Impact team turning the hackathon prototype into a persistent platform."
       ],
-      metrics: ["0.74 F1 on 8 hours of audio-video", "30 FPS", "Under 1.5 seconds end-to-end latency", "Hacklytics winner"],
+      metrics: ["0.74 F1 on 8 hours of audio-video", "30 FPS", "Under 1.5 seconds end-to-end latency", "Hacklytics Best Use of Snowflake API"],
       stack: ["React Native", "FastAPI", "WebSockets", "PostgreSQL", "OpenCV", "MediaPipe", "Whisper", "Python"],
-      links: [{ label: "View repository", href: "https://github.com/akshajnad/hacklytics-2026" }],
+      links: [{ label: "View repository", href: "https://github.com/akshajnad/graption" }],
       section: "#work",
       related: ["buywise", "aerospace", "awards"],
       suggestions: ["How does Graption identify the speaker?", "What were Graption's metrics?", "Which hackathon did Graption win?"]
@@ -147,9 +147,9 @@
         "The RAG pipeline used Titan embeddings, Bedrock Guardrails, Lambda, API Gateway, and CloudWatch tracing.",
         "It was designed to take actions rather than only return text."
       ],
-      metrics: ["13 of 15 grounded-answer evaluation score", "codeLinc10 winner"],
+      metrics: ["13 of 15 questions answered on an internal evaluation set", "codeLinc10 second-place team prize"],
       stack: ["AWS Bedrock", "Claude", "Titan embeddings", "S3", "Lambda", "API Gateway", "CloudWatch", "RAG", "Tool calling"],
-      links: [{ label: "View Devpost", href: "https://devpost.com/akshajnad" }],
+      links: [{ label: "View FinMate on Devpost", href: "https://devpost.com/software/finmate-gj93c8" }],
       section: "#work",
       related: ["awards", "travelers", "ria"],
       suggestions: ["How was FinMate grounded?", "What did FinMate win?", "Which projects use AWS Bedrock?"]
@@ -162,30 +162,30 @@
       tags: ["fintech", "budgeting", "purchasing power", "hackathon", "capital one"],
       summary: "PPP Pocket combines a purchasing-power score, geographic budgeting, spending insights, and shareable reports to make personal finances easier to interpret across locations.",
       details: ["The product included GeoBudget and Smart-Spend experiences backed by account and transaction data."],
-      metrics: ["Capital One Best Financial Hack", "HackGT 2025 Capital One Track finalist"],
+      metrics: [],
       stack: ["React", "Vite", "Tailwind CSS", "Supabase", "Edge Functions", "TypeScript"],
       links: [{ label: "View Devpost", href: "https://devpost.com/akshajnad" }],
       section: "#recognition",
       related: ["awards", "finmate", "gridly"],
-      suggestions: ["What did PPP Pocket win?", "How did PPP Pocket work?", "Show all hackathon projects"]
+      suggestions: ["How did PPP Pocket work?", "Show all hackathon projects"]
     },
     {
       id: "echolocate",
-      name: "Echolocate",
+      name: "EchoLocate",
       type: "project",
-      aliases: ["echolocate", "simularca", "simulacra", "bitcamp", "bitcamp umd", "economic policy simulator", "moonshot award"],
-      tags: ["multi agent", "economic policy", "simulation", "langgraph", "websocket", "hackathon"],
-      summary: "Echolocate simulates how 25 AI residents respond to an economic policy across a live pixel-art city.",
+      aliases: ["echolocate", "bitcamp", "bitcamp umd", "digital forensics", "moonshot award"],
+      tags: ["multi agent", "cybersecurity", "digital forensics", "simulation", "hackathon"],
+      summary: "EchoLocate is an AI digital-forensics simulation where specialist agents investigate cyberattacks, return structured findings, and update a live case board and evidence graph.",
       details: [
-        "Each resident perceives the policy, retrieves memories, reflects, plans, acts, and influences nearby agents over 15 rounds.",
-        "A FastAPI and LangGraph backend streams simulation events over WebSockets to a Next.js and Phaser frontend."
+        "The team's simulation coordinates up to eight specialist agents investigating a cybersecurity incident.",
+        "A React, TypeScript, and Phaser interface presents the investigation, backed by Python and FastAPI."
       ],
-      metrics: ["Moonshot Award for Most Innovative Hack at Bitcamp UMD", "25 AI agents across 15 simulation rounds"],
-      stack: ["LangGraph", "FastAPI", "Python", "Next.js", "Phaser", "WebSockets", "TypeScript"],
-      links: [{ label: "View repository", href: "https://github.com/akshajnad/bitcamp" }],
+      metrics: ["Best Moonshot Hack at Bitcamp", "Up to 8 parallel investigation agents"],
+      stack: ["React", "TypeScript", "Phaser", "FastAPI", "Python", "Qwen", "Featherless", "ElevenLabs"],
+      links: [{ label: "View EchoLocate on Devpost", href: "https://devpost.com/software/echolocate-e4k3dg" }],
       section: "#work",
       related: ["awards", "aerospace", "graption"],
-      suggestions: ["How does Echolocate simulate a policy?", "What did Echolocate win?", "How are its agents orchestrated?"]
+      suggestions: ["How does EchoLocate work?", "What did EchoLocate win?", "How are its agents orchestrated?"]
     },
     {
       id: "veritas",
@@ -295,17 +295,16 @@
       type: "recognition",
       aliases: ["awards", "recognition", "hackathons", "wins", "winner", "finalist", "prizes", "accomplishments"],
       tags: ["hackathon", "competition", "winner", "finalist"],
-      summary: "Akshaj has five hackathon wins and two track finalist finishes, plus Signifi was a Klaus Startup Challenge finalist.",
+      summary: "Akshaj’s recognition includes Hacklytics Best Use of Snowflake API, a codeLinc10 second-place team prize, EnergyHack Best Use of Vultr, and Bitcamp Best Moonshot Hack. Signifi was a Klaus Startup Challenge finalist.",
       details: [
-        "Hacklytics winner for Graption.",
-        "codeLinc10 winner for FinMate.",
+        "Best Use of Snowflake API at Hacklytics for Graption.",
+        "Second-place team prize at codeLinc10 for FinMate.",
         "Best Use of Vultr at EnergyHack for Gridly.",
-        "Capital One Best Financial Hack at HackGT for PPP Pocket.",
-        "Moonshot Award for Most Innovative Hack at Bitcamp UMD for Echolocate.",
-        "YHack K2 Think V2 Track finalist for Veritas and HackGT Capital One Track finalist for PPP Pocket.",
+        "Best Moonshot Hack at Bitcamp for EchoLocate.",
+        "YHack K2 Think V2 Track finalist for Veritas.",
         "Klaus Startup Challenge finalist for Signifi."
       ],
-      metrics: ["5 hackathon wins", "2 track finalist finishes", "1 startup challenge finalist finish"],
+      metrics: ["Hacklytics Best Use of Snowflake API", "codeLinc10 second-place team prize", "EnergyHack Best Use of Vultr", "Bitcamp Best Moonshot Hack"],
       stack: [],
       links: [{ label: "View recognition", href: "#recognition" }, { label: "View Devpost", href: "https://devpost.com/akshajnad" }],
       section: "#recognition",
@@ -318,7 +317,7 @@
       type: "contact",
       aliases: ["contact", "email", "reach", "linkedin", "github", "devpost", "resume", "connect", "hire"],
       tags: ["contact", "social", "resume"],
-      summary: "Akshaj can be reached at akshajnadn@gmail.com and is open to software engineering, applied AI, and research opportunities.",
+      summary: "Akshaj is seeking Summer 2027 software engineering internships. Contact him at akshajnadn@gmail.com.",
       details: [],
       metrics: [],
       stack: [],
@@ -721,13 +720,13 @@
   function recruiterResponse(kind) {
     if (kind === "roles") {
       return {
-        heading: "Best-fit roles",
-        paragraphs: ["Based on the work shown on this site, Akshaj is strongest for roles where software engineering meets applied AI and real systems."],
+        heading: "Summer 2027 SWE internships",
+        paragraphs: ["Akshaj is seeking Summer 2027 software engineering internships. His published work is especially relevant to these engineering teams:"],
         bullets: [
-          "Software engineering internships focused on backend, platform, or cloud systems.",
-          "Applied AI or ML systems roles involving RAG, agents, evaluation, and production integration.",
-          "Product engineering roles where one person owns both technical architecture and user-facing delivery.",
-          "Robotics or autonomy research roles involving simulation, perception, and multi-agent control."
+          "Backend, platform, and cloud teams building reliable services and infrastructure.",
+          "Applied AI teams working on retrieval, agents, evaluation, and integration with existing systems.",
+          "Product engineering teams combining technical architecture with user-facing delivery.",
+          "Robotics and autonomy software teams working on simulation, perception, and multi-agent control."
         ],
         links: [{ label: "Open resume", href: "resume.pdf" }, { label: "Email Akshaj", href: "mailto:akshajnadn@gmail.com" }],
         suggestions: ["Why should a recruiter hire him?", "What is his strongest project?", "What professional experience does he have?"],
@@ -740,10 +739,10 @@
       heading: kind === "standout" ? "What makes Akshaj stand out" : "Why Akshaj is a strong candidate",
       paragraphs: ["His strongest signal is that he repeatedly takes ambiguous ideas past the demo stage and turns them into measurable, end-to-end systems."],
       bullets: [
-        "Production-minded AI: the Travelers system includes routing, retrieval, human approval, observability, and deployment rather than only an LLM prompt.",
+        "Engineering beyond the model: the Travelers system combines routing, retrieval, human approval, and observability, with EKS packaging in progress.",
         "Technical range with depth: his work spans enterprise cloud systems, multimodal accessibility, iOS, fintech, and multi-agent robotics.",
-        "Ownership and leadership: he founded Signifi and leads a 15-person Big Data Big Impact project team.",
-        "Measurable outcomes: examples include sub-5-minute ticket diagnosis, 0.74 F1 at 30 FPS, about 20% lower simulated fuel cost, and five hackathon wins."
+        "Ownership and leadership: he co-founded Signifi and leads a 15-person Big Data Big Impact project team.",
+        "Measurable outcomes: examples include sub-5-minute ticket diagnosis, 0.74 F1 at 30 FPS, and about 20% lower simulated fuel cost."
       ],
       links: [{ label: "Open resume", href: "resume.pdf" }, { label: "View selected work", href: "#work" }],
       suggestions: ["Which roles fit him best?", "What is his strongest project?", "How can I contact him?"],
@@ -757,8 +756,8 @@
       heading: "Strongest work by signal",
       paragraphs: ["There is not one objectively strongest item, but three stand out for different recruiter signals:"],
       bullets: [
-        "Travelers is the strongest production-engineering signal because it combines enterprise scale, AWS orchestration, human approval, observability, and deployment.",
-        "Signifi is the strongest ownership and product signal because Akshaj founded it, designed the artifact architecture, reached pilot teams, and secured startup funding.",
+        "Travelers is the strongest production-engineering signal because it combines enterprise scale, AWS orchestration, human approval, and observability.",
+        "Signifi is the strongest ownership and product signal because Akshaj co-founded it, designed the artifact architecture, reached pilot teams, and received Microsoft for Startups support.",
         "Graption is the strongest real-time ML project signal because it combines multimodal modeling, a mobile streaming system, measured F1 and latency, and team leadership."
       ],
       links: [{ label: "View experience", href: "#experience" }, { label: "View selected work", href: "#work" }],
@@ -797,7 +796,7 @@
     if (!matches.length) {
       return {
         heading: "Technology not found",
-        paragraphs: ["That technology is not explicitly tied to a project in the verified portfolio content."],
+        paragraphs: ["That technology is not explicitly tied to a project in the published portfolio content."],
         bullets: [],
         links: [{ label: "View full toolkit", href: "#about" }],
         suggestions: ["Which projects use AWS?", "Where has he used Python?", "What is his full tech stack?"],
@@ -808,7 +807,7 @@
 
     return {
       heading: "Where Akshaj used " + technologies.join(" and "),
-      paragraphs: ["The verified portfolio connects that technology to these projects or roles:"],
+      paragraphs: ["The portfolio connects that technology to these projects or roles:"],
       bullets: matches.slice(0, 6).map(function (record) {
         var overlap = (record.stack || []).filter(function (item) {
           var itemText = normalize(item);
@@ -825,8 +824,8 @@
 
   function greetingResponse() {
     return {
-      heading: "Portfolio assistant",
-      paragraphs: ["Ask about Akshaj's experience, projects, research, skills, awards, or fit for a role. I can also compare projects and answer follow-up questions."],
+      heading: "Local portfolio search",
+      paragraphs: ["Search Akshaj’s published experience, projects, skills, and awards, or ask about Summer 2027 SWE internship fit. This runs locally using written portfolio entries and keyword matching, with no generative AI or data sent to a server."],
       bullets: [],
       links: [],
       suggestions: ["What is Akshaj building now?", "What makes him stand out?", "Which projects use AWS?"],
@@ -850,8 +849,8 @@
     }
 
     return {
-      heading: "I could not verify that from the site",
-      paragraphs: ["I only answer from Akshaj's published portfolio content, so I will not guess. Try asking about a role, project, technology, award, education, or contact information."],
+      heading: "No matching portfolio entry",
+      paragraphs: ["This local search uses Akshaj’s written portfolio entries. Try a project name, technology, award, education, contact information, or Summer 2027 internship availability."],
       bullets: [],
       links: [],
       suggestions: ["What is Akshaj building now?", "List his projects", "What makes him stand out?"],
@@ -886,7 +885,7 @@
         state.lastIntent = "";
         response = greetingResponse();
       } else if (/\b(what is he doing now|what is akshaj doing now|currently building|building now|current work|current roles|right now|latest work)\b/.test(q)) response = currentResponse();
-      else if (/\b(best fit|which roles|what roles|role should|position should|career fit|good fit)\b/.test(q)) response = recruiterResponse("roles");
+      else if (/\b(summer 2027|availability|available|looking for|seeking|open to|best fit|which roles|what roles|role should|position should|career fit|good fit)\b/.test(q)) response = recruiterResponse("roles");
       else if (/\b(why hire|hire him|strong candidate|recruiter|qualified|candidate)\b/.test(q)) response = recruiterResponse("hire");
       else if (/\b(stand out|unique|different from|what makes him|strengths)\b/.test(q)) response = recruiterResponse("standout");
       else if (/\b(strongest|best project|most impressive|top project|best work|biggest project)\b/.test(q)) response = strongestResponse();
@@ -965,6 +964,14 @@
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
 
+  function closeMenu(restoreFocus) {
+    if (!menuToggle || !nav) return;
+    menuToggle.setAttribute("aria-expanded", "false");
+    nav.classList.remove("is-open");
+    document.body.classList.remove("menu-open");
+    if (restoreFocus) menuToggle.focus();
+  }
+
   if (menuToggle && nav) {
     menuToggle.addEventListener("click", function () {
       var isOpen = menuToggle.getAttribute("aria-expanded") === "true";
@@ -973,12 +980,20 @@
       document.body.classList.toggle("menu-open", !isOpen);
     });
 
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        menuToggle.setAttribute("aria-expanded", "false");
-        nav.classList.remove("is-open");
-        document.body.classList.remove("menu-open");
-      });
+    nav.addEventListener("click", function (event) {
+      if (event.target.closest("a")) closeMenu(false);
+    });
+
+    document.addEventListener("click", function (event) {
+      if (menuToggle.getAttribute("aria-expanded") !== "true") return;
+      if (!nav.contains(event.target) && !menuToggle.contains(event.target)) closeMenu(false);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+        event.preventDefault();
+        closeMenu(true);
+      }
     });
   }
 
@@ -1025,6 +1040,9 @@
 
   var assistant = createEngine();
   var initialMessage = messages.firstElementChild ? messages.firstElementChild.cloneNode(true) : null;
+  var responseTimer = null;
+  var isSearching = false;
+  var focusBeforeAssistant = null;
 
   function createTextElement(tag, className, text) {
     var element = document.createElement(tag);
@@ -1042,7 +1060,7 @@
   function addTypingIndicator() {
     var indicator = document.createElement("div");
     indicator.className = "assistant-message assistant-message-system assistant-typing";
-    indicator.setAttribute("aria-label", "Assistant is preparing an answer");
+    indicator.setAttribute("aria-label", "Searching portfolio entries");
     for (var i = 0; i < 3; i += 1) indicator.appendChild(document.createElement("span"));
     messages.appendChild(indicator);
     messages.scrollTop = messages.scrollHeight;
@@ -1091,50 +1109,77 @@
     items.slice(0, 4).forEach(function (text) {
       var button = createTextElement("button", "", text);
       button.type = "button";
+      button.disabled = isSearching;
       suggestions.appendChild(button);
     });
   }
 
+  function setSearching(searching) {
+    isSearching = searching;
+    input.disabled = searching;
+    form.classList.toggle("is-thinking", searching);
+    form.setAttribute("aria-busy", String(searching));
+    Array.from(form.querySelectorAll('button[type="submit"]')).forEach(function (button) {
+      button.disabled = searching;
+    });
+    if (suggestions) {
+      Array.from(suggestions.querySelectorAll("button")).forEach(function (button) {
+        button.disabled = searching;
+      });
+    }
+  }
+
   function submitQuestion(question) {
+    if (isSearching || input.disabled) return;
     var cleaned = String(question || "").trim();
     if (!cleaned) return;
     addUserMessage(cleaned);
     input.value = "";
-    input.disabled = true;
-    form.classList.add("is-thinking");
+    setSearching(true);
     var indicator = addTypingIndicator();
     var response = assistant.ask(cleaned);
 
-    window.setTimeout(function () {
+    responseTimer = window.setTimeout(function () {
+      responseTimer = null;
       indicator.remove();
       renderResponse(response);
-      input.disabled = false;
-      form.classList.remove("is-thinking");
-      input.focus();
+      setSearching(false);
+      if (!panel.hidden && (document.activeElement === document.body || form.contains(document.activeElement) || (suggestions && suggestions.contains(document.activeElement)))) {
+        input.focus();
+      }
     }, Math.min(420, 170 + cleaned.length * 3));
   }
 
   function resetConversation() {
+    if (responseTimer !== null) window.clearTimeout(responseTimer);
+    responseTimer = null;
+    setSearching(false);
     assistant.reset();
     messages.textContent = "";
     if (initialMessage) messages.appendChild(initialMessage.cloneNode(true));
     setSuggestions(["What is Akshaj building now?", "What makes him stand out?", "Which projects use AWS?"]);
     input.value = "";
-    input.focus();
+    if (!panel.hidden) input.focus();
   }
 
   function openAssistant() {
+    if (panel.hidden) focusBeforeAssistant = document.activeElement;
+    closeMenu(false);
     panel.hidden = false;
     launcher.setAttribute("aria-expanded", "true");
     document.body.classList.add("assistant-open");
-    window.setTimeout(function () { input.focus(); }, 30);
+    if (!input.disabled) input.focus();
+    else if (closeButton) closeButton.focus();
   }
 
   function closeAssistant() {
     panel.hidden = true;
     launcher.setAttribute("aria-expanded", "false");
     document.body.classList.remove("assistant-open");
-    launcher.focus();
+    if (focusBeforeAssistant && focusBeforeAssistant !== document.body && focusBeforeAssistant.isConnected && !panel.contains(focusBeforeAssistant) && typeof focusBeforeAssistant.focus === "function") {
+      focusBeforeAssistant.focus();
+      if (document.activeElement !== focusBeforeAssistant) launcher.focus();
+    } else launcher.focus();
   }
 
   launcher.addEventListener("click", function () {
@@ -1153,12 +1198,15 @@
   if (suggestions) {
     suggestions.addEventListener("click", function (event) {
       var button = event.target.closest("button");
-      if (button) submitQuestion(button.textContent || "");
+      if (button && !button.disabled) submitQuestion(button.textContent || "");
     });
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === "Escape" && !panel.hidden) closeAssistant();
+    if (event.key === "Escape" && !panel.hidden) {
+      event.preventDefault();
+      closeAssistant();
+    }
     if ((event.metaKey || event.ctrlKey) && event.key === "/") {
       event.preventDefault();
       openAssistant();
