@@ -20,6 +20,15 @@ const STACK_ALIAS = {
   "core ml": "applevision",
   "vultr vps": "vultr",
   "vultr ai agents": "vultr",
+  "bedrock agentcore": "bedrock",
+  "bedrock knowledge bases": "bedrock",
+  "postgresql (rds)": "postgresql",
+  pgvector: "postgresql",
+  jira: "atlassian",
+  confluence: "atlassian",
+  langsmith: "evals",
+  mappo: "rl",
+  "aws ecs": "aws",
 };
 function skillForStack(name, project) {
   const key = name.toLowerCase();

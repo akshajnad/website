@@ -10,12 +10,12 @@
       tags: ["software engineer", "student", "founder", "researcher", "georgia tech", "computer science", "applied ai"],
       summary: "Akshaj is a Georgia Tech computer science student who builds applied AI systems, backend infrastructure, product experiences, and robotics software.",
       details: [
-        "He is currently a software engineering intern at Travelers, co-founder and lead developer of Signifi, a Georgia Tech aerospace robotics researcher, and a project lead in Big Data Big Impact.",
+        "He was a software engineering intern at Travelers in summer 2026, is co-founder and lead developer of Signifi, leads Graption in Big Data Big Impact, and does research in Georgia Tech's Aerospace Robotics Lab.",
         "His work usually spans the full path from model or prototype to evaluation, infrastructure, human approval, and a usable interface.",
         "He is seeking Summer 2027 software engineering internships, with a focus on backend, platform, and applied AI systems."
       ],
-      metrics: ["4.0 Georgia Tech GPA", "10+ AI products and applications built", "$25K Microsoft for Startups support", "Hacklytics Best Use of Snowflake API"],
-      stack: ["Python", "Java", "C++", "TypeScript", "SQL", "Swift", "AWS", "Docker", "Terraform", "React Native", "FastAPI"],
+      metrics: ["4.0 Georgia Tech GPA", "5x hackathon winner", "$25K Microsoft for Startups support", "AIME Qualifier"],
+      stack: ["Python", "Java", "C++", "TypeScript", "JavaScript", "SQL", "AWS", "Docker", "Kubernetes", "Terraform", "React", "FastAPI", "PyTorch", "LangGraph"],
       links: [
         { label: "GitHub", href: "https://github.com/akshajnad" },
         { label: "LinkedIn", href: "https://www.linkedin.com/in/akshaj-nadimpalli/" },
@@ -29,16 +29,16 @@
       id: "travelers",
       name: "Travelers internship",
       type: "experience",
-      aliases: ["travelers", "current internship", "software engineering intern", "servicenow agent", "ticket agent", "support ticket system", "enterprise ai"],
+      aliases: ["travelers", "summer internship", "software engineering intern", "servicenow agent", "ticket agent", "support ticket system", "enterprise ai"],
       tags: ["internship", "enterprise", "insurance", "support", "ticket triage", "agentic workflow", "human in the loop", "platform engineering"],
-      summary: "At Travelers, Akshaj is building a serverless agent system that classifies, diagnoses, and drafts resolutions for ServiceNow tickets from a 150+ user data platform processing 8,000+ jobs each day.",
+      summary: "At Travelers (Jun–Aug 2026), Akshaj built an event-driven multi-agent AI incident-triage service in Python on AWS Bedrock AgentCore that cut ServiceNow ticket diagnosis from about 60 minutes to 5 for a platform running 8K+ daily jobs.",
       details: [
-        "EventBridge and Lambda route tickets across six root-cause categories to a Bedrock supervisor that delegates retrieval and diagnosis work.",
-        "Step Functions and API Gateway callbacks keep a human approval gate before resolution notes are written back to ServiceNow or added to the knowledge base.",
-        "The system is instrumented with Dynatrace and Graylog; packaging for EKS with Angular, Spring Boot, Terraform, and GitHub Actions is in progress."
+        "Four supervisor-collaborator LLM agents use RAG over 200+ docs with Titan embeddings and hybrid k-NN/BM25 search in Amazon OpenSearch, reaching about 90% root-cause accuracy across 68 resolutions.",
+        "A React (TypeScript/JavaScript) and FastAPI portal gives 3 teams human-in-the-loop review, using SSE, MongoDB change streams, Redis queues, Okta OAuth 2.0, and REST integrations with Jira, Confluence, and ServiceNow.",
+        "Recurring ETL pipelines (EventBridge cron, S3 triggers) feed docs and engineer fixes into Bedrock Knowledge Bases and load tickets and resolutions into Snowflake via SQL; deployment uses Docker, Kubernetes (EKS), Helm, Terraform, GitHub Actions, and Dynatrace."
       ],
-      metrics: ["150+ platform users", "8,000+ jobs per day", "Diagnosis reduced from roughly 60 minutes to under 5", "Traceability across 37 resolved tickets"],
-      stack: ["AWS Bedrock", "Lambda", "EventBridge", "Step Functions", "API Gateway", "DynamoDB", "EKS", "Terraform", "GitHub Actions", "Dynatrace", "Graylog", "ServiceNow"],
+      metrics: ["Diagnosis cut from ~60 minutes to 5", "~90% root-cause accuracy across 68 resolutions", "8K+ daily jobs", "3 teams using the review portal"],
+      stack: ["Python", "AWS Bedrock AgentCore", "Lambda", "S3", "SNS", "EventBridge", "OpenSearch", "Titan embeddings", "React", "TypeScript", "FastAPI", "MongoDB", "Redis", "Snowflake", "Docker", "Kubernetes", "EKS", "Helm", "Terraform", "GitHub Actions", "Dynatrace", "ServiceNow"],
       links: [{ label: "View experience section", href: "#experience" }],
       section: "#experience",
       related: ["skills", "signifi", "ria"],
@@ -50,14 +50,14 @@
       type: "startup",
       aliases: ["signifi", "startup", "founder", "requirements platform", "prd generator", "product requirements", "create x", "create-x"],
       tags: ["founder", "product", "requirements", "prototypes", "artifact graph", "schema validation", "ai product", "pilot teams"],
-      summary: "Signifi is an AI-native requirements platform that turns raw notes and transcripts into linked PRDs, user stories, test cases, timelines, and interactive prototypes.",
+      summary: "Signifi is an AI-native product management platform, serving 6 pilot teams, that turns briefs into PRDs, user stories, prototypes, and timelines through multi-agent LLM orchestration.",
       details: [
-        "An orchestrated planner/worker pipeline uses shared run state to keep requirements, stories, prototypes, and timelines aligned across 15+ agent steps.",
-        "Structured JSON outputs give each generation step an explicit contract.",
-        "Next.js renders interactive prototypes from the generated artifacts."
+        "Agents are orchestrated with LangGraph and tool calling; RAG over pgvector and MCP connectors for Atlassian, Drive, Canva, and Figma raised spec retrieval accuracy.",
+        "Prototype generation runs on Next.js, TypeScript, and Supabase, with a SwiftUI iOS companion app.",
+        "LLM eval harnesses and LangSmith tracing raised the eval pass rate from 72% to 94%."
       ],
-      metrics: ["3 pilot teams", "$25K Microsoft for Startups support", "15+ orchestrated agent steps", "Klaus Startup Challenge finalist"],
-      stack: ["TypeScript", "Next.js", "AI structured outputs", "Schema validation", "Artifact graphs"],
+      metrics: ["6 pilot teams", "Eval pass rate 72% → 94%", "$25K Microsoft for Startups support", "CREATE-X S26 batch", "Klaus Startup Challenge finalist"],
+      stack: ["TypeScript", "Next.js", "Supabase", "pgvector", "LangGraph", "MCP", "LangSmith", "SwiftUI"],
       links: [{ label: "Explore Signifi demo", href: "https://www.signifi.tech/demo" }],
       section: "#work",
       related: ["profile", "travelers", "skills"],
@@ -69,13 +69,13 @@
       type: "research",
       aliases: ["aerospace robotics lab", "spacecraft", "space research", "multi agent spacecraft", "ros2 simulation", "mujoco", "formation control", "robotics research"],
       tags: ["research", "robotics", "spacecraft", "simulation", "decentralized learning", "formation control", "gnc", "autonomy"],
-      summary: "In Georgia Tech's Aerospace Robotics Lab, Akshaj built a ROS2 and MuJoCo spacecraft simulator where eight agents run independent perception and control loops at 500 Hz.",
+      summary: "In Georgia Tech's Aerospace Robotics Lab (since Jan 2026), Akshaj engineered a ROS2 + MuJoCo multi-agent spacecraft simulator in C++ and Python running 8 agents at 500 Hz.",
       details: [
-        "The simulator coordinates physics, guidance-navigation-control, onboard vision, and formation control without requiring expensive physical test data.",
-        "It generated structured rollouts for decentralized training and collision-free coordination."
+        "The simulator integrates GNC, formation control, and onboard computer vision for perception-driven coordination.",
+        "He trained decentralized MAPPO policies for 8-agent formation reconfiguration over 5M environment steps, cutting total delta-v 18% versus an LQR baseline across 200 held-out scenarios while keeping formation error under 0.5 m."
       ],
-      metrics: ["8 independently controlled agents", "500 Hz simulation", "Roughly 500 training rollouts", "About 20% lower simulated fuel cost"],
-      stack: ["ROS2", "MuJoCo", "Python", "C++", "Machine learning", "Simulation"],
+      metrics: ["8 agents at 500 Hz", "5M environment steps", "18% less delta-v than LQR", "Formation error under 0.5 m"],
+      stack: ["ROS2", "MuJoCo", "C++", "Python", "MAPPO", "Reinforcement learning", "Simulation"],
       links: [{ label: "View research work", href: "#work" }],
       section: "#work",
       related: ["graption", "skills", "profile"],
@@ -87,14 +87,13 @@
       type: "project",
       aliases: ["graption", "captioning", "live captions", "speaker aware captions", "active speaker", "accessibility project", "hacklytics"],
       tags: ["accessibility", "multimodal ai", "computer vision", "speech", "real time", "bdbi", "project lead"],
-      summary: "Graption is a speaker-aware live-captioning platform that identifies who is speaking from audio, lip movement, and gestures, then places captions near that person.",
+      summary: "Graption is a multimodal ML system that gives Deaf and hard-of-hearing users speaker-aware captions. Akshaj leads the 15-person Big Data Big Impact team building it (since May 2026); it won at Hacklytics.",
       details: [
-        "A React Native client receives captions from FastAPI over WebSockets while OpenCV, MediaPipe, Whisper, and audio events contribute active-speaker signals.",
-        "A retrieval layer stores the transcript and surrounding conversation so users can ask what they missed.",
-        "Akshaj leads the 15-person Big Data Big Impact team turning the hackathon prototype into a persistent platform."
+        "He is training a multimodal active-speaker detection model in PyTorch that fuses CNN log-mel audio embeddings with lip and gesture features via a cross-attention transformer, lifting F1 from 0.61 to 0.74 on 8 hours of AV data.",
+        "A real-time Whisper/MediaPipe streaming pipeline runs at 30 FPS with sub-1s latency on AWS: Dockerized FastAPI and WebSocket services on ECS, face-embedding retrieval via S3/DynamoDB under 50 ms, and PostgreSQL on RDS."
       ],
-      metrics: ["0.74 F1 on 8 hours of audio-video", "30 FPS", "Under 1.5 seconds end-to-end latency", "Hacklytics Best Use of Snowflake API"],
-      stack: ["React Native", "FastAPI", "WebSockets", "PostgreSQL", "OpenCV", "MediaPipe", "Whisper", "Python"],
+      metrics: ["F1 0.61 → 0.74 on 8 hours of AV data", "30 FPS", "Sub-1s latency", "Hacklytics Best Use of Snowflake API"],
+      stack: ["PyTorch", "Whisper", "MediaPipe", "FastAPI", "WebSockets", "Docker", "AWS ECS", "DynamoDB", "PostgreSQL", "Python"],
       links: [{ label: "View repository", href: "https://github.com/akshajnad/graption" }],
       section: "#work",
       related: ["buywise", "aerospace", "awards"],
@@ -106,13 +105,13 @@
       type: "experience",
       aliases: ["ria", "ria advisory", "first internship", "billing internship", "oracle billing", "ormb", "etl internship"],
       tags: ["internship", "fintech", "billing", "etl", "anomaly detection", "backend", "data engineering"],
-      summary: "At RIA Advisory, Akshaj automated recurring revenue and billing workflows in Oracle ORMB through Python ETL pipelines on AWS Lambda and S3.",
+      summary: "At RIA Advisory (May–Aug 2025), Akshaj automated ETL pipelines into Oracle ORMB with Python, AWS Lambda, and S3, reducing revenue processing time by 35%.",
       details: [
-        "He built reconciliation checks and staging-data validation to catch incomplete or inconsistent records before production billing.",
-        "He also developed Spring Boot and MySQL pricing APIs plus SQL and ORMB templates for new billing scenarios."
+        "He caught 15+ defects before release with pytest unit/integration tests and SQL reconciliation checks on MySQL tables.",
+        "He flagged 21 misbilled records with a scikit-learn random forest (0.88 precision / 0.79 recall) trained on 100K+ SQL rows, and cut pricing lookup latency with Spring Boot (Java) REST endpoints over indexed MySQL tables."
       ],
-      metrics: ["Random forest reached 0.88 precision", "0.79 recall", "21 misbilled records identified"],
-      stack: ["Python", "AWS Lambda", "S3", "Oracle ORMB", "SQL", "Spring Boot", "Java", "MySQL", "Scikit-learn"],
+      metrics: ["35% faster revenue processing", "15+ defects caught pre-release", "21 misbilled records flagged", "0.88 precision / 0.79 recall"],
+      stack: ["Python", "AWS Lambda", "S3", "Oracle ORMB", "pytest", "SQL", "MySQL", "Scikit-learn", "Spring Boot", "Java"],
       links: [{ label: "View experience section", href: "#experience" }],
       section: "#experience",
       related: ["travelers", "finmate", "skills"],
@@ -175,13 +174,13 @@
       type: "project",
       aliases: ["echolocate", "bitcamp", "bitcamp umd", "digital forensics", "moonshot award"],
       tags: ["multi agent", "cybersecurity", "digital forensics", "simulation", "hackathon"],
-      summary: "EchoLocate is an AI digital-forensics simulation where specialist agents investigate cyberattacks, return structured findings, and update a live case board and evidence graph.",
+      summary: "EchoLocate (Bitcamp 2026 winner, Best Moonshot Hack) is an AI-powered cybersecurity incident investigation platform built on 8 specialized LLM agents in LangGraph.",
       details: [
-        "The team's simulation coordinates up to eight specialist agents investigating a cybersecurity incident.",
-        "A React, TypeScript, and Phaser interface presents the investigation, backed by Python and FastAPI."
+        "Log, network, file, and timeline agents reason over shared evidence through a RAG-grounded investigation graph.",
+        "Live agent events stream to an interactive JavaScript/React UI over Socket.IO with graph-based evidence visualization."
       ],
-      metrics: ["Best Moonshot Hack at Bitcamp", "Up to 8 parallel investigation agents"],
-      stack: ["React", "TypeScript", "Phaser", "FastAPI", "Python", "Qwen", "Featherless", "ElevenLabs"],
+      metrics: ["Bitcamp 2026 Best Moonshot Hack", "8 specialized LLM agents"],
+      stack: ["LangGraph", "RAG", "React", "JavaScript", "Socket.IO", "Python"],
       links: [{ label: "View EchoLocate on Devpost", href: "https://devpost.com/software/echolocate-e4k3dg" }],
       section: "#work",
       related: ["awards", "aerospace", "graption"],
@@ -277,13 +276,14 @@
       tags: ["programming", "machine learning", "cloud", "backend", "frontend", "mobile", "devops"],
       summary: "Akshaj works across programming languages, AI and data tooling, cloud infrastructure, backend systems, mobile, and product development.",
       details: [
-        "Languages: Python, Java, C++, TypeScript, SQL, Swift, and Bash.",
-        "AI and data: PyTorch, Scikit-learn, Hugging Face, LangGraph, and Pinecone.",
-        "Systems: AWS, Docker, Terraform, EKS, GitHub Actions, REST, and GraphQL.",
-        "Product: Next.js, React Native, Angular, FastAPI, Spring Boot, and Supabase."
+        "Languages: Python, Java, C++, TypeScript, JavaScript, SQL, Swift, Bash, Ruby, and HTML/CSS.",
+        "Frameworks: React, Next.js, Angular, FastAPI, Spring Boot, Node.js, Express, REST, gRPC, GraphQL, and Django.",
+        "AI/ML: TensorFlow, PyTorch, Keras, scikit-learn, NumPy/Pandas, LangChain/LangGraph, and OpenAI/Anthropic SDKs.",
+        "Cloud/DevOps: AWS, GCP, Docker, Kubernetes (AWS EKS), Helm, Redis, Terraform, and CI/CD with GitHub Actions.",
+        "Tools and data: Git, PostgreSQL, MySQL, MongoDB, Playwright, Selenium, pytest, JUnit, Agile/Scrum, and Claude Code."
       ],
       metrics: [],
-      stack: ["Python", "Java", "C++", "TypeScript", "SQL", "Swift", "Bash", "PyTorch", "Scikit-learn", "Hugging Face", "LangGraph", "Pinecone", "AWS", "Docker", "Terraform", "EKS", "GitHub Actions", "REST", "GraphQL", "Next.js", "React Native", "Angular", "FastAPI", "Spring Boot", "Supabase"],
+      stack: ["Python", "Java", "C++", "TypeScript", "JavaScript", "SQL", "Swift", "React", "Next.js", "FastAPI", "Spring Boot", "PyTorch", "TensorFlow", "LangGraph", "AWS", "GCP", "Docker", "Kubernetes", "Terraform", "Redis", "PostgreSQL", "MongoDB"],
       links: [{ label: "Explore skills", href: "#skills" }],
       section: "#skills",
       related: ["travelers", "signifi", "aerospace"],
@@ -295,16 +295,16 @@
       type: "recognition",
       aliases: ["awards", "recognition", "hackathons", "wins", "winner", "finalist", "prizes", "accomplishments"],
       tags: ["hackathon", "competition", "winner", "finalist"],
-      summary: "Akshaj’s recognition includes Hacklytics Best Use of Snowflake API, a codeLinc10 second-place team prize, EnergyHack Best Use of Vultr, and Bitcamp Best Moonshot Hack. Signifi was a Klaus Startup Challenge finalist.",
+      summary: "Akshaj is a 5x hackathon winner (Hacklytics, Bitcamp, codeLinc, EnergyHack, Jane Street Mystery Planet) and an AIME Qualifier. Signifi was a Klaus Startup Challenge finalist.",
       details: [
         "Best Use of Snowflake API at Hacklytics for Graption.",
-        "Second-place team prize at codeLinc10 for FinMate.",
-        "Best Use of Vultr at EnergyHack for Gridly.",
         "Best Moonshot Hack at Bitcamp for EchoLocate.",
-        "YHack K2 Think V2 Track finalist for Veritas.",
-        "Klaus Startup Challenge finalist for Signifi."
+        "Best Use of Vultr at EnergyHack for Gridly.",
+        "Second-place team prize at codeLinc10 for FinMate.",
+        "Winner of Jane Street Mystery Planet.",
+        "YHack K2 Think V2 Track finalist for Veritas; Klaus Startup Challenge finalist for Signifi; AIME Qualifier."
       ],
-      metrics: ["Hacklytics Best Use of Snowflake API", "codeLinc10 second-place team prize", "EnergyHack Best Use of Vultr", "Bitcamp Best Moonshot Hack"],
+      metrics: ["5x hackathon winner", "Hacklytics Best Use of Snowflake API", "Bitcamp Best Moonshot Hack", "AIME Qualifier"],
       stack: [],
       links: [{ label: "View recognition", href: "#recognition" }, { label: "View Devpost", href: "https://devpost.com/akshajnad" }],
       section: "#recognition",
@@ -739,10 +739,10 @@
       heading: kind === "standout" ? "What makes Akshaj stand out" : "Why Akshaj is a strong candidate",
       paragraphs: ["His strongest signal is that he repeatedly takes ambiguous ideas past the demo stage and turns them into measurable, end-to-end systems."],
       bullets: [
-        "Engineering beyond the model: the Travelers system combines routing, retrieval, human approval, and observability, with EKS packaging in progress.",
+        "Engineering beyond the model: the Travelers system combines Python agents on Bedrock AgentCore, hybrid retrieval, a human-in-the-loop portal, ETL feedback loops, and EKS deployment.",
         "Technical range with depth: his work spans enterprise cloud systems, multimodal accessibility, iOS, fintech, and multi-agent robotics.",
-        "Ownership and leadership: he co-founded Signifi and leads a 15-person Big Data Big Impact project team.",
-        "Measurable outcomes: examples include sub-5-minute ticket diagnosis, 0.74 F1 at 30 FPS, and about 20% lower simulated fuel cost."
+        "Ownership and leadership: he co-founded Signifi (6 pilot teams) and leads a 15-person Big Data Big Impact project team.",
+        "Measurable outcomes: ticket diagnosis cut from ~60 to 5 minutes, ~90% root-cause accuracy, F1 0.61 → 0.74 at 30 FPS, and 18% less delta-v than an LQR baseline."
       ],
       links: [{ label: "Open resume", href: "resume.pdf" }, { label: "View selected work", href: "#work" }],
       suggestions: ["Which roles fit him best?", "What is his strongest project?", "How can I contact him?"],
@@ -757,7 +757,7 @@
       paragraphs: ["There is not one objectively strongest item, but three stand out for different recruiter signals:"],
       bullets: [
         "Travelers is the strongest production-engineering signal because it combines enterprise scale, AWS orchestration, human approval, and observability.",
-        "Signifi is the strongest ownership and product signal because Akshaj co-founded it, designed the artifact architecture, reached pilot teams, and received Microsoft for Startups support.",
+        "Signifi is the strongest ownership and product signal because Akshaj co-founded it, architected the platform, reached 6 pilot teams, raised its eval pass rate from 72% to 94%, and received Microsoft for Startups support.",
         "Graption is the strongest real-time ML project signal because it combines multimodal modeling, a mobile streaming system, measured F1 and latency, and team leadership."
       ],
       links: [{ label: "View experience", href: "#experience" }, { label: "View selected work", href: "#work" }],
@@ -770,16 +770,16 @@
   function currentResponse() {
     return {
       heading: "What Akshaj is building now",
-      paragraphs: ["His current work spans enterprise AI, a startup, accessibility, and robotics research."],
+      paragraphs: ["His current work spans a startup, accessibility ML, and robotics research, following a summer 2026 internship at Travelers."],
       bullets: [
-        "Travelers: a ServiceNow ticket-triage and resolution agent for a 150+ user platform processing 8,000+ jobs per day.",
-        "Signifi: an AI-native requirements engine with linked product artifacts and prototypes for three pilot teams.",
-        "Graption: leading a 15-person team developing speaker-aware live captions and missed-context retrieval.",
-        "Aerospace Robotics Lab: multi-agent spacecraft simulation and decentralized coordination research."
+        "Signifi: an AI-native product management platform serving 6 pilot teams.",
+        "Graption: leading a 15-person team building speaker-aware captions with a multimodal active-speaker model.",
+        "Aerospace Robotics Lab: decentralized MAPPO policies for 8-spacecraft formation reconfiguration.",
+        "Travelers (Jun–Aug 2026): a Python multi-agent incident-triage service on AWS Bedrock AgentCore."
       ],
       links: [{ label: "View experience", href: "#experience" }, { label: "View selected work", href: "#work" }],
-      suggestions: ["How does the Travelers system work?", "What is Signifi?", "What robotics research is he doing?"],
-      entityIds: ["travelers", "signifi", "graption", "aerospace"],
+      suggestions: ["What is Signifi?", "How does Graption work?", "What robotics research is he doing?"],
+      entityIds: ["signifi", "graption", "aerospace", "travelers"],
       intent: "current"
     };
   }

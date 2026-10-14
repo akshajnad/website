@@ -1,4 +1,4 @@
-import { byId, AWARDS, PROFILE } from "./data.js";
+import { byId, AWARDS, PROFILE, OTHER_SKILLS } from "./data.js";
 import { iconSVG } from "./icons.js";
 import { esc, clamp, hasWebGL, prefersReducedMotion, finePointer, whileVisible, countUp } from "./util.js";
 import { initCaseStudy, frame } from "./case-study.js";
@@ -13,10 +13,10 @@ document.documentElement.classList.toggle("has-webgl", webgl);
 // ---------------------------------------------------------------------------
 // Content rendered from data.js
 const NOW = [
-  { id: "travelers", line: "Multi-agent ticket triage on Amazon Bedrock" },
-  { id: "signifi", line: "Co-founder · one brief → linked specs and prototypes" },
+  { id: "travelers", line: "Summer 2026 · multi-agent incident triage in Python on Bedrock" },
   { id: "graption", line: "Leading 15 people on speaker-aware captions" },
-  { id: "aerospace", line: "Eight-spacecraft simulator at 500 Hz" },
+  { id: "signifi", line: "Co-founder · 6 pilot teams" },
+  { id: "aerospace", line: "MAPPO policies for 8-spacecraft formations" },
 ];
 document.querySelector("[data-now-list]").innerHTML = NOW.map(({ id, line }) => {
   const p = byId[id];
@@ -70,11 +70,18 @@ document.querySelector("[data-build-grid]").innerHTML = BUILDS.map((id, i) => {
 }).join("");
 
 document.querySelector("[data-awards]").innerHTML = AWARDS.map((a, i) => {
-  const p = byId[a.project];
-  return `<li class="reveal-up" style="--d:${i * 60}ms"><button type="button" class="award" data-open="${a.project}">
-    <span class="n">${String(i + 1).padStart(2, "0")}</span><strong>${esc(a.event)}</strong><span>${esc(a.prize)}</span><small>${esc(p.title)} · open project →</small>
-  </button></li>`;
+  const p = a.project && byId[a.project];
+  const inner = `<span class="n">${String(i + 1).padStart(2, "0")}</span><strong>${esc(a.event)}</strong><span>${esc(a.prize)}</span>`;
+  return `<li class="reveal-up" style="--d:${i * 60}ms">${
+    p
+      ? `<button type="button" class="award" data-open="${a.project}">${inner}<small>${esc(p.title)} · open project →</small></button>`
+      : `<div class="award">${inner}<small>Listed on my résumé</small></div>`
+  }</li>`;
 }).join("");
+
+document.querySelector("[data-other-skills]").innerHTML = OTHER_SKILLS.map(
+  (g) => `<div><dt>${esc(g.cat)}</dt><dd>${g.items.map((x) => `<span class="chip">${esc(x)}</span>`).join("")}</dd></div>`
+).join("");
 
 document.querySelectorAll("[data-icon]").forEach((el) => (el.innerHTML = iconSVG(el.dataset.icon)));
 const year = document.querySelector("[data-year]");

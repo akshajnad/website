@@ -31,7 +31,7 @@ The site is built around one idea, "the stack": a hero with three system layers,
 
 ## Content provenance
 
-Role and project facts come from the previous portfolio and `resume.pdf`. Award labels were checked against Devpost: [Graption](https://devpost.com/software/graption), [EchoLocate](https://devpost.com/software/echolocate-e4k3dg), [Gridly](https://devpost.com/software/gridly-0h29vm), and [FinMate](https://devpost.com/software/finmate-gj93c8). Signifi uses a capture of the authenticated Designer showing a generated WaitLess screen at https://www.signifi.tech/. Graption uses the "Deaf Individual POV" app capture and the Hacklytics architecture diagram from its Devpost gallery; the demo video is the team's Hacklytics submission on YouTube. EchoLocate's screenshot is from https://www.echolocate.us/.
+Role and project facts come from `resume.pdf` (the source of truth), with older projects carried over from the previous portfolio. Award labels were checked against Devpost: [Graption](https://devpost.com/software/graption), [EchoLocate](https://devpost.com/software/echolocate-e4k3dg), [Gridly](https://devpost.com/software/gridly-0h29vm), and [FinMate](https://devpost.com/software/finmate-gj93c8). Signifi uses a capture of the authenticated Designer showing a generated WaitLess screen at https://www.signifi.tech/. Graption uses the "Deaf Individual POV" app capture and the Hacklytics architecture diagram from its Devpost gallery; the demo video is the team's Hacklytics submission on YouTube. EchoLocate's screenshot is from https://www.echolocate.us/.
 
 ## Reverting
 

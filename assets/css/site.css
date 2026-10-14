@@ -1852,6 +1852,39 @@ em {
   display: none;
 }
 
+.sx-more {
+  margin-top: 48px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+.sx-more .mono {
+  margin: 0 0 14px;
+}
+.sx-more dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px 28px;
+}
+.sx-more dt {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.sx-more dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.sx-more .chip {
+  padding: 5px 10px;
+  font-size: 12.5px;
+}
+div.award {
+  cursor: default;
+}
+
 /* --------------------------------------------------------------------------
    Recognition
    -------------------------------------------------------------------------- */
@@ -1871,13 +1904,13 @@ em {
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--line-2);
 }
 .award-list li {
   border-bottom: 1px solid var(--line);
 }
-.award-list li:not(:nth-child(3n + 1)) {
+.award-list li:not(:nth-child(4n + 1)) {
   border-left: 1px solid var(--line);
 }
 .award {
@@ -3031,7 +3064,7 @@ button.chip:hover {
   .award-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  .award-list li:not(:nth-child(3n + 1)) {
+  .award-list li:not(:nth-child(4n + 1)) {
     border-left: 0;
   }
   .award-list li:nth-child(even) {

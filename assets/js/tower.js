@@ -9,8 +9,7 @@ function floorData() {
     const p = byId[f.id];
     const annex = (f.annex || []).map((id) => byId[id]);
     if (p) return { ...p, annex };
-    const awards = annex.filter((a) => a.award && !/finalist/i.test(a.award)).length;
-    return { ...f, kind: "group", annex, results: [{ value: String(awards), label: "hackathon awards" }, { value: String(annex.length), label: "builds" }] };
+    return { ...f, kind: "group", annex };
   });
 }
 
