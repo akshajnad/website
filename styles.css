@@ -559,97 +559,6 @@ details[open] .expand-icon {
 .signifi-visual {
   background: radial-gradient(ellipse at center, #fbf7f1 20%, #e9e5dc 90%);
 }
-.artifact-map {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 70px;
-  bottom: 50px;
-}
-.graph-lines {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
-}
-.graph-lines path {
-  stroke: #9b9f8f;
-  stroke-width: 1.2;
-  fill: none;
-}
-.artifact-node {
-  position: absolute;
-  border: 1px solid #d6d4c9;
-  background: #fffefb;
-  box-shadow: 0 7px 12px #474b3310;
-  border-radius: 6px;
-  padding: 16px;
-  width: 35%;
-  z-index: 1;
-}
-.artifact-node strong {
-  display: block;
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: -0.2px;
-  line-height: 1.2;
-}
-.artifact-node i {
-  font-size: 9px;
-  color: #73776c;
-  display: block;
-  font-style: normal;
-  margin-top: 5px;
-}
-.artifact-node > span {
-  display: block;
-  font-size: 9px;
-  font-family: var(--mono);
-  color: var(--accent);
-  margin-bottom: 12px;
-}
-.source-node {
-  left: 7%;
-  top: 34%;
-  transform: rotate(-3deg);
-  width: 36%;
-  padding: 25px 18px;
-}
-.source-node strong {
-  font-family: Georgia, serif;
-  font-size: 22px;
-}
-.story-node,
-.test-node,
-.ui-node {
-  left: 60%;
-  width: 32%;
-  padding: 16px;
-}
-.story-node {
-  top: 3%;
-  transform: rotate(2deg);
-}
-.test-node {
-  top: 37%;
-  transform: rotate(-1deg);
-}
-.ui-node {
-  top: 71%;
-  transform: rotate(2deg);
-}
-.story-node > span,
-.test-node > span,
-.ui-node > span {
-  position: absolute;
-  right: 15px;
-  top: 14px;
-}
-.story-node strong,
-.test-node strong,
-.ui-node strong {
-  font-size: 12px;
-}
 .project-copy {
   padding: 36px 36px 31px;
 }
@@ -794,118 +703,23 @@ details[open] .expand-icon {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+/* Keep the complete product interface visible at every card size. */
+.product-image-wrap {
+  position: absolute;
+  inset: 72px 22px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 6px;
+}
 .graption-visual {
   background: #dfe8db;
-}
-.caption-scene {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 40px;
-  bottom: 30px;
-}
-.person {
-  position: absolute;
-  left: 23%;
-  top: 45px;
-}
-.person-head {
-  border-radius: 40% 45% 40% 50%;
-  background: #89a089;
-  width: 47px;
-  height: 57px;
-  position: relative;
-  left: 21px;
-  transform: rotate(-8deg);
-}
-.person-body {
-  border-radius: 44% 44% 2% 2%;
-  width: 90px;
-  height: 95px;
-  background: #79977e;
-  margin-top: 6px;
-}
-.person-two {
-  left: 66%;
-  top: 52px;
-  transform: scale(0.92);
-}
-.person-two .person-head {
-  background: #bac8b0;
-  transform: rotate(12deg);
-}
-.person-two .person-body {
-  background: #a8bda0;
-}
-.tracking-box {
-  position: absolute;
-  border: 1px solid #508467;
-  width: 91px;
-  height: 108px;
-  top: 35px;
-  left: 23%;
-  border-radius: 7px;
-  transform: translateX(-2px);
-}
-.tracking-box:before,
-.tracking-box:after {
-  content: "";
-  width: 7px;
-  height: 7px;
-  background: #3b7254;
-  position: absolute;
-  top: -4px;
-  left: -4px;
-}
-.tracking-box:after {
-  top: auto;
-  left: auto;
-  bottom: -4px;
-  right: -4px;
-}
-.tracking-box > span {
-  font-size: 7px;
-  font-family: var(--mono);
-  position: absolute;
-  top: -18px;
-  left: 0;
-  white-space: nowrap;
-  color: #366248;
-}
-.caption-bubble {
-  position: absolute;
-  bottom: 19px;
-  left: 16%;
-  right: 16%;
-  background: #fcfff7;
-  border: 1px solid #cfdbbf;
-  padding: 14px 17px;
-  border-radius: 6px;
-  box-shadow: 0 8px 16px #4b644519;
-  font-size: 12px;
-  color: #2d4a34;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  justify-content: space-between;
-}
-.waveform {
-  display: flex;
-  gap: 2px;
-  height: 20px;
-  align-items: center;
-}
-.waveform i {
-  display: block;
-  width: 2px;
-  height: 8px;
-  background: #527650;
-}
-.waveform i:nth-child(3n) {
-  height: 17px;
-}
-.waveform i:nth-child(3n + 1) {
-  height: 12px;
 }
 .echolocate-visual {
   background: #e0e5ee;
@@ -1583,15 +1397,6 @@ details[open] .expand-icon {
   .featured-project > .project-visual {
     min-height: 470px;
   }
-  .artifact-node strong {
-    font-size: 11px;
-  }
-  .source-node strong {
-    font-size: 20px;
-  }
-  .artifact-node i {
-    font-size: 8px;
-  }
   .project-actions {
     gap: 15px;
   }
@@ -1767,57 +1572,11 @@ details[open] .expand-icon {
     flex-wrap: wrap;
     gap: 12px;
   }
-  .source-node {
-    left: 6%;
-    top: 34%;
-    width: 40%;
-    padding: 21px 12px;
-  }
-  .story-node,
-  .test-node,
-  .ui-node {
-    left: 60%;
-    width: 35%;
-    padding: 14px 8px;
-  }
-  .artifact-node > span {
-    font-size: 7px;
-  }
-  .artifact-node strong {
-    font-size: 10px;
-  }
-  .source-node strong {
-    font-size: 18px;
-  }
-  .artifact-node i {
-    font-size: 7px;
-  }
-  .story-node > span,
-  .test-node > span,
-  .ui-node > span {
-    right: 7px;
-    top: 6px;
-  }
   .project-pair {
     gap: 20px;
   }
   .compact-project .project-visual {
     height: 260px;
-  }
-  .caption-bubble {
-    font-size: 9px;
-    left: 9%;
-    right: 9%;
-    padding: 10px;
-  }
-  .caption-scene {
-    transform: scale(0.85);
-    transform-origin: center;
-    left: -25px;
-    right: -25px;
-  }
-  .person-two {
-    left: 68%;
   }
   .project-result strong {
     font-size: 15px;
@@ -2101,10 +1860,6 @@ details[open] .expand-icon {
   .featured-project > .project-visual {
     min-height: 310px;
   }
-  .artifact-map {
-    top: 60px;
-    bottom: 50px;
-  }
   .visual-caption,
   .visual-bottom {
     left: 22px;
@@ -2118,34 +1873,6 @@ details[open] .expand-icon {
   }
   .visual-caption > span:last-child,
   .visual-bottom {
-    font-size: 7px;
-  }
-  .source-node {
-    left: 7%;
-    width: 36%;
-    padding: 21px 15px;
-    top: 34%;
-  }
-  .source-node strong {
-    font-size: 19px;
-  }
-  .story-node,
-  .test-node,
-  .ui-node {
-    left: 62%;
-    width: 31%;
-    padding: 13px 10px;
-  }
-  .artifact-node strong {
-    font-size: 10px;
-  }
-  .artifact-node i {
-    font-size: 7px;
-  }
-  .source-node strong {
-    font-size: 19px;
-  }
-  .source-node > span {
     font-size: 7px;
   }
   .project-copy {
@@ -2209,18 +1936,6 @@ details[open] .expand-icon {
   }
   .compact-project .project-visual {
     height: 290px;
-  }
-  .caption-scene {
-    transform: scale(0.95);
-    left: 0;
-    right: 0;
-  }
-  .caption-bubble {
-    font-size: 11px;
-    padding: 12px 15px;
-    bottom: 15px;
-    left: 13%;
-    right: 13%;
   }
   .echo-image-wrap {
     top: 70px;
