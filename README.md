@@ -24,14 +24,14 @@ The site is built around one idea, "the stack": a hero with three system layers,
 
 ## Accessibility and fallbacks
 
-- The tower is never required: the floor index, focus card, and a "List" view expose everything, and phones/tablets under 900px get the stacked list automatically.
-- No WebGL: the hero shows a static SVG, and the experience section falls back to the list view.
+- The tower is never required to find anything: the floor index (a swipeable strip on phones) and the focus card expose every role, and each opens its case study.
+- No WebGL: the hero shows a static SVG, and the experience section falls back to a stacked list.
 - `prefers-reduced-motion`: scroll reveals, count-ups, wire animations, and camera easing are disabled; the 3D scenes render static frames.
 - All interactive elements are buttons or links with visible focus states. Case studies are native `<dialog>`s (Esc or browser Back closes them).
 
 ## Content provenance
 
-Role and project facts come from `resume.pdf` (the source of truth), with older projects carried over from the previous portfolio. Award labels were checked against Devpost: [Graption](https://devpost.com/software/graption), [EchoLocate](https://devpost.com/software/echolocate-e4k3dg), [Gridly](https://devpost.com/software/gridly-0h29vm), and [FinMate](https://devpost.com/software/finmate-gj93c8). Signifi uses a capture of the authenticated Designer showing a generated WaitLess screen at https://www.signifi.tech/. Graption uses the "Deaf Individual POV" app capture and the Hacklytics architecture diagram from its Devpost gallery; the demo video is the team's Hacklytics submission on YouTube. EchoLocate's screenshot is from https://www.echolocate.us/.
+Role and project facts come from `resume.pdf` (the source of truth), with older projects carried over from the previous portfolio. Award labels were checked against Devpost: [Graption](https://devpost.com/software/graption), [EchoLocate](https://devpost.com/software/echolocate-e4k3dg), [Gridly](https://devpost.com/software/gridly-0h29vm), and [FinMate](https://devpost.com/software/finmate-gj93c8). Signifi uses a capture of the authenticated Designer showing a generated WaitLess screen at https://www.signifi.tech/. Graption uses a capture of the working app with a caption under the speaker (from the team's BDBI presentation), the "Deaf Individual POV" capture and the Hacklytics architecture diagram from Devpost; the demo video is the team's Hacklytics submission on YouTube. EchoLocate's screenshot is from https://www.echolocate.us/.
 
 ## Reverting
 

@@ -15,7 +15,8 @@ export function initSkills({ openProject }) {
   const wires = root.querySelector("[data-sx-wires]");
   const filtersEl = document.querySelector("[data-sx-filters]");
 
-  const skills = SKILLS.filter((s) => usesOf(s.id).length);
+  // Skills with no linked project (résumé-only) still get a tile.
+  const skills = SKILLS;
   const projects = PROJECTS.filter((p) => p.skills && Object.keys(p.skills).length);
   let selected = null;
   let filter = "all";
@@ -32,10 +33,10 @@ export function initSkills({ openProject }) {
       const glyph = s.icon ? iconSVG(s.icon) : `<span class="sx-mono">${esc(s.mono || s.name[0])}</span>`;
       return `<li data-cat="${s.cat}"><button type="button" class="sx-tile" data-skill="${s.id}" style="--c:${s.color}" aria-pressed="false" aria-controls="sx-rail" aria-label="${esc(
         s.name
-      )}, used in ${n} ${n === 1 ? "project" : "projects"}">
+      )}, ${n ? `used in ${n} ${n === 1 ? "project" : "projects"}` : "on my résumé"}">
         <span class="sx-icon" aria-hidden="true">${glyph}</span>
         <span class="sx-name">${esc(s.name)}</span>
-        <span class="sx-count" aria-hidden="true">${String(n).padStart(2, "0")}</span>
+        <span class="sx-count" aria-hidden="true">${n ? String(n).padStart(2, "0") : "CV"}</span>
       </button></li>`;
     })
     .join("");
@@ -72,9 +73,9 @@ export function initSkills({ openProject }) {
     const n = usesOf(selected).length;
     head.style.setProperty("--c", s.color);
     head.innerHTML = `<span class="sx-icon" aria-hidden="true">${s.icon ? iconSVG(s.icon) : `<span class="sx-mono">${esc(s.mono)}</span>`}</span>
-      <div><h3>${esc(s.name)}</h3><p>Used in ${n} ${n === 1 ? "project" : "projects"} · ${esc(
-      CATEGORIES.find((c) => c.id === s.cat).label
-    )}</p></div>
+      <div><h3>${esc(s.name)}</h3><p>${
+        n ? `Used in ${n} ${n === 1 ? "project" : "projects"}` : "On my résumé, not linked to a project here"
+      } · ${esc(CATEGORIES.find((c) => c.id === s.cat).label)}</p></div>
       <button type="button" class="sx-close" data-sx-close aria-label="Close ${esc(s.name)}">×</button>`;
   }
 

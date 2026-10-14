@@ -28,7 +28,7 @@ export function countUp(el, duration = 1100) {
   const [, pre, num, post] = m;
   const target = parseFloat(num.replace(/,/g, ""));
   const decimals = (num.split(".")[1] || "").length;
-  if (decimals) return; // scores like 0.74 F1 read better shown as-is
+  if (decimals || target < 10) return; // small numbers and scores read better shown as-is
   const comma = num.includes(",");
   const fmt = (v) => {
     const s = v.toFixed(decimals);

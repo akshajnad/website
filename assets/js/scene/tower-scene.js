@@ -174,7 +174,8 @@ export function createTowerScene({ canvas, labelsEl, floors, reduced, onHover, o
     // frame the tower left of centre so floor labels have room on the right
     const cw = canvas.clientWidth;
     const ch = canvas.clientHeight;
-    if (camera.view?.offsetX !== cw * 0.1 || camera.view?.fullWidth !== cw || camera.view?.fullHeight !== ch) camera.setViewOffset(cw, ch, cw * 0.1, 0, cw, ch);
+    const ox = cw > 640 ? cw * 0.1 : 0;
+    if (camera.view?.offsetX !== ox || camera.view?.fullWidth !== cw || camera.view?.fullHeight !== ch) camera.setViewOffset(cw, ch, ox, 0, cw, ch);
     const k = reduced ? 1 : 0.08;
     pointer.x += (pointer.tx - pointer.x) * k;
     pointer.y += (pointer.ty - pointer.y) * k;

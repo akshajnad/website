@@ -32,8 +32,6 @@ export function initTower({ openProject }) {
   let loading = null;
   const reduced = prefersReducedMotion();
   const webgl = hasWebGL();
-  const wide = matchMedia("(min-width: 900px)");
-  let listMode = false;
 
   // ---- index
   indexEl.innerHTML = floors
@@ -46,7 +44,7 @@ export function initTower({ openProject }) {
     )
     .join("");
 
-  // ---- list / fallback view
+  // ---- fallback list, used only when WebGL is unavailable
   listEl.innerHTML = floors
     .map((f, i) => {
       const r = (f.results || [])[0];
@@ -91,13 +89,18 @@ export function initTower({ openProject }) {
     active = i;
     indexEl.querySelectorAll("[data-floor]").forEach((b) => b.setAttribute("aria-current", String(+b.dataset.floor === i)));
     renderFocus(i);
+    // on phones the floor index is a horizontal strip; keep the active floor visible
+    const nav = indexEl.parentElement;
+    if (nav.scrollWidth > nav.clientWidth) {
+      const b = indexEl.querySelector(`[data-floor="${i}"]`);
+      nav.scrollTo({ left: b.offsetLeft - (nav.clientWidth - b.offsetWidth) / 2, behavior: reduced ? "auto" : "smooth" });
+    }
   }
 
   // ---- scroll -> floor
   let ticking = false;
   function update() {
     ticking = false;
-    if (listMode) return;
     const r = track.getBoundingClientRect();
     const span = track.offsetHeight - window.innerHeight;
     const p = clamp(-r.top / Math.max(1, span));
@@ -143,30 +146,9 @@ export function initTower({ openProject }) {
     const o = e.target.closest("[data-open]");
     if (o) openProject(o.dataset.open);
   });
-  section.querySelectorAll("[data-view]").forEach((b) =>
-    b.addEventListener("click", () => {
-      setListMode(b.dataset.view === "list");
-      try {
-        localStorage.setItem("tower-view", b.dataset.view);
-      } catch {}
-    })
-  );
-
-  function setListMode(on) {
-    listMode = on;
-    section.classList.toggle("is-list", on);
-    section.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", String((b.dataset.view === "list") === on)));
-    listEl.querySelectorAll(".reveal-up").forEach((el) => el.classList.add("is-in"));
-    if (on) scene?.stop();
-    else {
-      ensureScene();
-      onScroll();
-    }
-  }
-
   // ---- 3D
   function ensureScene() {
-    if (scene || loading || !webgl || !wide.matches || listMode) return;
+    if (scene || loading || !webgl) return;
     loading = import("./scene/tower-scene.js")
       .then(({ createTowerScene }) => {
         scene = createTowerScene({
@@ -191,7 +173,7 @@ export function initTower({ openProject }) {
         update();
         whileVisible(
           track,
-          () => !reduced && !listMode && scene.start(),
+          () => !reduced && scene.start(),
           () => scene.stop(),
           "200px"
         );
@@ -202,12 +184,10 @@ export function initTower({ openProject }) {
       });
   }
 
-  if (!webgl) document.documentElement.classList.add("no-tower");
-  let saved = null;
-  try {
-    saved = localStorage.getItem("tower-view");
-  } catch {}
-  if (saved === "list") setListMode(true);
+  if (!webgl) {
+    document.documentElement.classList.add("no-tower");
+    listEl.querySelectorAll(".reveal-up").forEach((el) => el.classList.add("is-in"));
+  }
 
   // Load the 3D scene shortly before the section scrolls into view.
   const io = new IntersectionObserver(
@@ -220,10 +200,6 @@ export function initTower({ openProject }) {
     { rootMargin: "800px 0px" }
   );
   io.observe(section);
-  wide.addEventListener("change", () => {
-    if (wide.matches) ensureScene();
-    onScroll();
-  });
 
   setActive(0);
   update();

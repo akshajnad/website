@@ -1,4 +1,4 @@
-import { byId, AWARDS, PROFILE, OTHER_SKILLS } from "./data.js";
+import { byId, WINS, OTHER_RECOGNITION, PROFILE, OTHER_SKILLS } from "./data.js";
 import { iconSVG } from "./icons.js";
 import { esc, clamp, hasWebGL, prefersReducedMotion, finePointer, whileVisible, countUp } from "./util.js";
 import { initCaseStudy, frame } from "./case-study.js";
@@ -40,7 +40,7 @@ document.querySelector("[data-showcase]").innerHTML = SHOWCASE.map((id, i) => {
     </div>
     <div class="show-copy reveal-up" style="--d:120ms">
       <div class="show-kicker"><span class="mono">${String(i + 1).padStart(2, "0")} / ${esc(KIND[p.kind])} · ${esc(p.role)}</span>${
-        p.award ? `<span class="award-chip">✳ ${esc(p.award)}</span>` : ""
+        p.hackTag ? `<span class="award-chip">✳ ${esc(p.hackTag)}</span>` : ""
       }</div>
       <h3>${esc(p.title)}</h3>
       <p class="show-headline">${esc(p.headline)}</p>
@@ -61,7 +61,7 @@ document.querySelector("[data-build-grid]").innerHTML = BUILDS.map((id, i) => {
   const r = (p.results || [])[0];
   return `<li class="reveal-up" style="--d:${i * 50}ms"><button type="button" class="build-card" style="--c:${p.color}" data-open="${id}">
     <div class="build-top"><span class="build-mark" aria-hidden="true">${esc(p.mark)}</span>${
-      p.award ? `<span class="award-chip">✳ ${esc(p.award.split(" · ")[1] || p.award)}</span>` : ""
+      p.hackTag ? `<span class="award-chip">✳ ${esc(p.hackTag)}</span>` : ""
     }</div>
     <h4>${esc(p.title)}</h4>
     <p>${esc(p.summary)}</p>
@@ -69,15 +69,29 @@ document.querySelector("[data-build-grid]").innerHTML = BUILDS.map((id, i) => {
   </button></li>`;
 }).join("");
 
-document.querySelector("[data-awards]").innerHTML = AWARDS.map((a, i) => {
-  const p = a.project && byId[a.project];
-  const inner = `<span class="n">${String(i + 1).padStart(2, "0")}</span><strong>${esc(a.event)}</strong><span>${esc(a.prize)}</span>`;
-  return `<li class="reveal-up" style="--d:${i * 60}ms">${
-    p
-      ? `<button type="button" class="award" data-open="${a.project}">${inner}<small>${esc(p.title)} · open project →</small></button>`
-      : `<div class="award">${inner}<small>Listed on my résumé</small></div>`
+// Hackathon wins: one medal per win
+const medal = (w) => `<svg class="medal-svg" viewBox="0 0 120 150" aria-hidden="true">
+    <path class="ribbon ribbon-l" d="M34 0h26l-8 62H22Z" />
+    <path class="ribbon ribbon-r" d="M60 0h26l12 62H68Z" />
+    <circle cx="60" cy="96" r="48" fill="url(#medal-rim)" />
+    <circle cx="60" cy="96" r="41" fill="url(#medal-gold)" />
+    <circle cx="60" cy="96" r="35" fill="none" stroke="#8a6420" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="2 3" />
+    <text x="60" y="${w.year ? 100 : 105}" text-anchor="middle" class="medal-mark">${esc(w.mark)}</text>
+    ${w.year ? `<text x="60" y="118" text-anchor="middle" class="medal-year">${esc(w.year)}</text>` : ""}
+  </svg>`;
+document.querySelector("[data-medals]").innerHTML = WINS.map((w, i) => {
+  const p = w.project && byId[w.project];
+  const body = `<span class="medal-coin">${medal(w)}</span>
+    <span class="medal-event">${esc(w.event)}${w.year ? ` <small>${esc(w.year)}</small>` : ""}</span>
+    <span class="medal-prize">${esc(w.prize)}</span>
+    <span class="medal-project">${p ? `${esc(p.title)} <span aria-hidden="true">→</span>` : "Winner"}</span>`;
+  return `<li class="medal-item" style="--i:${i};--c:${p ? p.color : "#f2cd78"}">${
+    p ? `<button type="button" class="medal" data-open="${w.project}" aria-label="${esc(w.event)} winner: ${esc(p.title)}">${body}</button>` : `<div class="medal">${body}</div>`
   }</li>`;
 }).join("");
+document.querySelector("[data-wins-also]").innerHTML = OTHER_RECOGNITION.map(
+  (r) => `<li>${r.project ? `<button type="button" data-open="${r.project}">${esc(r.label)}</button>` : esc(r.label)}${r.detail ? ` <span>· ${esc(r.detail)}</span>` : ""}</li>`
+).join("");
 
 document.querySelector("[data-other-skills]").innerHTML = OTHER_SKILLS.map(
   (g) => `<div><dt>${esc(g.cat)}</dt><dd>${g.items.map((x) => `<span class="chip">${esc(x)}</span>`).join("")}</dd></div>`
@@ -144,7 +158,7 @@ document.querySelectorAll("[data-split-words]").forEach(splitWords);
 
 // ---------------------------------------------------------------------------
 // Scroll reveals
-const revealTargets = document.querySelectorAll(".reveal-up, [data-split-words], .section");
+const revealTargets = document.querySelectorAll(".reveal-up, [data-split-words], .section, .medals");
 if ("IntersectionObserver" in window && !reduced) {
   const io = new IntersectionObserver(
     (entries) =>
@@ -170,7 +184,7 @@ requestAnimationFrame(() => {
     el.classList.add("is-in");
   });
 });
-document.querySelectorAll(".show [data-count]").forEach((el) => countUp(el));
+document.querySelectorAll(".show [data-count], .wins-big [data-count]").forEach((el) => countUp(el));
 
 // ---------------------------------------------------------------------------
 // Pointer micro-interactions (fine pointers only)
@@ -183,6 +197,16 @@ if (finePointer() && !reduced) {
       const dy = e.clientY - (r.top + r.height / 2);
       m.style.transition = "transform .15s ease-out";
       m.style.transform = `translate(${dx * 0.22}px, ${dy * 0.32}px)`;
+    }
+    const md = e.target.closest(".medal");
+    if (md) {
+      const r = md.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width;
+      const py = (e.clientY - r.top) / r.height;
+      md.style.setProperty("--mx", `${px * 100}%`);
+      md.style.setProperty("--my", `${py * 100}%`);
+      md.style.setProperty("--rx", `${(0.5 - py) * 16}deg`);
+      md.style.setProperty("--ry", `${(px - 0.5) * 22}deg`);
     }
     const card = e.target.closest(".build-card");
     if (card) {
@@ -200,6 +224,11 @@ if (finePointer() && !reduced) {
     if (m && !m.contains(e.relatedTarget)) {
       m.style.transition = "transform .6s cubic-bezier(.16,1,.3,1)";
       m.style.transform = "";
+    }
+    const md = e.target.closest(".medal");
+    if (md && !md.contains(e.relatedTarget)) {
+      md.style.setProperty("--rx", "0deg");
+      md.style.setProperty("--ry", "0deg");
     }
     const card = e.target.closest(".build-card");
     if (card && !card.contains(e.relatedTarget)) {

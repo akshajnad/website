@@ -66,10 +66,11 @@
           <span>Menu</span><span class="menu-toggle-icon" aria-hidden="true"></span>
         </button>
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
-          <a href="#experience"><span class="nav-num">01</span>Experience</a>
-          <a href="#work"><span class="nav-num">02</span>Work</a>
-          <a href="#skills"><span class="nav-num">03</span>Skills</a>
-          <a href="#about"><span class="nav-num">04</span>About</a>
+          <a href="#experience">Experience</a>
+          <a href="#work">Selected work</a>
+          <a href="#hackathons">Hackathons</a>
+          <a href="#skills">Skills</a>
+          <a href="#about">About</a>
           <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
           <a class="nav-contact" href="#contact">Contact</a>
         </nav>
@@ -124,18 +125,9 @@
       <!-- EXPERIENCE TOWER -->
       <section class="section tower-section" id="experience" aria-labelledby="experience-title">
         <div class="shell section-head">
-          <p class="eyebrow"><span>01</span> Experience</p>
-          <h2 id="experience-title" class="section-title" data-split-words>Everything I’ve built, <em>stacked.</em></h2>
+          <h2 id="experience-title" class="section-title">Experience</h2>
           <div class="section-head-side">
-            <p>
-              Each floor is a role, newest at the top.
-              <span class="hint-3d">Scroll to move down the tower, pick a floor from the list, or click a block to open the full case study.</span>
-              <span class="hint-list">Open any floor for the full case study.</span>
-            </p>
-            <div class="view-toggle" role="group" aria-label="Experience view">
-              <button type="button" aria-pressed="true" data-view="tower">3D tower</button>
-              <button type="button" aria-pressed="false" data-view="list">List</button>
-            </div>
+            <p>Internships, research and my startup, most recent at the top. Scroll through the tower or pick a role from the list, then open it for details.</p>
           </div>
         </div>
         <div class="tower-track" data-tower-track>
@@ -160,29 +152,60 @@
       <!-- SELECTED WORK -->
       <section class="section work-section" id="work" aria-labelledby="work-title">
         <div class="shell section-head">
-          <p class="eyebrow"><span>02</span> Selected work</p>
-          <h2 id="work-title" class="section-title" data-split-words>Real products, <em>running.</em></h2>
+          <h2 id="work-title" class="section-title">Selected work</h2>
           <div class="section-head-side">
-            <p>Screens from the working software, not mockups. Open any project for the architecture and the decisions behind it.</p>
+            <p>Projects shown with screenshots of the working software. Open any of them for the full write-up.</p>
           </div>
         </div>
         <div class="shell showcase" data-showcase></div>
         <div class="shell builds">
           <div class="builds-head">
-            <h3 class="builds-title">More builds</h3>
+            <h3 class="builds-title">More projects</h3>
             <p class="mono">Hackathons · iOS Club · Big Data Big Impact</p>
           </div>
           <ul class="build-grid" data-build-grid></ul>
         </div>
       </section>
 
+      <!-- HACKATHON WINS -->
+      <section class="section wins-section" id="hackathons" aria-labelledby="wins-title">
+        <div class="wins-light" aria-hidden="true"></div>
+        <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+          <defs>
+            <linearGradient id="medal-gold" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#fff3cf" />
+              <stop offset=".45" stop-color="#f2cd78" />
+              <stop offset="1" stop-color="#a87a25" />
+            </linearGradient>
+            <linearGradient id="medal-rim" x1="0" y1="1" x2="1" y2="0">
+              <stop offset="0" stop-color="#8a6420" />
+              <stop offset="1" stop-color="#ffe7a8" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="shell section-head">
+          <h2 id="wins-title" class="section-title">Hackathon wins</h2>
+          <div class="section-head-side">
+            <p>Projects that won at hackathons. Click a medal to open the project.</p>
+          </div>
+        </div>
+        <div class="shell wins-grid">
+          <div class="wins-count">
+            <p class="wins-big"><span data-count>5</span><span class="wins-x">×</span></p>
+            <p class="wins-label">hackathon winner</p>
+            <ul class="wins-also" data-wins-also></ul>
+            <a class="link-arrow" href="https://devpost.com/akshajnad" target="_blank" rel="noopener">All projects on Devpost <span aria-hidden="true">↗</span></a>
+          </div>
+          <ol class="medals" data-medals></ol>
+        </div>
+      </section>
+
       <!-- SKILLS -->
       <section class="section skills-section" id="skills" aria-labelledby="skills-title">
         <div class="shell section-head">
-          <p class="eyebrow"><span>03</span> Skills</p>
-          <h2 id="skills-title" class="section-title" data-split-words>Tools, traced to <em>where I used them.</em></h2>
+          <h2 id="skills-title" class="section-title">Skills</h2>
           <div class="section-head-side">
-            <p>Pick a technology to see every project that used it, and how. Each link opens that project.</p>
+            <p>Click a skill to see the projects where I used it and what I did with it.</p>
           </div>
         </div>
         <div class="shell">
@@ -199,23 +222,12 @@
         </div>
       </section>
 
-      <!-- RECOGNITION -->
-      <section class="section recognition-section" id="recognition" aria-labelledby="recognition-title">
-        <div class="shell">
-          <div class="recog-head">
-            <p class="eyebrow" id="recognition-title"><span>✳</span> Built under pressure, recognized along the way</p>
-            <a class="link-arrow" href="https://devpost.com/akshajnad" target="_blank" rel="noopener">All projects on Devpost <span aria-hidden="true">↗</span></a>
-          </div>
-          <ol class="award-list" data-awards></ol>
-        </div>
-      </section>
 
       <!-- ABOUT -->
       <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="shell about-grid">
           <div class="about-main">
-            <p class="eyebrow"><span>04</span> About</p>
-            <h2 id="about-title" class="section-title" data-split-words>Curious about the system. <em>Careful with the details.</em></h2>
+            <h2 id="about-title" class="section-title">About</h2>
             <div class="about-text">
               <p>
                 I’m Akshaj, a Computer Science student at Georgia Tech, graduating in May 2028. I like owning the full
@@ -259,7 +271,7 @@
         <div class="contact-field" aria-hidden="true"></div>
         <div class="shell contact-inner">
           <p class="status-chip"><span class="pulse" aria-hidden="true"></span>Summer 2027 SWE internships</p>
-          <h2 id="contact-title" class="contact-title" data-split-words>Let’s build something <em>useful.</em></h2>
+          <h2 id="contact-title" class="contact-title">Contact</h2>
           <p class="contact-lede">I’m looking for teams working on applied AI, backend infrastructure, and thoughtful products.</p>
           <div class="contact-actions">
             <a class="contact-email magnetic" href="mailto:akshajnadn@gmail.com">akshajnadn@gmail.com <span aria-hidden="true">↗</span></a>
@@ -279,7 +291,6 @@
     <footer class="site-footer">
       <div class="shell footer-shell">
         <p>© <span data-year>2026</span> Akshaj Nadimpalli</p>
-        <p class="mono">Built by hand with HTML, CSS, JavaScript and Three.js</p>
         <a href="#top">Back to top ↑</a>
       </div>
     </footer>
@@ -298,8 +309,8 @@
     </dialog>
 
     <!-- Portfolio search (existing local assistant) -->
-    <button class="assistant-launcher" type="button" aria-expanded="false" aria-controls="portfolio-assistant" data-assistant-launcher>
-      <span aria-hidden="true">⌕</span> Ask about my work <span class="assistant-launcher-key" aria-hidden="true">⌘/</span>
+    <button class="assistant-launcher" type="button" aria-expanded="false" aria-controls="portfolio-assistant" aria-label="Ask about my work" data-assistant-launcher>
+      <span aria-hidden="true">⌕</span> <span class="assistant-launcher-text" aria-hidden="true">Ask about my work</span> <span class="assistant-launcher-key" aria-hidden="true">⌘/</span>
     </button>
     <section class="assistant-panel" id="portfolio-assistant" aria-label="Portfolio search" hidden data-assistant-panel>
       <div class="assistant-header">

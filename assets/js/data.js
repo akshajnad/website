@@ -55,6 +55,8 @@ export const SKILLS = [
   { id: "redis", name: "Redis", cat: "cloud", icon: "redis", color: "#ff4438" },
   { id: "supabase", name: "Supabase", cat: "cloud", icon: "supabase", color: "#3ecf8e" },
   { id: "vultr", name: "Vultr", cat: "cloud", icon: "vultr", color: "#4d7cff" },
+  { id: "azure", name: "Azure", cat: "cloud", mono: "Az", color: "#3a96dd" },
+  { id: "gcp", name: "Google Cloud", cat: "cloud", icon: "googlecloud", color: "#4285f4" },
 
   { id: "agents", name: "LLM agents", cat: "ai", mono: "Ag", color: "#ff7a45" },
   { id: "langgraph", name: "LangGraph", cat: "ai", icon: "langgraph", color: "#8fb4ff" },
@@ -69,7 +71,13 @@ export const SKILLS = [
   { id: "opencv", name: "OpenCV", cat: "ai", icon: "opencv", color: "#5c3ee8" },
   { id: "huggingface", name: "Hugging Face", cat: "ai", icon: "huggingface", color: "#ffd21e" },
   { id: "claude", name: "Claude", cat: "ai", icon: "claude", color: "#d97757" },
-  { id: "applevision", name: "Apple Vision / Core ML", cat: "ai", icon: "apple", color: "#d6d6d6" },
+  { id: "applevision", name: "Apple Vision", cat: "ai", icon: "apple", color: "#d6d6d6" },
+  { id: "coreml", name: "Core ML", cat: "ai", icon: "apple", color: "#b9c7ff" },
+  { id: "relu", name: "ReLU", cat: "ai", mono: "ReLU", color: "#ff9a6b" },
+  { id: "lora", name: "LoRA", cat: "ai", mono: "LoRA", color: "#d8b4ff" },
+  { id: "seqmodels", name: "GRU / 1D CNN", cat: "ai", mono: "GRU", color: "#8fb4ff" },
+  { id: "audioml", name: "Audio ML", cat: "ai", mono: "Au", color: "#5fd0c4" },
+  { id: "wandb", name: "Weights & Biases", cat: "ai", icon: "weightsandbiases", color: "#ffbe00" },
 
   { id: "postgresql", name: "PostgreSQL", cat: "tools", icon: "postgresql", color: "#6b9bd1" },
   { id: "mysql", name: "MySQL", cat: "tools", icon: "mysql", color: "#5d87a1" },
@@ -77,6 +85,10 @@ export const SKILLS = [
   { id: "opensearch", name: "OpenSearch", cat: "tools", icon: "opensearch", color: "#2f8cff" },
   { id: "snowflake", name: "Snowflake", cat: "tools", icon: "snowflake", color: "#29b5e8" },
   { id: "pytest", name: "pytest", cat: "tools", icon: "pytest", color: "#0a9edc" },
+  { id: "playwright", name: "Playwright", cat: "tools", mono: "Pw", color: "#45ba4b" },
+  { id: "selenium", name: "Selenium", cat: "tools", icon: "selenium", color: "#43b02a" },
+  { id: "sqlite", name: "SQLite", cat: "tools", icon: "sqlite", color: "#5fa8d3" },
+  { id: "slurm", name: "SLURM (PACE HPC)", cat: "tools", mono: "HPC", color: "#e6c36a" },
   { id: "githubactions", name: "GitHub Actions", cat: "tools", icon: "githubactions", color: "#2088ff" },
   { id: "helm", name: "Helm", cat: "tools", icon: "helm", color: "#4f8ff7" },
   { id: "dynatrace", name: "Dynatrace", cat: "tools", icon: "dynatrace", color: "#1496ff" },
@@ -92,8 +104,7 @@ export const OTHER_SKILLS = [
   { cat: "Languages", items: ["Bash", "Ruby", "HTML/CSS"] },
   { cat: "Frameworks", items: ["Angular", "Node.js", "Express", "REST", "gRPC", "GraphQL", "Django"] },
   { cat: "AI / ML", items: ["TensorFlow", "Keras", "NumPy / Pandas", "LangChain", "OpenAI / Anthropic SDKs"] },
-  { cat: "Cloud / DevOps", items: ["GCP"] },
-  { cat: "Tools", items: ["Git", "Playwright", "Selenium", "JUnit", "Agile / Scrum", "Claude Code"] },
+  { cat: "Tools", items: ["Git", "JUnit", "Agile / Scrum", "Claude Code"] },
 ];
 
 // kind: experience | startup | research | project
@@ -187,6 +198,7 @@ export const PROJECTS = [
     dates: "May 2026 — Present",
     color: "#5fd068",
     mark: "G",
+    hackTag: "Hacklytics winner",
     award: "Hacklytics 2026 · Best Use of Snowflake API",
     headline: "Captions that know who's speaking.",
     summary:
@@ -197,6 +209,7 @@ export const PROJECTS = [
       "Training a multimodal active-speaker detection model in PyTorch that fuses CNN log-mel audio embeddings with lip and gesture features through a cross-attention transformer, lifting F1 from 0.61 to 0.74 on 8 hours of audio-video data.",
       "Built a real-time Whisper + MediaPipe streaming pipeline at 30 FPS and sub-1s latency on AWS, with Dockerized FastAPI and WebSocket services on ECS.",
       "Face-embedding retrieval through S3 and DynamoDB in under 50 ms, with PostgreSQL on RDS.",
+      "Redesigning it as an offline-first SwiftUI iOS app: on-device MediaPipe, a Core ML speaker model and WhisperKit, with a WavLM tone model trained on PACE and served from FastAPI on Cloud Run.",
     ],
     decisions: [
       { title: "Fuse the signals", text: "Cross-attention lets the model weigh audio against lip and gesture cues, instead of trusting any single signal. That took F1 from 0.61 to 0.74." },
@@ -209,12 +222,12 @@ export const PROJECTS = [
       { value: "<1 s", label: "end-to-end latency" },
       { value: "15", label: "people on the team" },
     ],
-    stack: ["PyTorch", "Python", "Whisper", "MediaPipe", "OpenCV", "FastAPI", "WebSockets", "Docker", "AWS ECS", "S3", "DynamoDB", "PostgreSQL (RDS)", "React Native"],
+    stack: ["PyTorch", "Python", "Swift", "SwiftUI", "Core ML", "Whisper", "MediaPipe", "OpenCV", "LoRA", "ReLU", "Weights & Biases", "FastAPI", "WebSockets", "Docker", "AWS ECS", "S3", "DynamoDB", "PostgreSQL (RDS)", "Google Cloud", "SQLite", "React Native"],
     skills: {
       python: "The ML pipeline, model training and FastAPI services.",
       pytorch: "Active-speaker model: CNN log-mel audio embeddings fused with lip and gesture features via a cross-attention transformer (F1 0.61 → 0.74).",
       mediapipe: "Face, lip and gesture landmarks in the 30 FPS streaming pipeline.",
-      whisper: "Speech-to-text in the real-time pipeline, under 1 s end to end.",
+      whisper: "Speech-to-text in the real-time pipeline, under 1 s end to end; the iOS redesign runs Whisper on-device with WhisperKit so captions work offline.",
       opencv: "Visual features (face and lip regions) for the active-speaker signal.",
       fastapi: "Dockerized FastAPI + WebSocket services on ECS stream captions to the client.",
       websockets: "Live caption stream from the FastAPI services.",
@@ -222,10 +235,21 @@ export const PROJECTS = [
       aws: "ECS for services, S3 + DynamoDB for face-embedding retrieval (<50 ms), RDS for PostgreSQL.",
       postgresql: "Runs on RDS for the platform's data.",
       reactnative: "The phone client that shows captions next to whoever is speaking.",
-      huggingface: "The Hacklytics build used a Wav2Vec model fine-tuned on RAVDESS, via Hugging Face, to tag speech tone.",
+      huggingface: "The tone model uses Hugging Face's WavLM-base-plus (frozen) with a custom head; the Hacklytics build used a Wav2Vec model fine-tuned on RAVDESS.",
       snowflake: "The Hacklytics build used Snowflake Cortex for meeting summaries and RAG over past transcripts (Best Use of Snowflake API).",
       rag: "The Hacklytics build retrieved past transcripts with RAG in Snowflake.",
       elevenlabs: "Speech-to-text in the original Hacklytics build.",
+      swift: "The redesigned iOS app is Swift, split into local packages for vision, audio, fusion, networking and UI.",
+      swiftui: "Caption list, speaker highlight boxes, tone chips and sound-alert banners.",
+      coreml: "The speaker model is exported from PyTorch with coremltools and runs on the iPhone, so captions and highlights work offline.",
+      seqmodels: "Speaker detection over 15-frame windows of 96-dim face features: a 2-layer GRU, with a 1D CNN trained alongside to keep the better one.",
+      relu: "The tone head is Linear → ReLU → Dropout → Linear on top of frozen WavLM features.",
+      lora: "LoRA for parameter-efficient fine-tuning of the pretrained models.",
+      audioml: "Voice activity detection segments sentences, Apple SoundAnalysis raises alerts (doorbell, alarm, siren), and a WavLM-based model tags tone.",
+      wandb: "Every training run is logged to Weights & Biases.",
+      slurm: "Models train on Georgia Tech's PACE GPU cluster through SLURM batch jobs.",
+      gcp: "The tone server is containerized for Google Cloud Run so remote testers can use it.",
+      sqlite: "The tone server logs captions, tags and latencies to SQLite (never audio).",
     },
     diagram: {
       caption: "Real-time path from camera and microphone to a caption under the speaker.",
@@ -245,13 +269,22 @@ export const PROJECTS = [
     },
     media: [
       {
+        src: "assets/media/graption-captions.jpg",
+        webp: "assets/media/graption-captions.webp",
+        w: 1086,
+        h: 496,
+        frame: "phone",
+        alt: "Graption running on an iPhone in a meeting: the caption 'research article by Thad Starner' with a neutral tone tag appears under the person speaking, above him an alert reads 'Your name was said!'",
+        caption: "The working app: the caption sits under the person speaking, tagged with their tone, and an alert fires when your name comes up.",
+      },
+      {
         src: "assets/graption.jpg",
         webp: "assets/media/graption.webp",
         w: 1178,
         h: 525,
         frame: "phone",
-        alt: "Graption running on an iPhone in a group meeting: tracking boxes around three faces, lip landmarks, confidence scores, and the middle speaker labeled ACTIVE in green",
-        caption: "The working app in a real meeting. Each face gets a speaker score; the person talking is marked ACTIVE. App capture from the Devpost gallery.",
+        alt: "Graption's speaker detection in a group meeting: tracking boxes around three faces with lip landmarks and confidence scores, the middle speaker labeled ACTIVE in green",
+        caption: "Speaker detection: each face gets a score and the person talking is marked ACTIVE.",
       },
       {
         src: "assets/media/graption-architecture.jpg",
@@ -314,6 +347,7 @@ export const PROJECTS = [
       atlassian: "An MCP connector pulls specs from Atlassian tools.",
       swiftui: "The iOS companion app.",
       swift: "The iOS companion app.",
+      azure: "Azure is part of Signifi's cloud stack.",
     },
     diagram: {
       caption: "From one brief to linked artifacts.",
@@ -468,6 +502,7 @@ export const PROJECTS = [
     dates: "Apr 2026",
     color: "#f2a33a",
     mark: "E",
+    hackTag: "Bitcamp winner",
     award: "Bitcamp 2026 · Best Moonshot Hack",
     headline: "Investigate a breach. Connect the evidence.",
     summary:
@@ -538,6 +573,7 @@ export const PROJECTS = [
     dates: "2025",
     color: "#7cc4ff",
     mark: "F",
+    hackTag: "codeLinc winner",
     award: "codeLinc10 · 2nd place",
     headline: "Benefits answers that can also act.",
     summary: "A financial-benefits assistant that answers from retrieved policy context and can call tools to update the user's dashboard.",
@@ -558,6 +594,7 @@ export const PROJECTS = [
       rag: "Policy documents in S3 are embedded with Titan and retrieved to ground every answer.",
       claude: "Claude Sonnet generates grounded answers and calls tools to update the dashboard.",
       nextjs: "The assistant and dashboard front end.",
+      gcp: "Google Cloud was part of the project's infrastructure.",
     },
     diagram: {
       cols: 4,
@@ -582,6 +619,7 @@ export const PROJECTS = [
     dates: "2026",
     color: "#b6e36a",
     mark: "Gr",
+    hackTag: "EnergyHack winner",
     award: "EnergyHack '26 · Best Use of Vultr",
     headline: "A real smart plug, scheduled around a cleaner grid.",
     summary: "An IoT platform that controls a physical smart plug and schedules device use around user deadlines and lower-carbon grid windows.",
@@ -654,6 +692,7 @@ export const PROJECTS = [
     dates: "2026",
     color: "#c7a6ff",
     mark: "V",
+    hackTag: "YHack finalist",
     award: "YHack 2026 · K2 Think V2 Track finalist",
     headline: "Understanding, and disputing, a medical bill.",
     summary: "Analyzes medical bills and insurance documents, explains suspected errors, and coordinates email, legal-research and voice agents to support a dispute.",
@@ -683,7 +722,7 @@ export const PROJECTS = [
     skills: {
       swift: "The generation pipeline and app logic.",
       swiftui: "Lesson, quiz and progress screens.",
-      applevision: "Core ML and Apple Foundation Models generate lessons and quizzes on device.",
+      coreml: "Core ML and Apple Foundation Models generate lessons and quizzes on device.",
       firebase: "Part of the app's backend stack.",
     },
     links: [],
@@ -753,15 +792,19 @@ export const FLOORS = [
   },
 ];
 
-export const AWARDS = [
-  { event: "Hacklytics '26", prize: "Best Use of Snowflake API", project: "graption", href: "https://devpost.com/software/graption" },
-  { event: "Bitcamp '26", prize: "Best Moonshot Hack", project: "echolocate", href: "https://devpost.com/software/echolocate-e4k3dg" },
-  { event: "EnergyHack '26", prize: "Best Use of Vultr", project: "gridly", href: "https://devpost.com/software/gridly-0h29vm" },
-  { event: "codeLinc10", prize: "2nd place", project: "finmate", href: "https://devpost.com/software/finmate-gj93c8" },
-  { event: "Jane Street", prize: "Mystery Planet winner", project: null, href: null },
-  { event: "Klaus Startup Challenge", prize: "Finalist", project: "signifi", href: "https://www.signifi.tech/" },
-  { event: "YHack '26", prize: "K2 Think V2 Track finalist", project: "veritas", href: "https://devpost.com/akshajnad" },
-  { event: "AIME", prize: "Qualifier", project: null, href: null },
+// Hackathon wins (shown as medals) and other recognition.
+export const WINS = [
+  { event: "Hacklytics", year: "'26", mark: "H", prize: "Best Use of Snowflake API", project: "graption" },
+  { event: "Bitcamp", year: "'26", mark: "B", prize: "Best Moonshot Hack", project: "echolocate" },
+  { event: "EnergyHack", year: "'26", mark: "E", prize: "Best Use of Vultr", project: "gridly" },
+  { event: "codeLinc", year: "'25", mark: "C", prize: "2nd place", project: "finmate" },
+  { event: "Jane Street", year: "", mark: "JS", prize: "Mystery Planet", project: null },
+];
+
+export const OTHER_RECOGNITION = [
+  { label: "YHack '26 finalist", detail: "K2 Think V2 track", project: "veritas" },
+  { label: "Klaus Startup Challenge finalist", detail: "Signifi", project: "signifi" },
+  { label: "AIME Qualifier", detail: "", project: null },
 ];
 
 export const byId = Object.fromEntries(PROJECTS.map((p) => [p.id, p]));

@@ -164,7 +164,7 @@
       metrics: [],
       stack: ["React", "Vite", "Tailwind CSS", "Supabase", "Edge Functions", "TypeScript"],
       links: [{ label: "View Devpost", href: "https://devpost.com/akshajnad" }],
-      section: "#recognition",
+      section: "#hackathons",
       related: ["awards", "finmate", "gridly"],
       suggestions: ["How did PPP Pocket work?", "Show all hackathon projects"]
     },
@@ -197,7 +197,7 @@
       metrics: ["YHack 2026 K2 Think V2 Track finalist"],
       stack: ["AI agents", "Document analysis", "Email automation", "Voice agents", "Legal research"],
       links: [{ label: "View Devpost", href: "https://devpost.com/akshajnad" }],
-      section: "#recognition",
+      section: "#hackathons",
       related: ["awards", "finmate", "signifi"],
       suggestions: ["How does Veritas work?", "What recognition did it receive?", "Show other AI projects"]
     },
@@ -306,8 +306,8 @@
       ],
       metrics: ["5x hackathon winner", "Hacklytics Best Use of Snowflake API", "Bitcamp Best Moonshot Hack", "AIME Qualifier"],
       stack: [],
-      links: [{ label: "View recognition", href: "#recognition" }, { label: "View Devpost", href: "https://devpost.com/akshajnad" }],
-      section: "#recognition",
+      links: [{ label: "View recognition", href: "#hackathons" }, { label: "View Devpost", href: "https://devpost.com/akshajnad" }],
+      section: "#hackathons",
       related: ["graption", "finmate", "gridly", "ppp-pocket", "echolocate", "veritas"],
       suggestions: ["Which project won Hacklytics?", "Tell me about FinMate", "Show all hackathon projects"]
     },
@@ -361,7 +361,7 @@
         { label: "Swarm intelligence paper", href: "Adaptive_Collective_Strategies_for_Swarm_Intelligence_Applications.pdf" },
         { label: "Startup success study", href: "The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf" }
       ],
-      section: "#recognition",
+      section: "#hackathons",
       related: ["aerospace", "signifi"],
       suggestions: ["Tell me about his robotics research", "What is Signifi?", "What research work has he done?"]
     }
