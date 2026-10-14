@@ -284,8 +284,8 @@
       ],
       metrics: [],
       stack: ["Python", "Java", "C++", "TypeScript", "SQL", "Swift", "Bash", "PyTorch", "Scikit-learn", "Hugging Face", "LangGraph", "Pinecone", "AWS", "Docker", "Terraform", "EKS", "GitHub Actions", "REST", "GraphQL", "Next.js", "React Native", "Angular", "FastAPI", "Spring Boot", "Supabase"],
-      links: [{ label: "View toolkit", href: "#about" }],
-      section: "#about",
+      links: [{ label: "Explore skills", href: "#skills" }],
+      section: "#skills",
       related: ["travelers", "signifi", "aerospace"],
       suggestions: ["Where has he used Python?", "Which projects use AWS?", "What mobile development has he done?"]
     },
@@ -798,7 +798,7 @@
         heading: "Technology not found",
         paragraphs: ["That technology is not explicitly tied to a project in the published portfolio content."],
         bullets: [],
-        links: [{ label: "View full toolkit", href: "#about" }],
+        links: [{ label: "Explore skills", href: "#skills" }],
         suggestions: ["Which projects use AWS?", "Where has he used Python?", "What is his full tech stack?"],
         entityIds: ["skills"],
         intent: "stack"
@@ -815,7 +815,7 @@
         });
         return record.name + (overlap.length ? " — " + overlap.join(", ") : "") + ": " + record.summary;
       }),
-      links: [{ label: "View full toolkit", href: "#about" }],
+      links: [{ label: "Explore skills", href: "#skills" }],
       suggestions: matches.slice(0, 3).map(function (record) { return "Tell me about " + record.name; }),
       entityIds: matches.slice(0, 6).map(function (record) { return record.id; }),
       intent: "stack"

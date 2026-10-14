@@ -8,7 +8,8 @@
       name="description"
       content="Georgia Tech CS student building applied AI, backend systems, and useful products. Explore Akshaj's work at Travelers, Signifi, and Graption. Seeking Summer 2027 SWE internships."
     />
-    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="theme-color" content="#0a0c0f" />
+    <meta name="color-scheme" content="dark" />
     <meta property="og:title" content="Akshaj Nadimpalli — Software Engineer" />
     <meta
       property="og:description"
@@ -16,14 +17,26 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.akshajnad.tech/" />
-    <meta
-      property="og:image"
-      content="https://www.akshajnad.tech/assets/social-preview.jpg"
-    />
+    <meta property="og:image" content="https://www.akshajnad.tech/assets/social-preview.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://www.akshajnad.tech/" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <link rel="modulepreload" href="assets/js/main.js" />
+    <link rel="modulepreload" href="assets/js/data.js" />
+    <script>
+      document.documentElement.classList.add("js");
+      // If the site script never boots (old browser, blocked module), show content without animations.
+      setTimeout(function () {
+        if (!window.__siteReady) document.documentElement.classList.remove("js");
+      }, 3500);
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -31,10 +44,7 @@
         "name": "Akshaj Nadimpalli",
         "url": "https://www.akshajnad.tech/",
         "jobTitle": "Software Engineer",
-        "affiliation": {
-          "@type": "CollegeOrUniversity",
-          "name": "Georgia Institute of Technology"
-        },
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Georgia Institute of Technology" },
         "sameAs": [
           "https://github.com/akshajnad",
           "https://www.linkedin.com/in/akshaj-nadimpalli/",
@@ -45,1082 +55,285 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header" data-header>
       <div class="shell nav-shell">
-        <a class="wordmark" href="#top" aria-label="Akshaj Nadimpalli, home"
-          >an<span>.</span></a
-        >
-        <span class="nav-descriptor">ENGINEER &amp; BUILDER</span>
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          data-menu-toggle
-        >
-          <span>Menu</span><span aria-hidden="true">＋</span>
+        <a class="wordmark" href="#top" aria-label="Akshaj Nadimpalli, home">
+          <span class="wordmark-glyph" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span class="wordmark-text">akshaj<span>.</span></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
+          <span>Menu</span><span class="menu-toggle-icon" aria-hidden="true"></span>
         </button>
-        <nav
-          class="site-nav"
-          id="site-nav"
-          aria-label="Primary navigation"
-          data-nav
-        >
-          <a href="#work">Work</a><a href="#experience">Experience</a
-          ><a href="#about">About</a>
-          <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener"
-            >Résumé <span aria-hidden="true">↗</span></a
-          >
-          <a
-            class="nav-contact"
-            href="mailto:akshajnadn@gmail.com"
-            aria-label="Email Akshaj"
-            >Let’s talk <span aria-hidden="true">↗</span></a
-          >
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+          <a href="#experience"><span class="nav-num">01</span>Experience</a>
+          <a href="#work"><span class="nav-num">02</span>Work</a>
+          <a href="#skills"><span class="nav-num">03</span>Skills</a>
+          <a href="#about"><span class="nav-num">04</span>About</a>
+          <a class="nav-resume" href="resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
+          <a class="nav-contact" href="#contact">Contact</a>
         </nav>
       </div>
+      <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
     </header>
+
     <main id="main">
-      <section class="hero shell" id="top" aria-labelledby="hero-title">
-        <div class="hero-topline">
-          <p class="availability">
-            <span aria-hidden="true"></span> OPEN TO SUMMER 2027 SWE INTERNSHIPS
-          </p>
-          <p class="location">ATLANTA, GA / GEORGIA TECH</p>
+      <!-- HERO -->
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-stage" aria-hidden="true">
+          <canvas class="hero-canvas" data-hero-canvas></canvas>
+          <div class="hero-labels" data-hero-labels></div>
+          <svg class="hero-fallback" viewBox="0 0 520 420" data-hero-fallback>
+            <g fill="none" stroke-linejoin="round">
+              <path d="M90 300 260 380 430 300 260 220Z" fill="#101419" stroke="#5b7aa6" stroke-opacity=".6" />
+              <path d="M90 210 260 290 430 210 260 130Z" fill="#12171c" stroke="#c9e49e" stroke-opacity=".55" />
+              <path d="M90 120 260 200 430 120 260 40Z" fill="#161b21" stroke="#ff7a45" stroke-opacity=".8" />
+              <path d="M200 160v90M320 160v90M260 200v90M200 250v90M320 250v90" stroke="#ece8e1" stroke-opacity=".18" />
+            </g>
+          </svg>
         </div>
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">HI, I’M AKSHAJ NADIMPALLI.</p>
-            <h1 id="hero-title">
-              I build AI for<br />the <em>real world.</em>
-            </h1>
-            <p class="hero-lede">
-              From enterprise workflows to live accessibility tools.<br
-                class="desktop-break"
-              />
-              I connect models, infrastructure, and interfaces to build software
-              people can use.
+        <div class="shell hero-shell">
+          <div class="hero-meta reveal-up">
+            <p class="status-chip"><span class="pulse" aria-hidden="true"></span>Open to Summer 2027 SWE internships</p>
+            <p class="mono hero-loc">Atlanta, GA · Georgia Tech CS ’28</p>
+          </div>
+          <h1 class="hero-title" id="hero-title" data-split>
+            <span class="line">Akshaj</span>
+            <span class="line">Nadimpalli</span>
+          </h1>
+          <div class="hero-lower">
+            <p class="hero-lede reveal-up">
+              Software engineer. I build <em>AI systems</em>, the backend infrastructure under them, and the products
+              people actually use, from enterprise agents at Travelers to live captions for Deaf users.
             </p>
-            <div class="hero-actions">
-              <a class="button button-primary" href="#work"
-                >Explore my work <span aria-hidden="true">↘</span></a
-              ><a
-                class="text-link"
-                href="resume.pdf"
-                target="_blank"
-                rel="noopener"
-                >View résumé <span aria-hidden="true">↗</span></a
-              >
-            </div>
-            <div class="hero-credentials">
-              <img
-                class="credential-photo"
-                src="assets/akshaj.jpg"
-                width="40"
-                height="40"
-                alt="Akshaj Nadimpalli"
-              />
-              <p>
-                <strong>Georgia Tech CS ’28</strong> <span>·</span> 4.0 GPA<br /><span
-                  >Travelers SWE intern · Signifi co-founder</span
-                >
-              </p>
+            <div class="hero-actions reveal-up">
+              <a class="btn btn-primary magnetic" href="#experience"><span>Explore my work</span><span aria-hidden="true" class="btn-arrow">↓</span></a>
+              <a class="btn btn-ghost magnetic" href="resume.pdf" target="_blank" rel="noopener"><span>Résumé</span><span aria-hidden="true">↗</span></a>
+              <a class="btn btn-ghost magnetic" href="mailto:akshajnadn@gmail.com"><span>Email</span><span aria-hidden="true">↗</span></a>
+              <a class="btn btn-icon magnetic" href="https://github.com/akshajnad" target="_blank" rel="noopener" aria-label="GitHub profile" data-icon="github"></a>
             </div>
           </div>
-          <div
-            class="system-card"
-            aria-label="An interactive illustration of my engineering focus"
-          >
-            <div class="system-card-top">
-              <span
-                ><span class="live-dot" aria-hidden="true"></span> FROM IDEA TO
-                IMPACT</span
-              ><span aria-hidden="true">[ AN—01 ]</span>
-            </div>
-            <div class="system-art" aria-hidden="true">
-              <svg viewBox="0 0 520 340" fill="none">
-                <defs>
-                  <linearGradient
-                    id="slab-top"
-                    x1="115"
-                    y1="70"
-                    x2="390"
-                    y2="210"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#fff8ec" />
-                    <stop offset="1" stop-color="#bdb7a9" />
-                  </linearGradient>
-                  <linearGradient
-                    id="slab-side"
-                    x1="260"
-                    y1="135"
-                    x2="260"
-                    y2="225"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#8e887f" />
-                    <stop offset="1" stop-color="#494743" />
-                  </linearGradient>
-                  <linearGradient
-                    id="slab-orange"
-                    x1="120"
-                    y1="90"
-                    x2="390"
-                    y2="200"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#ffba85" />
-                    <stop offset="1" stop-color="#f26338" />
-                  </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="12" />
-                  </filter>
-                </defs>
-                <ellipse
-                  cx="265"
-                  cy="278"
-                  rx="140"
-                  ry="25"
-                  fill="#000"
-                  opacity=".4"
-                  filter="url(#glow)"
-                />
-                <path
-                  d="M34 196 260 326 486 196M34 150 260 280 486 150M34 104 260 234 486 104M112 56 112 240M185 24 185 284M335 24 335 284M408 56 408 240"
-                  stroke="#373a37"
-                  stroke-width=".7"
-                />
-                <g class="slab slab-bottom">
-                  <path
-                    d="m123 223 137-78 137 78-137 78-137-78Z"
-                    fill="#313a32"
-                    stroke="#829481"
-                  />
-                  <path
-                    d="m123 223 137 78v13l-137-78v-13Zm137 78 137-78v13l-137 78v-13Z"
-                    fill="#242c26"
-                    stroke="#677564"
-                  />
-                  <path
-                    d="m154 224 106-61 106 61-106 60-106-60Z"
-                    stroke="#a9ba91"
-                    stroke-dasharray="4 5"
-                  />
-                  <path d="m217 224 43-25 43 25-43 25-43-25Z" fill="#c9e49e" />
-                </g>
-                <g class="slab slab-middle">
-                  <path
-                    d="m123 164 137-78 137 78-137 78-137-78Z"
-                    fill="url(#slab-top)"
-                  />
-                  <path
-                    d="m123 164 137 78v17l-137-78v-17Zm137 78 137-78v17l-137 78v-17Z"
-                    fill="url(#slab-side)"
-                  />
-                  <path
-                    d="m191 163 69-39 69 39-69 39-69-39Z"
-                    stroke="#716e65"
-                  />
-                  <path
-                    d="m209 163 51-29 51 29-51 29-51-29Z"
-                    stroke="#716e65"
-                  />
-                  <path d="m228 163 32-18 32 18-32 18-32-18Z" fill="#3a3e35" />
-                </g>
-                <g class="slab slab-top">
-                  <path
-                    d="m123 102 137-78 137 78-137 78-137-78Z"
-                    fill="url(#slab-orange)"
-                  />
-                  <path
-                    d="m123 102 137 78v15l-137-78v-15Zm137 78 137-78v15l-137 78v-15Z"
-                    fill="#ab492e"
-                  />
-                  <path
-                    d="m209 103 51-29 51 29-51 29-51-29Z"
-                    stroke="#ffe1c9"
-                  />
-                  <path d="m244 103 16-9 16 9-16 9-16-9Z" fill="#fff4e6" />
-                  <path
-                    d="m175 103 23-13m124 0 23 13m-85-60v17m0 86v17"
-                    stroke="#fff4e6"
-                    stroke-width="2"
-                  />
-                </g>
-                <g stroke="#b5b8ad" stroke-width=".8">
-                  <path d="m398 102 50-29h34" />
-                  <path d="m123 164-54-31H32" />
-                  <path d="m396 236 35 21h49" />
-                </g>
-                <g font-family="monospace" font-size="9" fill="#cdd0c6">
-                  <text x="433" y="61">INTERFACE</text>
-                  <text x="24" y="121">INTELLIGENCE</text>
-                  <text x="433" y="273">INFRA</text>
-                </g>
-                <g fill="#d8eeab">
-                  <circle class="signal-dot" cx="448" cy="73" r="3" />
-                  <circle cx="69" cy="133" r="3" />
-                  <circle cx="431" cy="257" r="3" />
-                </g>
-              </svg>
-            </div>
-            <div
-              class="system-tabs"
-              role="group"
-              aria-label="Explore an engineering focus"
-            >
-              <button type="button" aria-pressed="true" data-focus="cloud">
-                01 / Cloud</button
-              ><button type="button" aria-pressed="false" data-focus="product">
-                02 / Product</button
-              ><button type="button" aria-pressed="false" data-focus="vision">
-                03 / Vision
-              </button>
-            </div>
-            <div class="system-caption" aria-live="polite">
-              <p data-focus-title>AI with a human in the loop.</p>
-              <span data-focus-description
-                >Bedrock agents + serverless workflows at Travelers.</span
-              ><a href="#travelers" data-focus-link
-                >Explore the work <span aria-hidden="true">↗</span></a
-              >
-            </div>
+          <div class="now-strip reveal-up" aria-label="What I'm working on now">
+            <p class="mono now-label">Now</p>
+            <ul class="now-list" data-now-list></ul>
           </div>
         </div>
+        <a class="scroll-cue" href="#experience" aria-label="Scroll to experience"><span></span></a>
       </section>
 
-      <section
-        class="section work-section"
-        id="work"
-        aria-labelledby="work-title"
-      >
-        <div class="shell">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">01 / SELECTED WORK</p>
-              <h2 id="work-title">Built to do something.</h2>
-            </div>
+      <!-- EXPERIENCE TOWER -->
+      <section class="section tower-section" id="experience" aria-labelledby="experience-title">
+        <div class="shell section-head">
+          <p class="eyebrow"><span>01</span> Experience</p>
+          <h2 id="experience-title" class="section-title" data-split-words>Everything I’ve built, <em>stacked.</em></h2>
+          <div class="section-head-side">
             <p>
-              Real problems. Deliberate engineering.<br />A few things I’ve
-              taken from idea to implementation.
+              Each floor is a role, newest at the top.
+              <span class="hint-3d">Scroll to move down the tower, pick a floor from the list, or click a block to open the full case study.</span>
+              <span class="hint-list">Open any floor for the full case study.</span>
             </p>
+            <div class="view-toggle" role="group" aria-label="Experience view">
+              <button type="button" aria-pressed="true" data-view="tower">3D tower</button>
+              <button type="button" aria-pressed="false" data-view="list">List</button>
+            </div>
           </div>
-          <article class="project featured-project" id="signifi">
-            <div class="project-visual signifi-visual">
-              <div class="visual-caption">
-                <span>signifi<span class="orange">.</span></span
-                ><span>REQUIREMENTS → REALITY</span>
+        </div>
+        <div class="tower-track" data-tower-track>
+          <div class="tower-sticky">
+            <div class="shell tower-grid">
+              <nav class="floor-index" aria-label="Experience floors">
+                <ol data-floor-index></ol>
+              </nav>
+              <div class="tower-stage" data-tower-stage>
+                <canvas class="tower-canvas" data-tower-canvas aria-hidden="true"></canvas>
+                <div class="tower-labels" data-tower-labels aria-hidden="true"></div>
+                <div class="tower-tip" data-tower-tip aria-hidden="true"></div>
+                <p class="tower-hint mono" aria-hidden="true">Hover a floor · click to open</p>
               </div>
-              <div class="product-image-wrap">
-                <img
-                  class="product-image"
-                  src="assets/signifi.jpg"
-                  alt="Signifi's actual Designer in dark mode, showing a generated WaitLess screen beside the screen navigator and design inspector"
-                  width="1800"
-                  height="1228"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-              <div class="visual-bottom">
-                <span>DESIGNER / GENERATED SCREENS</span><span>LIVE APP CAPTURE ↗</span>
-              </div>
+              <article class="floor-focus" data-floor-focus aria-live="polite"></article>
             </div>
-            <div class="project-copy">
-              <div class="project-meta">
-                <span>01 / AI PRODUCT</span
-                ><span class="project-badge">3 pilot teams</span>
-              </div>
-              <h3>Signifi</h3>
-              <p class="project-deck">One idea. Every artifact in sync.</p>
-              <p>
-                Product notes become linked specs, user stories, test cases, and
-                interactive prototypes. I co-founded Signifi and lead
-                development of the engine that keeps them connected.
-              </p>
-              <div class="project-result">
-                <strong>15+ agent steps</strong
-                ><span
-                  >Shared state keeps requirements and prototypes aligned</span
-                >
-              </div>
-              <ul class="tags" aria-label="Technologies">
-                <li>TypeScript</li>
-                <li>Next.js</li>
-                <li>Structured AI outputs</li>
-              </ul>
-              <div class="project-actions">
-                <a
-                  class="text-link"
-                  href="https://www.signifi.tech/demo"
-                  target="_blank"
-                  rel="noopener"
-                  >Explore product demo <span aria-hidden="true">↗</span></a
-                ><a class="subtle-link" href="#signifi-details"
-                  >Engineering notes <span aria-hidden="true">↓</span></a
-                >
-              </div>
-            </div>
-            <details class="engineering-details" id="signifi-details">
-              <summary>
-                <span>Under the hood</span
-                ><span class="details-hint"
-                  >The problem, my contribution, and the tradeoff</span
-                ><span class="expand-icon" aria-hidden="true">＋</span>
-              </summary>
-              <div class="detail-columns">
-                <div>
-                  <h4>The problem</h4>
-                  <p>
-                    When an AI-generated requirement changes, its stories,
-                    tests, and prototype can drift out of sync.
-                  </p>
-                </div>
-                <div>
-                  <h4>What I built</h4>
-                  <p>
-                    An orchestrated planner/worker pipeline using structured
-                    JSON outputs and shared run state to keep PRDs, stories,
-                    prototypes, and timelines aligned.
-                  </p>
-                </div>
-                <div>
-                  <h4>The engineering decision</h4>
-                  <p>
-                    Structured outputs give each generation step an explicit
-                    contract. Shared context keeps later artifacts connected to
-                    the same product brief, while Next.js renders the resulting
-                    prototype.
-                  </p>
-                </div>
-              </div>
-            </details>
-          </article>
-          <div class="project-pair">
-            <article class="project compact-project" id="graption">
-              <div class="project-visual graption-visual">
-                <div class="visual-caption">
-                  <span>graption</span><span>SPEAKER-AWARE CAPTIONS</span>
-                </div>
-                <div class="product-image-wrap">
-                  <img
-                    class="product-image"
-                    src="assets/graption.jpg"
-                    alt="Graption in a group meeting, with face tracking boxes and a green active-speaker indicator"
-                    width="1178"
-                    height="525"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="visual-bottom">
-                  <span>AUDIO + VISION + CONTEXT</span
-                  ><span>LIVE APP CAPTURE</span>
-                </div>
-              </div>
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span>02 / ACCESSIBILITY</span
-                  ><span class="project-badge">Hacklytics track winner</span>
-                </div>
-                <h3>Graption</h3>
-                <p class="project-deck">Captions that know who’s speaking.</p>
-                <p>
-                  I lead a 15-person Georgia Tech team building live captions
-                  that follow the speaker, with retrieval to help people catch
-                  up on missed conversation.
-                </p>
-                <div class="project-result">
-                  <strong>&lt;1.5s latency · 0.74 F1</strong
-                  ><span>Evaluated across 8 hours of audio-video</span>
-                </div>
-                <ul class="tags" aria-label="Technologies">
-                  <li>React Native</li>
-                  <li>FastAPI</li>
-                  <li>OpenCV</li>
-                  <li>WebSockets</li>
-                </ul>
-                <div class="project-actions">
-                  <a
-                    class="text-link"
-                    href="https://github.com/akshajnad/graption"
-                    target="_blank"
-                    rel="noopener"
-                    >View source <span aria-hidden="true">↗</span></a
-                  ><a
-                    class="subtle-link"
-                    href="https://devpost.com/software/graption"
-                    target="_blank"
-                    rel="noopener"
-                    >Demo &amp; award ↗</a
-                  >
-                </div>
-              </div>
-              <details class="engineering-details">
-                <summary>
-                  <span>Under the hood</span
-                  ><span class="expand-icon" aria-hidden="true">＋</span>
-                </summary>
-                <div class="detail-columns">
-                  <div>
-                    <h4>Multiple signals, one speaker</h4>
-                    <p>
-                      OpenCV and MediaPipe visual features combine with Whisper
-                      transcripts and audio events to identify the active
-                      speaker at 30 FPS.
-                    </p>
-                  </div>
-                  <div>
-                    <h4>Beyond a live transcript</h4>
-                    <p>
-                      A FastAPI WebSocket stream delivers captions to React
-                      Native. Stored conversation context supports retrieval
-                      when a user misses a moment.
-                    </p>
-                  </div>
-                </div>
-              </details>
-            </article>
-            <article class="project compact-project" id="echolocate">
-              <div class="project-visual echolocate-visual">
-                <div class="visual-caption">
-                  <span>EchoLocate</span
-                  ><span>CYBER FORENSICS, MADE PLAYABLE</span>
-                </div>
-                <div class="echo-image-wrap">
-                  <img
-                    src="assets/echolocate.png"
-                    width="1440"
-                    height="1000"
-                    alt="EchoLocate cyber-forensics game showing a pixel-art city, infrastructure sectors, and an evidence feed"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="visual-bottom">
-                  <span>SPECIALIST AGENTS / LIVE EVIDENCE</span
-                  ><span>ACTUAL PROJECT INTERFACE</span>
-                </div>
-              </div>
-              <div class="project-copy">
-                <div class="project-meta">
-                  <span>03 / MULTI-AGENT SYSTEMS</span
-                  ><span class="project-badge">Bitcamp Moonshot Award</span>
-                </div>
-                <h3>EchoLocate</h3>
-                <p class="project-deck">
-                  Investigate a breach. Connect the evidence.
-                </p>
-                <p>
-                  Built with a four-person team: a cyber-forensics game where
-                  specialist AI agents investigate a digital city and turn
-                  structured findings into a live evidence graph.
-                </p>
-                <div class="project-result">
-                  <strong>Up to 8 parallel agents</strong
-                  ><span
-                    >Log analysis, network tracing, and timeline
-                    reconstruction</span
-                  >
-                </div>
-                <ul class="tags" aria-label="Technologies">
-                  <li>React</li>
-                  <li>FastAPI</li>
-                  <li>Phaser</li>
-                  <li>Qwen</li>
-                </ul>
-                <div class="project-actions">
-                  <a
-                    class="text-link"
-                    href="https://github.com/SujayCh07/agentic-digital-forensics-simulator-sujayc"
-                    target="_blank"
-                    rel="noopener"
-                    >View source <span aria-hidden="true">↗</span></a
-                  ><a
-                    class="subtle-link"
-                    href="https://www.echolocate.us/"
-                    target="_blank"
-                    rel="noopener"
-                    >Play the demo ↗</a
-                  >
-                </div>
-              </div>
-              <details class="engineering-details">
-                <summary>
-                  <span>Under the hood</span
-                  ><span class="expand-icon" aria-hidden="true">＋</span>
-                </summary>
-                <div class="detail-columns">
-                  <div>
-                    <h4>Specialists with context</h4>
-                    <p>
-                      Players hire log-analysis, network-tracing,
-                      artifact-recovery, and timeline agents, then deploy them
-                      into infrastructure sectors. Each agent receives its role
-                      and the current case context.
-                    </p>
-                  </div>
-                  <div>
-                    <h4>From model output to evidence</h4>
-                    <p>
-                      Featherless-hosted Qwen returns JSON findings. The system
-                      turns them into evidence nodes and relationships that
-                      update the investigation board. React and Phaser make the
-                      workflow playable.
-                    </p>
-                  </div>
-                </div>
-              </details>
-            </article>
           </div>
-          <details class="project-archive">
-            <summary>
-              <span>More things I’ve built</span
-              ><span>iOS, IoT, financial AI, and research</span
-              ><span class="expand-icon" aria-hidden="true">＋</span>
-            </summary>
-            <div class="archive-list">
-              <a
-                href="https://github.com/akshajnad/energyhacks-gt"
-                target="_blank"
-                rel="noopener"
-                ><span>Gridly</span>
-                <p>
-                  Low-carbon scheduling for a real smart plug, tested across two
-                  cities.
-                </p>
-                <span>IoT / WebSockets ↗</span></a
-              >
-              <a
-                href="https://github.com/gtiosclub/Talking-Fingers"
-                target="_blank"
-                rel="noopener"
-                ><span>Talking Fingers</span>
-                <p>
-                  Live sign-language scoring with Apple Vision; 37 reference
-                  signs.
-                </p>
-                <span>Swift / Computer vision ↗</span></a
-              >
-              <a
-                href="https://devpost.com/software/finmate-gj93c8"
-                target="_blank"
-                rel="noopener"
-                ><span>FinMate</span>
-                <p>
-                  Grounded benefits answers and dashboard tool calls with AWS
-                  Bedrock.
-                </p>
-                <span>RAG / AWS ↗</span></a
-              >
-              <a
-                href="https://github.com/akshajnad/yhacks26"
-                target="_blank"
-                rel="noopener"
-                ><span>Veritas</span>
-                <p>
-                  A multi-agent workflow for understanding and disputing medical
-                  bills.
-                </p>
-                <span>AI agents / Full stack ↗</span></a
-              >
-              <div>
-                <span>SkillSwap</span>
-                <p>
-                  On-device lesson and quiz generation for peer learning at GT
-                  iOS Club.
-                </p>
-                <span>SwiftUI / Core ML</span>
-              </div>
-              <a
-                href="https://www.gtbigdatabigimpact.com/projects"
-                target="_blank"
-                rel="noopener"
-                ><span>BuyWise</span>
-                <p>Price-history forecasting inside the shopping flow.</p>
-                <span>Time series / Extension ↗</span></a
-              >
-            </div>
-          </details>
+        </div>
+        <div class="shell floor-list" data-floor-list></div>
+      </section>
+
+      <!-- SELECTED WORK -->
+      <section class="section work-section" id="work" aria-labelledby="work-title">
+        <div class="shell section-head">
+          <p class="eyebrow"><span>02</span> Selected work</p>
+          <h2 id="work-title" class="section-title" data-split-words>Real products, <em>running.</em></h2>
+          <div class="section-head-side">
+            <p>Screens from the working software, not mockups. Open any project for the architecture and the decisions behind it.</p>
+          </div>
+        </div>
+        <div class="shell showcase" data-showcase></div>
+        <div class="shell builds">
+          <div class="builds-head">
+            <h3 class="builds-title">More builds</h3>
+            <p class="mono">Hackathons · iOS Club · Big Data Big Impact</p>
+          </div>
+          <ul class="build-grid" data-build-grid></ul>
         </div>
       </section>
 
-      <section
-        class="section experience-section"
-        id="experience"
-        aria-labelledby="experience-title"
-      >
+      <!-- SKILLS -->
+      <section class="section skills-section" id="skills" aria-labelledby="skills-title">
+        <div class="shell section-head">
+          <p class="eyebrow"><span>03</span> Skills</p>
+          <h2 id="skills-title" class="section-title" data-split-words>Tools, traced to <em>where I used them.</em></h2>
+          <div class="section-head-side">
+            <p>Pick a technology to see every project that used it, and how. Each link opens that project.</p>
+          </div>
+        </div>
         <div class="shell">
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">02 / EXPERIENCE</p>
-              <h2 id="experience-title">
-                Good ideas need<br />good engineering.
-              </h2>
-            </div>
-            <p>
-              Cloud infrastructure, product ownership,<br />and research beyond
-              the demo.
-            </p>
-          </div>
-          <div class="experience-list">
-            <article class="experience-row" id="travelers">
-              <div class="experience-meta">
-                <span class="company-mark travelers-mark" aria-hidden="true"
-                  >T</span
-                >
-                <div>
-                  <h3>Travelers</h3>
-                  <p>Jun 2026 — Present</p>
-                </div>
-              </div>
-              <div class="experience-body">
-                <div class="role-heading">
-                  <h4>Software Engineering Intern</h4>
-                  <span>AI PLATFORM</span>
-                </div>
-                <p>
-                  Built an AI-assisted support workflow for a 150+ user data
-                  platform processing 8,000+ jobs a day. Reduced diagnosis from
-                  roughly an hour to under five minutes.
-                </p>
-                <ul class="tags">
-                  <li>AWS Bedrock</li>
-                  <li>Lambda</li>
-                  <li>Step Functions</li>
-                  <li>Terraform</li>
-                </ul>
-                <details>
-                  <summary>
-                    How the system works <span aria-hidden="true">＋</span>
-                  </summary>
-                  <p>
-                    EventBridge and Lambda route six root-cause categories to a
-                    Bedrock supervisor. Step Functions and API Gateway callbacks
-                    keep human approval before resolution notes are written to
-                    ServiceNow. Observability uses Dynatrace and Graylog; EKS
-                    packaging is in progress.
-                  </p>
-                </details>
-              </div>
-              <span class="experience-metric"
-                >&lt;5 min<span>ticket diagnosis</span></span
-              >
-            </article>
-            <article class="experience-row">
-              <div class="experience-meta">
-                <span class="company-mark signifi-mark" aria-hidden="true"
-                  >s.</span
-                >
-                <div>
-                  <h3>Signifi</h3>
-                  <p>Feb 2026 — Present</p>
-                </div>
-              </div>
-              <div class="experience-body">
-                <div class="role-heading">
-                  <h4>Co-founder &amp; Lead Developer</h4>
-                  <span>PRODUCT</span>
-                </div>
-                <p>
-                  Building a requirements engine that turns raw notes into
-                  linked engineering artifacts and prototypes. Serving three
-                  pilot teams, with $25K in Microsoft for Startups support.
-                </p>
-                <ul class="tags">
-                  <li>TypeScript</li>
-                  <li>Next.js</li>
-                  <li>Artifact graphs</li>
-                </ul>
-                <a class="subtle-link" href="#signifi">Explore the project ↗</a>
-              </div>
-              <span class="experience-metric">3<span>pilot teams</span></span>
-            </article>
-            <article class="experience-row">
-              <div class="experience-meta">
-                <span class="company-mark gt-mark" aria-hidden="true">GT</span>
-                <div>
-                  <h3>Big Data Big Impact</h3>
-                  <p>Jan 2026 — Present</p>
-                </div>
-              </div>
-              <div class="experience-body">
-                <div class="role-heading">
-                  <h4>Project Lead · Graption</h4>
-                  <span>LEADERSHIP</span>
-                </div>
-                <p>
-                  Leading 15 people as we turn a hackathon prototype into a
-                  persistent accessibility platform. Re-architected live
-                  captions around React Native, FastAPI, and PostgreSQL.
-                </p>
-                <ul class="tags">
-                  <li>Real-time systems</li>
-                  <li>Computer vision</li>
-                  <li>Team leadership</li>
-                </ul>
-              </div>
-              <span class="experience-metric">15<span>team members</span></span>
-            </article>
-            <article class="experience-row">
-              <div class="experience-meta">
-                <span class="company-mark ria-mark" aria-hidden="true">R</span>
-                <div>
-                  <h3>RIA Advisory</h3>
-                  <p>May — Aug 2025</p>
-                </div>
-              </div>
-              <div class="experience-body">
-                <div class="role-heading">
-                  <h4>Software Engineering Intern</h4>
-                  <span>BACKEND &amp; DATA</span>
-                </div>
-                <p>
-                  Automated billing workflows with Python ETL on Lambda and S3.
-                  Built reconciliation checks and an anomaly detector that
-                  surfaced 21 misbilled records.
-                </p>
-                <ul class="tags">
-                  <li>Python</li>
-                  <li>Spring Boot</li>
-                  <li>MySQL</li>
-                  <li>AWS</li>
-                </ul>
-                <details>
-                  <summary>
-                    Engineering details <span aria-hidden="true">＋</span>
-                  </summary>
-                  <p>
-                    The random forest achieved 0.88 precision and 0.79 recall.
-                    Staging-data validation caught inconsistent records before
-                    billing, alongside Spring Boot pricing APIs and reusable
-                    ORMB configuration templates.
-                  </p>
-                </details>
-              </div>
-              <span class="experience-metric"
-                >21<span>billing issues found</span></span
-              >
-            </article>
-            <article class="experience-row" id="research">
-              <div class="experience-meta">
-                <span class="company-mark gt-mark" aria-hidden="true">GT</span>
-                <div>
-                  <h3>Aerospace Robotics Lab</h3>
-                  <p>Undergraduate research</p>
-                </div>
-              </div>
-              <div class="experience-body">
-                <div class="role-heading">
-                  <h4>Research Assistant</h4>
-                  <span>ROBOTICS &amp; ML</span>
-                </div>
-                <p>
-                  Built a ROS2 and MuJoCo spacecraft simulator coordinating
-                  eight agents at 500 Hz. Trained decentralized models over ~500
-                  rollouts, reducing simulated fuel cost by ~20%.
-                </p>
-                <ul class="tags">
-                  <li>ROS2</li>
-                  <li>MuJoCo</li>
-                  <li>C++</li>
-                  <li>Decentralized learning</li>
-                </ul>
-                <details>
-                  <summary>
-                    Research scope <span aria-hidden="true">＋</span>
-                  </summary>
-                  <p>
-                    The testbed combines physics, guidance and navigation,
-                    onboard vision, and formation control. Models maintained
-                    collision-free trajectories in simulation; these results
-                    describe simulated fuel use, not physical spacecraft
-                    deployment.
-                  </p>
-                </details>
-              </div>
-              <span class="experience-metric"
-                >500 Hz<span>simulation loop</span></span
-              >
-            </article>
+          <div class="sx-filters" role="group" aria-label="Filter skills by category" data-sx-filters></div>
+          <div class="sx" data-sx>
+            <ul class="sx-tiles" data-sx-tiles aria-label="Skills"></ul>
+            <aside class="sx-rail" id="sx-rail" data-sx-rail aria-label="Projects and how each skill was used"></aside>
+            <svg class="sx-wires" data-sx-wires aria-hidden="true"></svg>
           </div>
         </div>
       </section>
 
-      <section
-        class="recognition-section shell"
-        id="recognition"
-        aria-labelledby="recognition-title"
-      >
-        <p class="eyebrow" id="recognition-title">
-          BUILT UNDER PRESSURE. RECOGNIZED ALONG THE WAY.
-        </p>
-        <div class="award-strip">
-          <a
-            href="https://devpost.com/software/graption"
-            target="_blank"
-            rel="noopener"
-            ><span class="award-icon" aria-hidden="true">✳</span
-            ><strong>Hacklytics ’26</strong
-            ><span>Best Use of Snowflake API</span></a
-          ><a
-            href="https://devpost.com/software/echolocate-e4k3dg"
-            target="_blank"
-            rel="noopener"
-            ><span class="award-icon" aria-hidden="true">↗</span
-            ><strong>Bitcamp ’26</strong
-            ><span>Best Moonshot Hack · EchoLocate</span></a
-          ><a
-            href="https://devpost.com/software/gridly-0h29vm"
-            target="_blank"
-            rel="noopener"
-            ><span class="award-icon" aria-hidden="true">⌁</span
-            ><strong>EnergyHack ’26</strong
-            ><span>Best Use of Vultr · Gridly</span></a
-          ><a
-            href="https://devpost.com/software/finmate-gj93c8"
-            target="_blank"
-            rel="noopener"
-            ><span class="award-icon" aria-hidden="true">✧</span
-            ><strong>codeLinc10</strong
-            ><span>2nd place · FinMate (2025)</span></a
-          >
+      <!-- RECOGNITION -->
+      <section class="section recognition-section" id="recognition" aria-labelledby="recognition-title">
+        <div class="shell">
+          <div class="recog-head">
+            <p class="eyebrow" id="recognition-title"><span>✳</span> Built under pressure, recognized along the way</p>
+            <a class="link-arrow" href="https://devpost.com/akshajnad" target="_blank" rel="noopener">All projects on Devpost <span aria-hidden="true">↗</span></a>
+          </div>
+          <ol class="award-list" data-awards></ol>
         </div>
-        <a
-          class="subtle-link"
-          href="https://devpost.com/akshajnad"
-          target="_blank"
-          rel="noopener"
-          >More projects &amp; recognition on Devpost ↗</a
-        >
       </section>
 
-      <section
-        class="section about-section"
-        id="about"
-        aria-labelledby="about-title"
-      >
+      <!-- ABOUT -->
+      <section class="section about-section" id="about" aria-labelledby="about-title">
         <div class="shell about-grid">
-          <div>
-            <p class="eyebrow">03 / THE PERSON BEHIND THE CODE</p>
-            <h2 id="about-title">
-              Curious about the system.<br />Careful with the details.
-            </h2>
+          <div class="about-main">
+            <p class="eyebrow"><span>04</span> About</p>
+            <h2 id="about-title" class="section-title" data-split-words>Curious about the system. <em>Careful with the details.</em></h2>
             <div class="about-text">
               <p>
-                I’m Akshaj, a Computer Science student at Georgia Tech,
-                graduating in May 2028. I like owning the full path from an
-                interesting idea to a working system.
+                I’m Akshaj, a Computer Science student at Georgia Tech, graduating in May 2028. I like owning the full
+                path from an interesting idea to a working system.
               </p>
               <p>
-                The parts I keep coming back to: reliable backends, models that
-                can be evaluated, and interfaces that make complex things
-                useful. My work spans enterprise support, accessibility, and
-                spacecraft autonomy.
+                The parts I keep coming back to: reliable backends, models that can be evaluated, and interfaces that
+                make complex things useful. My work spans enterprise support, accessibility, and spacecraft autonomy.
               </p>
-              <p>
-                Outside engineering: tennis, violin, and finding a good trail.
-              </p>
+              <p>Outside engineering: tennis, violin, and finding a good trail.</p>
             </div>
             <div class="about-links">
-              <a
-                class="text-link"
-                href="https://github.com/akshajnad"
-                target="_blank"
-                rel="noopener"
-                >GitHub ↗</a
-              ><a
-                class="text-link"
-                href="https://www.linkedin.com/in/akshaj-nadimpalli/"
-                target="_blank"
-                rel="noopener"
-                >LinkedIn ↗</a
-              ><a
-                class="text-link"
-                href="resume.pdf"
-                target="_blank"
-                rel="noopener"
-                >Résumé ↗</a
-              >
+              <a class="link-arrow" href="https://github.com/akshajnad" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+              <a class="link-arrow" href="https://www.linkedin.com/in/akshaj-nadimpalli/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a>
+              <a class="link-arrow" href="https://devpost.com/akshajnad" target="_blank" rel="noopener">Devpost <span aria-hidden="true">↗</span></a>
+              <a class="link-arrow" href="resume.pdf" target="_blank" rel="noopener">Résumé <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <div class="toolkit">
-            <div class="education">
-              <span class="mono">GEORGIA INSTITUTE OF TECHNOLOGY</span
-              ><strong>B.S. Computer Science</strong>
-              <p>Class of 2028 · 4.0 / 4.0 GPA</p>
-            </div>
-            <h3>Tools I put to work</h3>
-            <dl>
-              <div>
-                <dt>Languages</dt>
-                <dd>Python, TypeScript, Java, C++, SQL, Swift</dd>
-              </div>
-              <div>
-                <dt>Backend &amp; cloud</dt>
-                <dd>
-                  AWS, FastAPI, Spring Boot, PostgreSQL, Docker, Terraform
-                </dd>
-              </div>
-              <div>
-                <dt>AI &amp; systems</dt>
-                <dd>Bedrock, LangGraph, OpenCV, PyTorch, ROS2, MuJoCo</dd>
-              </div>
-              <div>
-                <dt>Interfaces</dt>
-                <dd>React, Next.js, React Native, SwiftUI</dd>
-              </div>
+          <div class="about-side">
+            <figure class="portrait">
+              <img src="assets/akshaj.jpg" width="160" height="160" alt="Akshaj Nadimpalli" loading="lazy" decoding="async" />
+            </figure>
+            <dl class="spec-sheet">
+              <div><dt>School</dt><dd>Georgia Institute of Technology<br /><span>B.S. Computer Science · May 2028</span></dd></div>
+              <div><dt>GPA</dt><dd>4.0 / 4.0</dd></div>
+              <div><dt>Coursework</dt><dd>Data Structures &amp; Algorithms, Computer Organization, Objects &amp; Design, Networking, Machine Learning</dd></div>
+              <div><dt>Activities</dt><dd>Big Data Big Impact (Project Lead) · SynapseX (Streaming &amp; Integration Lead) · GT iOS Club</dd></div>
+              <div><dt>Also use</dt><dd>Bash, Flask, Node.js/Express, REST, GraphQL, NumPy, Pandas, LangChain/LangGraph, OpenAI/Anthropic SDKs, Pinecone, Docker</dd></div>
             </dl>
+            <div class="papers">
+              <p class="mono">Earlier research</p>
+              <a class="link-arrow" href="Adaptive_Collective_Strategies_for_Swarm_Intelligence_Applications.pdf" target="_blank" rel="noopener">Adaptive collective strategies for swarm intelligence <span aria-hidden="true">↗</span></a>
+              <a class="link-arrow" href="The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf" target="_blank" rel="noopener">Factors in a startup’s success <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
-        </div>
-        <div class="shell publications">
-          <span class="mono">EARLIER RESEARCH</span
-          ><a
-            href="Adaptive_Collective_Strategies_for_Swarm_Intelligence_Applications.pdf"
-            target="_blank"
-            rel="noopener"
-            >Swarm intelligence paper ↗</a
-          ><a
-            href="The Influence of Various Factors in a Startup’s Success_ A Comprehensive Study.pdf"
-            target="_blank"
-            rel="noopener"
-            >Startup success study ↗</a
-          >
         </div>
       </section>
 
-      <section
-        class="contact-section"
-        id="contact"
-        aria-labelledby="contact-title"
-      >
-        <div class="shell">
-          <div class="contact-top">
-            <p class="availability">
-              <span aria-hidden="true"></span> SUMMER 2027 SWE INTERNSHIPS
-            </p>
-            <span class="mono">LET’S BUILD SOMETHING USEFUL.</span>
+      <!-- CONTACT -->
+      <section class="contact-section" id="contact" aria-labelledby="contact-title">
+        <div class="contact-field" aria-hidden="true"></div>
+        <div class="shell contact-inner">
+          <p class="status-chip"><span class="pulse" aria-hidden="true"></span>Summer 2027 SWE internships</p>
+          <h2 id="contact-title" class="contact-title" data-split-words>Let’s build something <em>useful.</em></h2>
+          <p class="contact-lede">I’m looking for teams working on applied AI, backend infrastructure, and thoughtful products.</p>
+          <div class="contact-actions">
+            <a class="contact-email magnetic" href="mailto:akshajnadn@gmail.com">akshajnadn@gmail.com <span aria-hidden="true">↗</span></a>
+            <button class="btn btn-ghost" type="button" data-copy-email>Copy email</button>
+            <span class="sr-only" role="status" data-copy-status></span>
           </div>
-          <div class="contact-main">
-            <h2 id="contact-title">
-              Your next engineer.<br /><em>Let’s talk.</em>
-            </h2>
-            <div>
-              <p>
-                I’m looking for teams working on applied AI,<br />backend
-                infrastructure, and thoughtful products.
-              </p>
-              <a class="contact-email" href="mailto:akshajnadn@gmail.com"
-                >akshajnadn@gmail.com <span aria-hidden="true">↗</span></a
-              ><button class="copy-email" type="button" data-copy-email>
-                Copy email <span aria-hidden="true">⧉</span></button
-              ><span
-                class="copy-status sr-only"
-                role="status"
-                data-copy-status
-              ></span>
-            </div>
+          <div class="contact-links">
+            <a href="resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+            <a href="https://github.com/akshajnad" target="_blank" rel="noopener">GitHub ↗</a>
+            <a href="https://www.linkedin.com/in/akshaj-nadimpalli/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <a href="https://devpost.com/akshajnad" target="_blank" rel="noopener">Devpost ↗</a>
           </div>
         </div>
       </section>
     </main>
+
     <footer class="site-footer">
       <div class="shell footer-shell">
-        <a class="wordmark" href="#top" aria-label="Back to top"
-          >an<span>.</span></a
-        >
         <p>© <span data-year>2026</span> Akshaj Nadimpalli</p>
-        <div>
-          <a href="https://github.com/akshajnad" target="_blank" rel="noopener"
-            >GitHub ↗</a
-          ><a
-            href="https://www.linkedin.com/in/akshaj-nadimpalli/"
-            target="_blank"
-            rel="noopener"
-            >LinkedIn ↗</a
-          ><a href="#top">Back to top ↑</a>
-        </div>
+        <p class="mono">Built by hand with HTML, CSS, JavaScript and Three.js</p>
+        <a href="#top">Back to top ↑</a>
       </div>
     </footer>
-    <button
-      class="assistant-launcher"
-      type="button"
-      aria-expanded="false"
-      aria-controls="portfolio-assistant"
-      data-assistant-launcher
-    >
-      <span aria-hidden="true">⌕</span> Ask about my work
-      <span class="assistant-launcher-key" aria-hidden="true">⌘/</span>
+
+    <!-- Case study dialog -->
+    <dialog class="cs" data-case aria-labelledby="cs-title">
+      <div class="cs-scroll" data-case-scroll>
+        <div class="cs-body" data-case-body></div>
+      </div>
+    </dialog>
+
+    <!-- Image lightbox -->
+    <dialog class="lightbox" data-lightbox aria-label="Image viewer">
+      <button class="lightbox-close" type="button" data-lightbox-close aria-label="Close image">×</button>
+      <figure><img alt="" data-lightbox-img /><figcaption data-lightbox-cap></figcaption></figure>
+    </dialog>
+
+    <!-- Portfolio search (existing local assistant) -->
+    <button class="assistant-launcher" type="button" aria-expanded="false" aria-controls="portfolio-assistant" data-assistant-launcher>
+      <span aria-hidden="true">⌕</span> Ask about my work <span class="assistant-launcher-key" aria-hidden="true">⌘/</span>
     </button>
-    <section
-      class="assistant-panel"
-      id="portfolio-assistant"
-      aria-label="Portfolio search"
-      hidden
-      data-assistant-panel
-    >
+    <section class="assistant-panel" id="portfolio-assistant" aria-label="Portfolio search" hidden data-assistant-panel>
       <div class="assistant-header">
         <div>
-          <p>EXPLORE THE PORTFOLIO</p>
+          <p>Explore the portfolio</p>
           <h2>Ask about my work</h2>
         </div>
         <div class="assistant-header-actions">
-          <button
-            class="assistant-icon-button"
-            type="button"
-            aria-label="Clear conversation"
-            data-assistant-clear
-          >
-            ↻</button
-          ><button
-            class="assistant-icon-button"
-            type="button"
-            aria-label="Close portfolio search"
-            data-assistant-close
-          >
-            ×
-          </button>
+          <button class="assistant-icon-button" type="button" aria-label="Clear conversation" data-assistant-clear>↻</button
+          ><button class="assistant-icon-button" type="button" aria-label="Close portfolio search" data-assistant-close>×</button>
         </div>
       </div>
-      <div
-        class="assistant-messages"
-        role="log"
-        aria-live="polite"
-        aria-relevant="additions"
-        data-assistant-messages
-      >
+      <div class="assistant-messages" role="log" aria-live="polite" aria-relevant="additions" data-assistant-messages>
         <div class="assistant-message assistant-message-system">
-          Find projects, experience, and technical details from this portfolio.
-          Try a question below, or search for a technology.
+          Find projects, experience, and technical details from this portfolio. Try a question below, or search for a technology.
         </div>
       </div>
-      <div
-        class="assistant-suggestions"
-        aria-label="Suggested questions"
-        data-assistant-suggestions
-      >
-        <button type="button">Which projects use AWS?</button
-        ><button type="button">What is Signifi?</button
+      <div class="assistant-suggestions" aria-label="Suggested questions" data-assistant-suggestions>
+        <button type="button">Which projects use AWS?</button><button type="button">What is Signifi?</button
         ><button type="button">How can I contact him?</button>
       </div>
       <form class="assistant-form" data-assistant-form>
-        <label class="sr-only" for="assistant-input"
-          >Ask a question about Akshaj</label
-        ><input
-          id="assistant-input"
-          type="text"
-          maxlength="180"
-          autocomplete="off"
-          placeholder="Ask about a project, role, or skill…"
-          data-assistant-input
-        /><button type="submit">Search</button>
+        <label class="sr-only" for="assistant-input">Ask a question about Akshaj</label
+        ><input id="assistant-input" type="text" maxlength="180" autocomplete="off" placeholder="Ask about a project, role, or skill…" data-assistant-input /><button type="submit">Search</button>
       </form>
-      <p class="assistant-note">
-        Local search of published portfolio content. No messages are sent.
-      </p>
+      <p class="assistant-note">Local search of published portfolio content. No messages are sent.</p>
     </section>
+
+    <noscript>
+      <div class="noscript">
+        <p>
+          This site uses JavaScript for its interactive views. The résumé has everything:
+          <a href="resume.pdf">open résumé (PDF)</a> · <a href="mailto:akshajnadn@gmail.com">akshajnadn@gmail.com</a>
+        </p>
+      </div>
+    </noscript>
+
     <script src="script.js" defer></script>
-    <script src="interactions.js" defer></script>
+    <script type="module" src="assets/js/main.js"></script>
   </body>
 </html>
