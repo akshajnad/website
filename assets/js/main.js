@@ -23,7 +23,7 @@ document.querySelector("[data-now-list]").innerHTML = NOW.map(({ id, line }) => 
   return `<li><button type="button" class="now-item" data-open="${id}" style="--c:${p.color}"><strong>${esc(p.title)}</strong><span>${esc(line)}</span></button></li>`;
 }).join("");
 
-const SHOWCASE = ["signifi", "graption", "echolocate"];
+const SHOWCASE = ["signifi", "graption", "relay", "echolocate"];
 const KIND = { experience: "Internship", startup: "Startup", research: "Research", project: "Project" };
 document.querySelector("[data-showcase]").innerHTML = SHOWCASE.map((id, i) => {
   const p = byId[id];
@@ -55,7 +55,7 @@ document.querySelector("[data-showcase]").innerHTML = SHOWCASE.map((id, i) => {
   </article>`;
 }).join("");
 
-const BUILDS = ["finmate", "gridly", "talking-fingers", "veritas", "skillswap", "buywise", "ppp-pocket"];
+const BUILDS = ["relay", "rlis", "finmate", "gridly", "talking-fingers", "veritas", "skillswap", "buywise", "ppp-pocket"];
 document.querySelector("[data-build-grid]").innerHTML = BUILDS.map((id, i) => {
   const p = byId[id];
   const r = (p.results || [])[0];
