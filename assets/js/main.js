@@ -55,7 +55,7 @@ document.querySelector("[data-showcase]").innerHTML = SHOWCASE.map((id, i) => {
   </article>`;
 }).join("");
 
-const BUILDS = ["relay", "rlis", "finmate", "gridly", "talking-fingers", "veritas", "skillswap", "buywise", "ppp-pocket"];
+const BUILDS = ["relay", "rlis", "kora", "synapsex", "finmate", "gridly", "talking-fingers", "veritas", "skillswap", "buywise", "ppp-pocket"];
 document.querySelector("[data-build-grid]").innerHTML = BUILDS.map((id, i) => {
   const p = byId[id];
   const r = (p.results || [])[0];
